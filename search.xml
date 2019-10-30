@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何搭建个人博客 使用Hexo（一）</title>
+    <url>/2019/10/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p>今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的</p>
+<h4 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h4><p>首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题，当然如果想要自定义域名的话，也可以支持，我后续会跟大家说的。</p>
+<p>所以大家先注册个GitHub账号，我们就正式开始吧！</p>
+<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><ul>
+<li><p>去<a href="https://nodejs.org" target="_blank" rel="noopener">官网</a>安装Node.js </p>
+</li>
+<li><p><img src="en-resource://database/2411:1" alt="26c93b61dd88af82436f5bca63a2934b.png"></p>
+</li>
+<li><p>下载好后一路 <strong>next</strong> 就好</p>
+</li>
+</ul>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><ul>
+<li>新建一个文件夹，比如我这里建了  blog  文件  </li>
+<li>我们来看一下 Node.js是否安装成功</li>
+<li><img src="en-resource://database/2413:1" alt="f1db8ac226537a73b0f06ca16555f02b.png"></li>
+</ul>
+<ul>
+<li><p>由于国内镜像源速度不是很好，我们先来安装个cnpm提高速度，以后下载什么东西都用cnpm</p>
+</li>
+<li><p>执行如下命令 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
+<li><p>等待安装完成</p>
+</li>
+<li><p><img src="en-resource://database/2415:1" alt="fd76b2119d32d64c6a2711981993b98a.png"></p>
+</li>
+<li><p>安装完成看一下他的版本</p>
+</li>
+<li><p><img src="en-resource://database/2417:1" alt="a135bbbf701eec90067b9f8a0b335ece.png"></p>
+</li>
+<li><p><strong>安装Hexo</strong> 执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+<li><p><img src="en-resource://database/2419:1" alt="1045900ccd10c1acee48c44e2cefc91b.png"></p>
+</li>
+<li><p>使用如下命令检测是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
+<li><p><img src="en-resource://database/2425:0" alt="eff802d8c90a0d8bb20bfdcafc4a8798.png"></p>
+</li>
+<li><p>安装完毕之后，确保环境变量配置好，能正常使用 hexo 命令。</p>
+</li>
+<li><p>查看当前路径命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure></li>
+<li><p>结果为 我的是存放在D盘blog的文件夹内<br><img src="en-resource://database/2427:0" alt="c92d3bacf47166aec150897ff60030a4.png"></p>
+</li>
+<li><p>然后我们运行命令，这步是关键，主要是建立整个项目，这里我的文件夹名字是blog</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+<li><p>等待下载安装完成，结果如下<br><img src="en-resource://database/2429:0" alt="a500b0626f414cdb3da5ebeb26787768.png"><br><img src="en-resource://database/2431:0" alt="1861da4847d3b5638b9884f5ae4277fd.png"></p>
+</li>
+</ul>
+<h4 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h4><ul>
+<li><p>首先我们调用  Hexo 的 generate 命令，将 Hexo 编译生成 HTML 代码，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
+<li><p>可以看到输出结果里面包含了 js、css、font 等内容，并发现他们都处在了项目根目录下的 public 文件夹下面了。<br><img src="en-resource://database/2433:0" alt="1a0e91a54db1c981eb80fc4ccaecff1c.png"><br><img src="en-resource://database/2435:0" alt="7f4c69cb89ef0155d07329448649ec14.png"></p>
+</li>
+<li><p>然后我们利用 Hexo 提供的 serve 命令把博客在本地运行起来，命令如下：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>运行结果如下<br><img src="en-resource://database/2437:0" alt="a31a4d9ca322583fa4827ce09f20729e.png"></p>
+</li>
+<li><p>我们在本地 4000 端口上就可以查看博客站点了，如图所示：<br><img src="en-resource://database/2439:0" alt="e84d6fd83b74ffe9831bcd1063e112ce.png"></p>
+</li>
+<li><p>到这为止我们就已经搭建好 一个博客框架了</p>
+</li>
+<li><p>记住这三条很常用的命令</p>
+<blockquote>
+<p>hexo clean #用来清理缓存文件<br>hexo g      #生成文件<br>hexo  s     #运行本地服务器<br>hexo  d   #上传到服务器</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="这次我们就先说到这"><a href="#这次我们就先说到这" class="headerlink" title="这次我们就先说到这"></a>这次我们就先说到这</h4><ul>
+<li>下一次我再跟大家分享 如何美化我们的博客。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>我的第一篇博客文章</title>
     <url>/2019/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h2 id="内容"><a href="#内容" class="headerlink" title=" 内容"></a> 内容</h2><h2 id="是否支持markdown"><a href="#是否支持markdown" class="headerlink" title="是否支持markdown"></a>是否支持markdown</h2><hr>

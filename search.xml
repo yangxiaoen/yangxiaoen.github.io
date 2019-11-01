@@ -3,42 +3,37 @@
   <entry>
     <title>有效的字母异位词</title>
     <url>/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="��Ч����ĸ��λ��"><a href="#��Ч����ĸ��λ��" class="headerlink" title="��Ч����ĸ��λ��????"></a>��Ч����ĸ��λ��????</h3><p>���������ַ��� s �� t ����дһ���������ж� t �Ƿ��� s ����ĸ��λ�ʡ�</p>
-<p>ʾ��?1:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">����: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">���: true</span><br></pre></td></tr></table></figure>
-<p>ʾ�� 2:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">����: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">���: false</span><br></pre></td></tr></table></figure>
-<p>˵��:<br>����Լ����ַ���ֻ����Сд��ĸ��</p>
-<p>����:<br>��������ַ������� unicode �ַ���ô�죿���ܷ������Ľⷨ��Ӧ�����������</p>
-<p>��Դ�����ۣ�LeetCode��<br>���ӣ�<a href="https://leetcode-cn.com/problems/valid-anagram" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-anagram</a></p>
-<h4 id="˼·"><a href="#˼·" class="headerlink" title="˼·"></a>˼·</h4><p>����ַ��������⣬Ӣ����ĸһ����26�������ǿ��Դ�����������a[],b[]�������е�Ԫ�طֱ��Ӧ��ĸ��a,b,c….z������������ s ����s��ÿ���ַ���Ӧ������Ԫ��a[i]++��ͬ���������� t ����t��ÿ���ַ���Ӧ������Ԫ��b[i]++,Ȼ��Ƚ�����a[]������b[],�������һ����<code>return true</code> ����<code>return false</code></p>
-<p>�ύ�Ĵ������£�</p>
+    <content><![CDATA[<h3 id="有效的字母异位词"><a href="#有效的字母异位词" class="headerlink" title="有效的字母异位词"></a>有效的字母异位词</h3><p>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。</p>
+<p>示例?1:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<p>说明:<br>你可以假设字符串只包含小写字母。</p>
+<p>进阶:<br>如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/valid-anagram" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-anagram</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>解决字符串的问题，英文字母一共才26个，我们可以创建两个数组a[],b[]，数组中的元素分别对应字母”a,b,c….z“，遍历数组 s 数组s中每个字符对应的数组元素a[i]++，同理遍历数组 t 数组t中每个字符对应的数组元素b[i]++,然后比较数组a[]与数组b[],如果数组一致则<code>return true</code> 否则<code>return false</code></p>
+<p>提交的代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bool isAnagram(char * s, char * t)&#123;</span><br><span class="line">    int a[26]=&#123;0&#125;;</span><br><span class="line">    int b[26]=&#123;0&#125;;</span><br><span class="line">    int n;</span><br><span class="line">    int i;</span><br><span class="line">    for(i=0;i&lt;strlen(s);++i)&#123;</span><br><span class="line">        if(s[i]&gt;=97 &amp;&amp; s[i]&lt;=123)</span><br><span class="line">        &#123;</span><br><span class="line">            n=s[i]-97;</span><br><span class="line">            a[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0 ;i&lt;strlen(t); ++i)&#123;</span><br><span class="line">        if(t[i]&gt;=97 &amp;&amp; t[i]&lt;=123)</span><br><span class="line">         &#123;</span><br><span class="line">            n=t[i]-97;</span><br><span class="line">            b[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0;i&lt;26;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[i]!=b[i])</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>ִ����ʱ��344 ms<br>������սʤ��5.12%��c�ύ��¼</p>
+<p>执行用时：344 ms<br>仅仅至战胜了5.12%的c提交记录</p>
 </blockquote>
-<p><strong>���ͣ�ÿ���������ݽṹ��ϰ!</strong></p>
+<p><strong>加油！每天做点数据结构练习!</strong></p>
 ]]></content>
       <categories>
-        <category>Leetcode�ַ���</category>
-        <category>��</category>
+        <category>Leetcode字符串</category>
+        <category>简单</category>
       </categories>
       <tags>
-        <tag>����</tag>
-        <tag>�ַ���</tag>
         <tag>Leetcode</tag>
-        <tag>��</tag>
+        <tag>数组</tag>
+        <tag>字符串</tag>
+        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
-    <title>K个一组翻转链表</title>
-    <url>/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>如何搭建个人博客 使用Hexo（一）</title>
-    <url>/2019/10/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <url>/2019/11/01/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<p>今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的</p>
 <h4 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h4><p>首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题，当然如果想要自定义域名的话，也可以支持，我后续会跟大家说的。</p>
 <p>所以大家先注册个GitHub账号，我们就正式开始吧！</p>
@@ -115,14 +110,41 @@
 ]]></content>
   </entry>
   <entry>
-    <title>我的第一篇博客文章</title>
-    <url>/2019/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h2 id="内容"><a href="#内容" class="headerlink" title=" 内容"></a> 内容</h2><h2 id="是否支持markdown"><a href="#是否支持markdown" class="headerlink" title="是否支持markdown"></a>是否支持markdown</h2><hr>
+    <title>K个一组翻转链表</title>
+    <url>/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="K个一组翻转链表"><a href="#K个一组翻转链表" class="headerlink" title="K个一组翻转链表"></a>K个一组翻转链表</h2><p>给你一个链表，每?k?个节点一组进行翻转，请你返回翻转后的链表。</p>
+<p>k?是一个正整数，它的值小于或等于链表的长度。</p>
+<p>如果节点总数不是?k?的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
+<p>示例 :</p>
+<p>给定这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5</p>
+<p>当?k?= 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5</p>
+<p>当?k?= 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5</p>
+<p>说明 :</p>
+<p>你的算法只能使用常数的额外空间。<br>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-nodes-in-k-group</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以创建三个指针<code>pre</code>  <code>cur</code>   <code>next</code><br><code>pre</code>  指针指向开始节点，<code>cue</code>指针指向<code>pre</code> 的下一个节点，<code>next</code>指针指向<code>cur</code>指针的下一个节点。<br>每次移动让<code>next = cur-&gt;next</code>节点 <code>cur-&gt;next = pre</code>让cur的指针指向pre ，pre移动到cur的位置，cur移动到next的位置，这样就实现了 链表的反转<br>代码实现如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">struct ListNode* Myreverse(struct ListNode *head)&#123;</span><br><span class="line">    struct ListNode* next = NULL;</span><br><span class="line">    struct ListNode *pre = NULL;</span><br><span class="line">    struct ListNode *cur = head;</span><br><span class="line">    while(cur != NULL)&#123;</span><br><span class="line">        next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = next;</span><br><span class="line">    &#125;</span><br><span class="line">    return pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于这个题的完整代码如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">struct ListNode* Myreverse(struct ListNode *head);</span><br><span class="line">struct ListNode* reverseKGroup(struct ListNode* head, int k)&#123;</span><br><span class="line">    struct ListNode *cur = head, *start = head, *next = NULL, *result = head;</span><br><span class="line">    struct ListNode *pre = (struct ListNode*)malloc(sizeof(struct ListNode));</span><br><span class="line">    int flag = 0;//是否第一次翻转</span><br><span class="line">    pre-&gt;next = head;</span><br><span class="line">    while(cur != NULL)&#123;</span><br><span class="line">        for(int i = 1;(i&lt;k)&amp;&amp;(cur != NULL); i++)&#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        flag++;</span><br><span class="line">        if(cur == NULL) break;</span><br><span class="line">        next = cur-&gt;next;//后继</span><br><span class="line">        cur-&gt;next = NULL;//切断链表进行翻转</span><br><span class="line">        pre-&gt;next = Myreverse(start);</span><br><span class="line">        if (flag == 1) result = pre-&gt;next;</span><br><span class="line">        pre = start;</span><br><span class="line">        start-&gt;next = next;</span><br><span class="line">        cur = next;</span><br><span class="line">        start = next;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct ListNode* Myreverse(struct ListNode *head)&#123;</span><br><span class="line">    struct ListNode* next = NULL;</span><br><span class="line">    struct ListNode *pre = NULL;</span><br><span class="line">    struct ListNode *cur = head;</span><br><span class="line">    while(cur != NULL)&#123;</span><br><span class="line">        next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = next;</span><br><span class="line">    &#125;</span><br><span class="line">    return pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时：12 ms</p>
+</blockquote>
 ]]></content>
+      <categories>
+        <category>Leetcode链表</category>
+        <category>困难</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+        <tag>Leetcode</tag>
+        <tag>困难</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/10/27/hello-world/</url>
+    <url>/2019/11/01/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
@@ -136,6 +158,12 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的第一篇博客文章</title>
+    <url>/2019/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h2 id="内容"><a href="#内容" class="headerlink" title=" 内容"></a> 内容</h2><h2 id="是否支持markdown"><a href="#是否支持markdown" class="headerlink" title="是否支持markdown"></a>是否支持markdown</h2><hr>
 ]]></content>
   </entry>
 </search>

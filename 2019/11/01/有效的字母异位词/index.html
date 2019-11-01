@@ -50,15 +50,15 @@
   };
 </script>
 
-  <meta name="description" content="��Ч����ĸ��λ��????���������ַ��� s �� t ����дһ���������ж� t �Ƿ��� s ����ĸ��λ�ʡ� ʾ��?1: 12����: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;���: true ʾ�� 2: 12����: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car">
-<meta name="keywords" content="����,�ַ���,Leetcode,��">
+  <meta name="description" content="有效的字母异位词给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。 示例?1: 12输入: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;输出: true 示例 2: 12输入: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot;输出: false 说明:你可以假设字符串只包含小写字母。">
+<meta name="keywords" content="Leetcode,数组,字符串,简单">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有效的字母异位词">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D&#x2F;index.html">
 <meta property="og:site_name" content="杨小恩同学的博客">
-<meta property="og:description" content="��Ч����ĸ��λ��????���������ַ��� s �� t ����дһ���������ж� t �Ƿ��� s ����ĸ��λ�ʡ� ʾ��?1: 12����: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;���: true ʾ�� 2: 12����: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car">
+<meta property="og:description" content="有效的字母异位词给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。 示例?1: 12输入: s = &amp;quot;anagram&amp;quot;, t = &amp;quot;nagaram&amp;quot;输出: true 示例 2: 12输入: s = &amp;quot;rat&amp;quot;, t = &amp;quot;car&amp;quot;输出: false 说明:你可以假设字符串只包含小写字母。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-01T02:48:09.859Z">
+<meta property="og:updated_time" content="2019-11-01T02:55:34.141Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/">
@@ -237,7 +237,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-01 10:47:55 / 修改时间：10:48:09" itemprop="dateCreated datePublished" datetime="2019-11-01T10:47:55+08:00">2019-11-01</time>
+              <time title="创建时间：2019-11-01 11:03:35 / 修改时间：10:55:34" itemprop="dateCreated datePublished" datetime="2019-11-01T11:03:35+08:00">2019-11-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,14 +245,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%EF%BF%BD%D6%B7%EF%BF%BD%EF%BF%BD%EF%BF%BD/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode�ַ���</span>
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode字符串</span>
                   </a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%EF%BF%BD%D6%B7%EF%BF%BD%EF%BF%BD%EF%BF%BD/%EF%BF%BD%EF%BF%BD/" itemprop="url" rel="index">
-                    <span itemprop="name">��</span>
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
                   </a>
                 </span>
             </span>
@@ -268,22 +268,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="��Ч����ĸ��λ��"><a href="#��Ч����ĸ��λ��" class="headerlink" title="��Ч����ĸ��λ��????"></a>��Ч����ĸ��λ��????</h3><p>���������ַ��� s �� t ����дһ���������ж� t �Ƿ��� s ����ĸ��λ�ʡ�</p>
-<p>ʾ��?1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">����: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">���: true</span><br></pre></td></tr></table></figure>
-<p>ʾ�� 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">����: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">���: false</span><br></pre></td></tr></table></figure>
-<p>˵��:<br>����Լ����ַ���ֻ����Сд��ĸ��</p>
-<p>����:<br>��������ַ������� unicode �ַ���ô�죿���ܷ������Ľⷨ��Ӧ�����������</p>
-<p>��Դ�����ۣ�LeetCode��<br>���ӣ�<a href="https://leetcode-cn.com/problems/valid-anagram" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-anagram</a></p>
-<h4 id="˼·"><a href="#˼·" class="headerlink" title="˼·"></a>˼·</h4><p>����ַ��������⣬Ӣ����ĸһ����26�������ǿ��Դ�����������a[],b[]�������е�Ԫ�طֱ��Ӧ��ĸ��a,b,c….z������������ s ����s��ÿ���ַ���Ӧ������Ԫ��a[i]++��ͬ���������� t ����t��ÿ���ַ���Ӧ������Ԫ��b[i]++,Ȼ��Ƚ�����a[]������b[],�������һ����<code>return true</code> ����<code>return false</code></p>
-<p>�ύ�Ĵ������£�</p>
+        <h3 id="有效的字母异位词"><a href="#有效的字母异位词" class="headerlink" title="有效的字母异位词"></a>有效的字母异位词</h3><p>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。</p>
+<p>示例?1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<p>说明:<br>你可以假设字符串只包含小写字母。</p>
+<p>进阶:<br>如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/valid-anagram" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-anagram</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>解决字符串的问题，英文字母一共才26个，我们可以创建两个数组a[],b[]，数组中的元素分别对应字母”a,b,c….z“，遍历数组 s 数组s中每个字符对应的数组元素a[i]++，同理遍历数组 t 数组t中每个字符对应的数组元素b[i]++,然后比较数组a[]与数组b[],如果数组一致则<code>return true</code> 否则<code>return false</code></p>
+<p>提交的代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">bool isAnagram(char * s, char * t)&#123;</span><br><span class="line">    int a[26]=&#123;0&#125;;</span><br><span class="line">    int b[26]=&#123;0&#125;;</span><br><span class="line">    int n;</span><br><span class="line">    int i;</span><br><span class="line">    for(i=0;i&lt;strlen(s);++i)&#123;</span><br><span class="line">        if(s[i]&gt;=97 &amp;&amp; s[i]&lt;=123)</span><br><span class="line">        &#123;</span><br><span class="line">            n=s[i]-97;</span><br><span class="line">            a[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0 ;i&lt;strlen(t); ++i)&#123;</span><br><span class="line">        if(t[i]&gt;=97 &amp;&amp; t[i]&lt;=123)</span><br><span class="line">         &#123;</span><br><span class="line">            n=t[i]-97;</span><br><span class="line">            b[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0;i&lt;26;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[i]!=b[i])</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>ִ����ʱ��344 ms<br>������սʤ��5.12%��c�ύ��¼</p>
+<p>执行用时：344 ms<br>仅仅至战胜了5.12%的c提交记录</p>
 </blockquote>
-<p><strong>���ͣ�ÿ���������ݽṹ��ϰ!</strong></p>
+<p><strong>加油！每天做点数据结构练习!</strong></p>
 
     </div>
 
@@ -293,18 +293,18 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/" rel="tag"># ����</a>
-              <a href="/tags/%EF%BF%BD%D6%B7%EF%BF%BD%EF%BF%BD%EF%BF%BD/" rel="tag"># �ַ���</a>
               <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
-              <a href="/tags/%EF%BF%BD%EF%BF%BD/" rel="tag"># ��</a>
+              <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"># 数组</a>
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"># 字符串</a>
+              <a href="/tags/%E7%AE%80%E5%8D%95/" rel="tag"># 简单</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" rel="next" title="K个一组翻转链表">
-                  <i class="fa fa-chevron-left"></i> K个一组翻转链表
+                <a href="/2019/11/01/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="如何搭建个人博客 使用Hexo（一）">
+                  <i class="fa fa-chevron-left"></i> 如何搭建个人博客 使用Hexo（一）
                 </a>
             </div>
 
@@ -350,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#��Ч����ĸ��λ��"><span class="nav-number">1.</span> <span class="nav-text">��Ч����ĸ��λ��????</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#˼·"><span class="nav-number">1.1.</span> <span class="nav-text">˼·</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#有效的字母异位词"><span class="nav-number">1.</span> <span class="nav-text">有效的字母异位词</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">1.1.</span> <span class="nav-text">思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -373,13 +373,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

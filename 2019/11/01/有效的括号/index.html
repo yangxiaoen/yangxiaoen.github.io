@@ -50,31 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的 准备条件首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它">
+  <meta name="description" content="有效的括号给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。 示例 1: 12输入: &amp;quot;()&amp;quot;输出: true 示例 2: 12输入: &amp;quot;()[]&amp;#123;&amp;#125;&amp;quot;输出: true 示例 3">
+<meta name="keywords" content="Leetcode,数组,简单">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建个人博客 使用Hexo（一）">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
+<meta property="og:title" content="有效的括号">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7&#x2F;index.html">
 <meta property="og:site_name" content="杨小恩同学的博客">
-<meta property="og:description" content="今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的 准备条件首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它">
+<meta property="og:description" content="有效的括号给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。 有效字符串需满足： 左括号必须用相同类型的右括号闭合。左括号必须以正确的顺序闭合。注意空字符串可被认为是有效字符串。 示例 1: 12输入: &amp;quot;()&amp;quot;输出: true 示例 2: 12输入: &amp;quot;()[]&amp;#123;&amp;#125;&amp;quot;输出: true 示例 3">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapfwbwj30oc0eugma.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapmae5j30bq057t8l.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glappw47j30mm073jre.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapve37j30n00act8y.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaq20hwj30nf0k90tv.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaq8xrzj308l082wed.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqe6xej306v03egld.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqlqa8j30n90d2t99.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqrkauj30oi07jmxf.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqvv6oj30eq0dtmx8.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glar00z8j30nj06v0su.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glar4s35j30ei01h3ya.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glarlqx0j31b00s0gyo.jpg">
-<meta property="og:updated_time" content="2019-10-30T14:26:07.915Z">
+<meta property="og:updated_time" content="2019-11-01T14:17:40.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapfwbwj30oc0eugma.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/01/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/">
+<link rel="canonical" href="http://yoursite.com/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">
 
 
 <script id="page-configurations">
@@ -88,7 +75,7 @@
   };
 </script>
 
-  <title>如何搭建个人博客 使用Hexo（一） | 杨小恩同学的博客</title>
+  <title>有效的括号 | 杨小恩同学的博客</title>
   
 
 
@@ -226,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/gang.png">
@@ -239,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          如何搭建个人博客 使用Hexo（一）
+          有效的括号
         </h1>
 
         <div class="post-meta">
@@ -248,16 +235,27 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-01 11:03:35" itemprop="dateCreated datePublished" datetime="2019-11-01T11:03:35+08:00">2019-11-01</time>
+              <time title="创建时间：2019-11-01 22:06:37 / 修改时间：22:17:40" itemprop="dateCreated datePublished" datetime="2019-11-01T22:06:37+08:00">2019-11-01</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-30 22:26:07" itemprop="dateModified" datetime="2019-10-30T22:26:07+08:00">2019-10-30</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode简单</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E7%AE%80%E5%8D%95/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -270,79 +268,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的</p>
-<h4 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h4><p>首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题，当然如果想要自定义域名的话，也可以支持，我后续会跟大家说的。</p>
-<p>所以大家先注册个GitHub账号，我们就正式开始吧！</p>
-<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><ul>
-<li><p>去<a href="https://nodejs.org" target="_blank" rel="noopener">官网</a>安装Node.js </p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapfwbwj30oc0eugma.jpg" alt="很棒哈"></p>
-</li>
-<li><p>下载好后一路 <strong>next</strong> 就好</p>
-</li>
+        <h2 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h2><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。<br>左括号必须以正确的顺序闭合。<br>注意空字符串可被认为是有效字符串。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;()&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;()[]&#123;&#125;&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;(]&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<p>示例 4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;([)]&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<p>示例 5:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;&#123;[]&#125;&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/valid-parentheses" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-parentheses</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>获取要判断的字符串长度，如果字符串为空，返回true 否则返回false</li>
+<li>创建一个栈 在字符串中找到 ‘(’ 或者 ‘{‘ 或者 ‘[‘的时候进栈，找到与之匹配的‘)’ 或者 ‘}’ 或者 ‘]’时候出栈 </li>
+<li>如何查找是否匹配 写了一个函数 isTrue 用来判断是否匹配<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bool isTrue(char a,char b)</span><br><span class="line">&#123;</span><br><span class="line">    if((a == &apos;(&apos; &amp;&amp; b == &apos;)&apos;) || (a == &apos;&#123;&apos; &amp;&amp; b == &apos;&#125;&apos;) ||(a == &apos;[&apos; &amp;&amp; b == &apos;]&apos;))</span><br><span class="line">        return true;</span><br><span class="line">    else </span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>遍历整个字符串，进行对应的出栈和进栈</li>
+<li>如果遍历结束，栈为空则表示完全匹配，否则表示不匹配</li>
 </ul>
-<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><ul>
-<li>新建一个文件夹，比如我这里建了  blog  文件  </li>
-<li>我们来看一下 Node.js是否安装成功</li>
-<li><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapmae5j30bq057t8l.jpg" alt="很棒哈"></li>
-</ul>
-<ul>
-<li><p>由于国内镜像源速度不是很好，我们先来安装个cnpm提高速度，以后下载什么东西都用cnpm</p>
-</li>
-<li><p>执行如下命令 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
-<li><p>等待安装完成</p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glappw47j30mm073jre.jpg" alt="很棒哈"></p>
-</li>
-<li><p>安装完成看一下他的版本</p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapve37j30n00act8y.jpg" alt="很棒哈"></p>
-</li>
-<li><p><strong>安装Hexo</strong> 执行如下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaq20hwj30nf0k90tv.jpg" alt="很棒哈"></p>
-</li>
-<li><p>使用如下命令检测是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaq8xrzj308l082wed.jpg" alt="很棒哈"></p>
-</li>
-<li><p>安装完毕之后，确保环境变量配置好，能正常使用 hexo 命令。</p>
-</li>
-<li><p>查看当前路径命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure></li>
-<li><p>结果为 我的是存放在D盘blog的文件夹内<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqe6xej306v03egld.jpg" alt="很棒哈"></p>
-</li>
-<li><p>然后我们运行命令，这步是关键，主要是建立整个项目，这里我的文件夹名字是blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-<li><p>等待下载安装完成，结果如下<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqlqa8j30n90d2t99.jpg" alt="很棒哈"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqrkauj30oi07jmxf.jpg" alt="很棒哈"></p>
-</li>
-</ul>
-<h4 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h4><ul>
-<li><p>首先我们调用  Hexo 的 generate 命令，将 Hexo 编译生成 HTML 代码，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
-<li><p>可以看到输出结果里面包含了 js、css、font 等内容，并发现他们都处在了项目根目录下的 public 文件夹下面了。<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqvv6oj30eq0dtmx8.jpg" alt="很棒哈"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glar00z8j30nj06v0su.jpg" alt="很棒哈"></p>
-</li>
-<li><p>然后我们利用 Hexo 提供的 serve 命令把博客在本地运行起来，命令如下：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>运行结果如下<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glar4s35j30ei01h3ya.jpg" alt="很棒哈"></p>
-</li>
-<li><p>我们在本地 4000 端口上就可以查看博客站点了，如图所示：<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glarlqx0j31b00s0gyo.jpg" alt="很棒哈"></p>
-</li>
-<li><p>到这为止我们就已经搭建好 一个博客框架了</p>
-</li>
-<li><p>记住这三条很常用的命令</p>
+<h4 id="对于这个题的完整代码如下"><a href="#对于这个题的完整代码如下" class="headerlink" title="对于这个题的完整代码如下"></a>对于这个题的完整代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">bool isTrue(char a,char b)</span><br><span class="line">&#123;</span><br><span class="line">    if((a == &apos;(&apos; &amp;&amp; b == &apos;)&apos;) || (a == &apos;&#123;&apos; &amp;&amp; b == &apos;&#125;&apos;) ||(a == &apos;[&apos; &amp;&amp; b == &apos;]&apos;))</span><br><span class="line">        return true;</span><br><span class="line">    else </span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool isValid(char * s)&#123;</span><br><span class="line">    int top = -1;</span><br><span class="line">    int len=strlen(s);</span><br><span class="line">    if(len == 0)</span><br><span class="line">        return true;</span><br><span class="line">    char str[len];</span><br><span class="line">    int i=0;</span><br><span class="line">    for(i=0; i&lt;len ;++i)</span><br><span class="line">    &#123;</span><br><span class="line">         if(top==-1 || !(isTrue(str[top],s[i])))</span><br><span class="line">        &#123;</span><br><span class="line">            ++top;</span><br><span class="line">            str[top] = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        else if(isTrue(str[top],s[i]))</span><br><span class="line">        &#123;</span><br><span class="line">            --top;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(top == -1)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <blockquote>
-<p>hexo clean #用来清理缓存文件<br>hexo g      #生成文件<br>hexo  s     #运行本地服务器<br>hexo  d   #上传到服务器</p>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了69.12%的用户<br>内存消耗 :6.9 MB, 在所有 c 提交中击败了73.49%的用户</p>
 </blockquote>
-</li>
-</ul>
-<h4 id="这次我们就先说到这"><a href="#这次我们就先说到这" class="headerlink" title="这次我们就先说到这"></a>这次我们就先说到这</h4><ul>
-<li>下一次我再跟大家分享 如何美化我们的博客。</li>
-</ul>
 
     </div>
 
@@ -351,22 +303,24 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+              <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"># 数组</a>
+              <a href="/tags/%E7%AE%80%E5%8D%95/" rel="tag"># 简单</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" rel="next" title="K个一组翻转链表">
-                  <i class="fa fa-chevron-left"></i> K个一组翻转链表
+                <a href="/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" rel="next" title="有效的字母异位词">
+                  <i class="fa fa-chevron-left"></i> 有效的字母异位词
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" rel="prev" title="有效的字母异位词">
-                  有效的字母异位词 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -406,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备条件"><span class="nav-number">1.</span> <span class="nav-text">准备条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装环境"><span class="nav-number">2.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行测试"><span class="nav-number">4.</span> <span class="nav-text">运行测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这次我们就先说到这"><span class="nav-number">5.</span> <span class="nav-text">这次我们就先说到这</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#有效的括号"><span class="nav-number">1.</span> <span class="nav-text">有效的括号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">1.0.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对于这个题的完整代码如下"><span class="nav-number">1.0.2.</span> <span class="nav-text">对于这个题的完整代码如下</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -595,7 +549,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'BlogReview',
       owner: 'yangxiaoen',
       admin: ['yangxiaoen'],
-      id: '444fb5a789272202614793f25c58844e',
+      id: '119d2229b714f6d6520d864a6e8d8907',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-01T14:17:40.326Z</updated>
+  <updated>2019-11-02T14:16:51.224Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日温度</title>
+    <link href="http://yoursite.com/2019/11/02/%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/"/>
+    <id>http://yoursite.com/2019/11/02/每日温度/</id>
+    <published>2019-11-02T14:02:32.144Z</published>
+    <updated>2019-11-02T14:16:51.224Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="每日温度"><a href="#每日温度" class="headerlink" title="每日温度"></a>每日温度</h3><p>根据每日 气温 列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请在该位置用?0 来代替。</p><p>例如，给定一个列表?<code>temperatures = [73, 74, 75, 71, 69, 72, 76, 73]</code>，你的输出应该是?<code>[1, 1, 4, 2, 1, 1, 0, 0]</code>。</p><p>提示：气温 列表长度的范围是?<code>[1, 30000]</code>。每个气温的值的均为华氏度，都是在?<code>[30, 100]?</code>范围内的整数。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/daily-temperatures" target="_blank" rel="noopener">https://leetcode-cn.com/problems/daily-temperatures</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>创建一个栈，把第一天的温度放进栈内，第二天与之比较，如果比第一天温度高，则应该输出1，如果比第一天温度低，就把这个温度值也入栈，继续下一个数值进行比较，如果温度比第二天高，则对应的第二天输出的应该为1，第二天的温度值出栈，然后与第一天的进行比较，如果大则第一天的数值出栈，对应输出为2，否则继续下一个元素按照这种方法比较，直到最后一个比较完，栈内还有元素就依次出栈，每个元素对应的输出结果为0.<br><strong>实现过程</strong></p><ul><li>定义一个栈，并定义栈顶指针top</li><li>创建一个链表<code>res</code> 用来存储结果，定义一个 <code>temp</code>用来存储数组下标</li><li>核心代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for(i = 0; i&lt; TSize; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    while(top != -1 &amp;&amp; T[i]&gt;T[stack[top]])</span><br><span class="line">    &#123;</span><br><span class="line">        temp = stack[top];</span><br><span class="line">        top--;//处理下标的距离</span><br><span class="line">        res[temp] = i - temp;</span><br><span class="line">    &#125;</span><br><span class="line">    ++top;//栈空了或者满足递减条件就入站</span><br><span class="line">    stack[top] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Note: The returned array must be malloced, assume caller calls free().</span><br><span class="line"> */</span><br><span class="line">#define MAX 30000</span><br><span class="line"></span><br><span class="line">int* dailyTemperatures(int* T, int TSize, int* returnSize)&#123;</span><br><span class="line">    int stack[MAX] = &#123;0&#125;;</span><br><span class="line">    int top = -1,i = 0, temp = 0;</span><br><span class="line">    int* res =(int *)malloc(sizeof(int)*TSize);</span><br><span class="line">    memset(res,0,sizeof(int)*TSize);//初始化函数 给res中 sizeof(int)*Tsize个赋值为0</span><br><span class="line">    if(res == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        * returnSize = 0;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = 0; i&lt; TSize; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        while(top != -1 &amp;&amp; T[i]&gt;T[stack[top]])</span><br><span class="line">        &#123;</span><br><span class="line">            temp = stack[top];</span><br><span class="line">            top--;//处理下标的距离</span><br><span class="line">            res[temp] = i - temp;</span><br><span class="line">        &#125;</span><br><span class="line">        ++top;//栈空了或者满足递减条件就入站</span><br><span class="line">        stack[top] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    * returnSize = TSize;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :232 ms, 在所有?c?提交中击败了53.11%的用户<br>内存消耗 :23.8 MB, 在所有?c?提交中击败了76.47%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;每日温度&quot;&gt;&lt;a href=&quot;#每日温度&quot; class=&quot;headerlink&quot; title=&quot;每日温度&quot;&gt;&lt;/a&gt;每日温度&lt;/h3&gt;&lt;p&gt;根据每日 气温 列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode数组" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>有效的括号</title>
@@ -78,9 +110,9 @@
     
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   

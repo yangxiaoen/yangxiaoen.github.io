@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>滑动窗口最大值</title>
+    <url>/2019/11/03/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/</url>
+    <content><![CDATA[<h3 id="滑动窗口最大值"><a href="#滑动窗口最大值" class="headerlink" title="滑动窗口最大值"></a>滑动窗口最大值</h3><p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
+<p>返回滑动窗口中的最大值。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3</span><br><span class="line">输出: [3,3,5,5,6,7] </span><br><span class="line">解释: </span><br><span class="line"></span><br><span class="line">  滑动窗口的位置                最大值</span><br><span class="line">---------------               -----</span><br><span class="line">[1  3  -1] -3  5  3  6  7       3</span><br><span class="line"> 1 [3  -1  -3] 5  3  6  7       3</span><br><span class="line"> 1  3 [-1  -3  5] 3  6  7       5</span><br><span class="line"> 1  3  -1 [-3  5  3] 6  7       5</span><br><span class="line"> 1  3  -1  -3 [5  3  6] 7       6</span><br><span class="line"> 1  3  -1  -3  5 [3  6  7]      7</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/sliding-window-maximum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sliding-window-maximum</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>有两种解题方法</p>
+<ol>
+<li>一种是每k个元素进行比较，创建一个链表将最大值输出</li>
+<li>第二种是创建一个双端链表，将元素从队尾入队，如果后一个节点元素数值比前一个大则前一个数值移除，如果比前一个结点元素数值小，则入队。这样就能保证队列的第一个元素为当前k个数值中最大的<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8l7raet5lj30lp08y0tt.jpg" alt="henbang"></li>
+</ol>
+<h4 id="第一种想法完整代码如下"><a href="#第一种想法完整代码如下" class="headerlink" title="第一种想法完整代码如下"></a>第一种想法完整代码如下</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Note: The returned array must be malloced, assume caller calls free().</span><br><span class="line"> */</span><br><span class="line">/*</span><br><span class="line">    maxInk()用于比较k个数值中最大值</span><br><span class="line">*/</span><br><span class="line">int maxInk(int *nums,int k)</span><br><span class="line">&#123;</span><br><span class="line">    int max=nums[0];</span><br><span class="line">    int i;</span><br><span class="line">    for(i = 0; i &lt; k; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        if(nums[i] &gt; max)</span><br><span class="line">            max = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* maxSlidingWindow(int* nums, int numsSize, int k, int* returnSize)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    int end = numsSize - k;</span><br><span class="line">    int rsize = numsSize - k + 1;</span><br><span class="line">    if(numsSize == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        * returnSize = 0;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    * returnSize = rsize;</span><br><span class="line">    int *r = (int *)malloc(sizeof(int)*rsize);</span><br><span class="line">    memset(r,0,sizeof(int)*rsize);</span><br><span class="line">    </span><br><span class="line">    for(i = 0; i&lt;= end; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        r[i] = maxInk(nums+i,k);</span><br><span class="line">    &#125;</span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时 :144 ms, 在所有 c 提交中击败了40.05% 的用户<br>内存消耗 :15.9 MB, 在所有 c 提交中击败了18.18%的用户</p>
+</blockquote>
+<h4 id="第二种想法完整代码如下"><a href="#第二种想法完整代码如下" class="headerlink" title="第二种想法完整代码如下"></a>第二种想法完整代码如下</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">	int *qdata;</span><br><span class="line">	int head;</span><br><span class="line">	int tail;</span><br><span class="line">	int qlen;</span><br><span class="line">&#125;Queue;</span><br><span class="line"></span><br><span class="line">void queue_init(Queue* q, int n)</span><br><span class="line">&#123;</span><br><span class="line">	if(n&gt;=0)</span><br><span class="line">	&#123;</span><br><span class="line">		q-&gt;qlen = n+1;</span><br><span class="line">		q-&gt;qdata = (int *)malloc(sizeof(int) *q-&gt;qlen);</span><br><span class="line">		q-&gt;head = 0;</span><br><span class="line">		q-&gt;tail = 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void queue_destroy(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">	free(q-&gt;qdata);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_is_full(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">	if((q-&gt;tail+1)%q-&gt;qlen == q-&gt;head) return 1;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_is_empty(Queue*q )</span><br><span class="line">&#123;</span><br><span class="line">	return q-&gt;head == q-&gt;tail;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void queue_add_tail(Queue *q, int e)</span><br><span class="line">&#123;</span><br><span class="line">	if(!queue_is_full(q))</span><br><span class="line">	&#123;</span><br><span class="line">		q-&gt;qdata[q-&gt;tail] = e;</span><br><span class="line">		q-&gt;tail = (q-&gt;tail+1)%q-&gt;qlen;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d not add, queue is full\n&quot;, e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_pull_head(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">	if(!queue_is_empty(q))</span><br><span class="line">	&#123;</span><br><span class="line">		int r = q-&gt;qdata[q-&gt;head];</span><br><span class="line">		q-&gt;head = (q-&gt;head+1)%q-&gt;qlen;</span><br><span class="line">		return r;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;not pull, queue is empty\n&quot;);</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int queue_peek_head(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">	if(!queue_is_empty(q))</span><br><span class="line">		return q-&gt;qdata[q-&gt;head];</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br><span class="line">int queue_pull_tail(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">    int r = q-&gt;qdata[(q-&gt;tail-1+q-&gt;qlen)%q-&gt;qlen];</span><br><span class="line">    if(!queue_is_empty(q))</span><br><span class="line">    &#123;</span><br><span class="line">        q-&gt;tail = (q-&gt;tail-1+q-&gt;qlen)%q-&gt;qlen;</span><br><span class="line">    &#125;</span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_peek_tail(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">    if(!queue_is_empty(q))</span><br><span class="line">    &#123;</span><br><span class="line">        return q-&gt;qdata[(q-&gt;tail-1+q-&gt;qlen)%q-&gt;qlen];</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br><span class="line">void queue_print(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">	int i;</span><br><span class="line">    printf(&quot;in queue: &quot;);</span><br><span class="line">	for(i = q-&gt;head; i != q-&gt;tail; i= (i+1)%q-&gt;qlen)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;,q-&gt;qdata[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void queue_reflact(Queue *q, int *nums)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;in queue: &quot;);</span><br><span class="line">	for(i = q-&gt;head; i != q-&gt;tail; i= (i+1)%q-&gt;qlen)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;,nums[q-&gt;qdata[i]]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void pr(int* nums, int numsSize)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;result: &quot;);</span><br><span class="line">    for(i=0; i&lt;numsSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d &quot;,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int* maxSlidingWindow(int* nums, int numsSize, int k, int* returnSize)&#123;</span><br><span class="line">    int i;</span><br><span class="line">    int j=0;</span><br><span class="line">    </span><br><span class="line">    int rsize = numsSize -k +1; </span><br><span class="line">    if(numsSize==0)</span><br><span class="line">    &#123;</span><br><span class="line">        *returnSize = 0;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    Queue qnode;</span><br><span class="line">    Queue* q = &amp;qnode;</span><br><span class="line">    queue_init(q, k);</span><br><span class="line">    </span><br><span class="line">    *returnSize = rsize;</span><br><span class="line">    int *r = (int *)malloc(sizeof(int)*rsize);</span><br><span class="line">    *returnSize = rsize;</span><br><span class="line">    memset(r, 0, sizeof(int)*rsize);</span><br><span class="line">     </span><br><span class="line">    for(i=0; i&lt;numsSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(queue_is_empty(q))</span><br><span class="line">        &#123; </span><br><span class="line">            queue_add_tail(q, i);</span><br><span class="line">            goto juge;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        if(queue_peek_head(q)&lt;=i-k)</span><br><span class="line">        &#123;</span><br><span class="line">            queue_pull_head(q);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        while(!queue_is_empty(q) &amp;&amp; nums[queue_peek_tail(q)] &lt; nums[i])</span><br><span class="line">        &#123;</span><br><span class="line">             queue_pull_tail(q);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        queue_add_tail(q, i);</span><br><span class="line"> </span><br><span class="line">        juge:if(i-k+1&gt;=0)&#123;</span><br><span class="line">            r[j++] = nums[queue_peek_head(q)];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :76 ms, 在所有 c 提交中击败了84.56% 的用户<br>内存消耗 :16.1 MB, 在所有 c 提交中击败了9.09%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode队列</category>
+        <category>困难</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>队列</tag>
+        <tag>困难</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日温度</title>
     <url>/2019/11/02/%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/</url>
     <content><![CDATA[<h3 id="每日温度"><a href="#每日温度" class="headerlink" title="每日温度"></a>每日温度</h3><p>根据每日 气温 列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请在该位置用?0 来代替。</p>
@@ -68,8 +101,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -98,8 +131,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
         <tag>字符串</tag>
       </tags>
@@ -209,9 +242,9 @@
         <category>困难</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>困难</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>

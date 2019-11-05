@@ -50,31 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的 准备条件首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它">
+  <meta name="description" content="各位相加给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。 示例: 123输入: 38输出: 2 解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。 进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？ 来源：力扣（LeetCode）链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;proble">
+<meta name="keywords" content="数组,字符串,Leetcode,简单,递归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建个人博客 使用Hexo（一）">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;30&#x2F;%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
+<meta property="og:title" content="各位相加">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;05&#x2F;%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0&#x2F;index.html">
 <meta property="og:site_name" content="杨小恩同学的博客">
-<meta property="og:description" content="今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的 准备条件首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它">
+<meta property="og:description" content="各位相加给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。 示例: 123输入: 38输出: 2 解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。 进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？ 来源：力扣（LeetCode）链接：https:&#x2F;&#x2F;leetcode-cn.com&#x2F;proble">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapfwbwj30oc0eugma.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapmae5j30bq057t8l.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glappw47j30mm073jre.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapve37j30n00act8y.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaq20hwj30nf0k90tv.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaq8xrzj308l082wed.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqe6xej306v03egld.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqlqa8j30n90d2t99.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqrkauj30oi07jmxf.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glaqvv6oj30eq0dtmx8.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glar00z8j30nj06v0su.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glar4s35j30ei01h3ya.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glarlqx0j31b00s0gyo.jpg">
-<meta property="og:updated_time" content="2019-10-30T14:26:07.915Z">
+<meta property="og:updated_time" content="2019-11-05T14:15:05.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;007X8olVly1g8glapfwbwj30oc0eugma.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2019/10/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/">
+<link rel="canonical" href="http://yoursite.com/2019/11/05/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0/">
 
 
 <script id="page-configurations">
@@ -88,7 +75,7 @@
   };
 </script>
 
-  <title>如何搭建个人博客 使用Hexo（一） | 杨小恩同学的博客</title>
+  <title>各位相加 | 杨小恩同学的博客</title>
   
 
 
@@ -226,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/gang.png">
@@ -239,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          如何搭建个人博客 使用Hexo（一）
+          各位相加
         </h1>
 
         <div class="post-meta">
@@ -248,9 +235,37 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-10-30 21:41:57 / 修改时间：22:26:07" itemprop="dateCreated datePublished" datetime="2019-10-30T21:41:57+08:00">2019-10-30</time>
+              <time title="创建时间：2019-11-05 22:15:05" itemprop="dateCreated datePublished" datetime="2019-11-05T22:15:05+08:00">2019-11-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode字符串</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
+                    <span itemprop="name">递归</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">循环</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -264,79 +279,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的</p>
-<h4 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h4><p>首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题，当然如果想要自定义域名的话，也可以支持，我后续会跟大家说的。</p>
-<p>所以大家先注册个GitHub账号，我们就正式开始吧！</p>
-<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><ul>
-<li><p>去<a href="https://nodejs.org" target="_blank" rel="noopener">官网</a>安装Node.js </p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapfwbwj30oc0eugma.jpg" alt="很棒哈"></p>
-</li>
-<li><p>下载好后一路 <strong>next</strong> 就好</p>
-</li>
-</ul>
-<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><ul>
-<li>新建一个文件夹，比如我这里建了  blog  文件  </li>
-<li>我们来看一下 Node.js是否安装成功</li>
-<li><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapmae5j30bq057t8l.jpg" alt="很棒哈"></li>
-</ul>
-<ul>
-<li><p>由于国内镜像源速度不是很好，我们先来安装个cnpm提高速度，以后下载什么东西都用cnpm</p>
-</li>
-<li><p>执行如下命令 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
-<li><p>等待安装完成</p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glappw47j30mm073jre.jpg" alt="很棒哈"></p>
-</li>
-<li><p>安装完成看一下他的版本</p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapve37j30n00act8y.jpg" alt="很棒哈"></p>
-</li>
-<li><p><strong>安装Hexo</strong> 执行如下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaq20hwj30nf0k90tv.jpg" alt="很棒哈"></p>
-</li>
-<li><p>使用如下命令检测是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaq8xrzj308l082wed.jpg" alt="很棒哈"></p>
-</li>
-<li><p>安装完毕之后，确保环境变量配置好，能正常使用 hexo 命令。</p>
-</li>
-<li><p>查看当前路径命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure></li>
-<li><p>结果为 我的是存放在D盘blog的文件夹内<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqe6xej306v03egld.jpg" alt="很棒哈"></p>
-</li>
-<li><p>然后我们运行命令，这步是关键，主要是建立整个项目，这里我的文件夹名字是blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-<li><p>等待下载安装完成，结果如下<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqlqa8j30n90d2t99.jpg" alt="很棒哈"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqrkauj30oi07jmxf.jpg" alt="很棒哈"></p>
-</li>
-</ul>
-<h4 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h4><ul>
-<li><p>首先我们调用  Hexo 的 generate 命令，将 Hexo 编译生成 HTML 代码，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
-<li><p>可以看到输出结果里面包含了 js、css、font 等内容，并发现他们都处在了项目根目录下的 public 文件夹下面了。<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqvv6oj30eq0dtmx8.jpg" alt="很棒哈"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glar00z8j30nj06v0su.jpg" alt="很棒哈"></p>
-</li>
-<li><p>然后我们利用 Hexo 提供的 serve 命令把博客在本地运行起来，命令如下：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>运行结果如下<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glar4s35j30ei01h3ya.jpg" alt="很棒哈"></p>
-</li>
-<li><p>我们在本地 4000 端口上就可以查看博客站点了，如图所示：<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glarlqx0j31b00s0gyo.jpg" alt="很棒哈"></p>
-</li>
-<li><p>到这为止我们就已经搭建好 一个博客框架了</p>
-</li>
-<li><p>记住这三条很常用的命令</p>
+        <h3 id="各位相加"><a href="#各位相加" class="headerlink" title="各位相加"></a>各位相加</h3><p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 38</span><br><span class="line">输出: 2 </span><br><span class="line">解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。</span><br></pre></td></tr></table></figure>
+<p>进阶:<br>你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/add-digits" target="_blank" rel="noopener">https://leetcode-cn.com/problems/add-digits</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以使用循环依次获取到这个数字 num 的各个位置的数字，并将其相加，如果相加不是个位数，我们就递归调用这个函数</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int addDigits(int num)&#123;</span><br><span class="line">    int k = 0; //表示各个位置上数字之和</span><br><span class="line">    while(num != 0)//求出各个位置上的数字并求和</span><br><span class="line">    &#123;</span><br><span class="line">        k = k + num % 10; </span><br><span class="line">        num = num/10; </span><br><span class="line">    &#125;</span><br><span class="line">    if(k / 10 != 0)//判断各个位置上数字是否为个位数</span><br><span class="line">        return addDigits(k);</span><br><span class="line">    return k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>hexo clean #用来清理缓存文件<br>hexo g      #生成文件<br>hexo  s     #运行本地服务器<br>hexo  d   #上传到服务器</p>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了76.94% 的用户<br>内存消耗 :6.6 MB, 在所有 c 提交中击败了55.62%的用户</p>
 </blockquote>
-</li>
-</ul>
-<h4 id="这次我们就先说到这"><a href="#这次我们就先说到这" class="headerlink" title="这次我们就先说到这"></a>这次我们就先说到这</h4><ul>
-<li>下一次我再跟大家分享 如何美化我们的博客。</li>
-</ul>
+<h5 id="进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？"><a href="#进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？" class="headerlink" title="进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？"></a>进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</h5><p>在Leetcode的题解区 看到了一位大神的实现方法，一行代码解决问题,大致思路是这样的</p>
+<blockquote>
+<p>时间复杂度为O(1)的解法：<br>    除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位<br>    把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。<br>    这样就出现了两部分的东西：<br>        原本10个现在9个1份的，打包好的物品，这些，我们不用管<br>        零散的物品，它们还可以分成：<br>            从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和<br>            以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值<br>    如上零散物品的总数，就是第一次处理num后得到的累加值<br>    如果这个累加值&gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。<br>    那么按照如上的思路，似乎可以通过n % 9得到最后的值<br>    但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。<br>    所以需要做一下特殊处理，(num - 1) % 9 + 1<br>    可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。</p>
+</blockquote>
+<p>作者：liveforexperience</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int addDigits(int num)&#123;</span><br><span class="line">    return 1 + (num - 1) % 9;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :0 ms, 在所有 c 提交中击败了100.00% 的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了7.69%的用户</p>
+</blockquote>
 
     </div>
 
@@ -345,22 +306,26 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"># 数组</a>
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"># 字符串</a>
+              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+              <a href="/tags/%E7%AE%80%E5%8D%95/" rel="tag"># 简单</a>
+              <a href="/tags/%E9%80%92%E5%BD%92/" rel="tag"># 递归</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/10/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="next" title="我的第一篇博客文章">
-                  <i class="fa fa-chevron-left"></i> 我的第一篇博客文章
+                <a href="/2019/11/04/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/" rel="next" title="二叉搜索树中第K小的元素">
+                  <i class="fa fa-chevron-left"></i> 二叉搜索树中第K小的元素
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" rel="prev" title="K个一组翻转链表">
-                  K个一组翻转链表 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -400,7 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备条件"><span class="nav-number">1.</span> <span class="nav-text">准备条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装环境"><span class="nav-number">2.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">3.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行测试"><span class="nav-number">4.</span> <span class="nav-text">运行测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这次我们就先说到这"><span class="nav-number">5.</span> <span class="nav-text">这次我们就先说到这</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#各位相加"><span class="nav-number">1.</span> <span class="nav-text">各位相加</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">1.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完整代码"><span class="nav-number">1.2.</span> <span class="nav-text">完整代码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？"><span class="nav-number">1.2.1.</span> <span class="nav-text">进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -416,20 +381,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -589,7 +554,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'BlogReview',
       owner: 'yangxiaoen',
       admin: ['yangxiaoen'],
-      id: '4c14f144128d6a9d15233a04ba266e9e',
+      id: '12d79818f871e655be363bb0d3fb0ea9',
         language: 'zh-CN',
       distractionFreeMode: 'true'
     });

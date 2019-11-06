@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>二叉树的前序遍历</title>
+    <url>/2019/11/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/</url>
+    <content><![CDATA[<h3 id="二叉树的前序遍历"><a href="#二叉树的前序遍历" class="headerlink" title="二叉树的前序遍历"></a>二叉树的前序遍历</h3><p>给定一个二叉树，返回它的 前序 遍历。</p>
+<p> 示例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,null,2,3]  </span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3 </span><br><span class="line"></span><br><span class="line">输出: [1,2,3]</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-preorder-traversal</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归实现，思路很简单，获取根节点的值并存储，递归调用遍历左子树，然后递归调用遍历右子树，但是对于我来说，将想法转换为代码有些困难，大家直接看代码吧！</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void preorderTravel(struct TreeNode* root, int* result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return;</span><br><span class="line">    result [*rSize] = root -&gt; val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">    preorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    preorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* preorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int *)malloc(sizeof(int)*100);//为结果开辟存储空间</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    preorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考代码的作者：sfas</p>
+</blockquote>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了73.21% 的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了99.14%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode二叉树</category>
+        <category>递归</category>
+        <category>中等</category>
+      </categories>
+      <tags>
+        <tag>数二叉树</tag>
+        <tag>Leetcode</tag>
+        <tag>递归</tag>
+        <tag>中等</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>各位相加</title>
     <url>/2019/11/05/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0/</url>
     <content><![CDATA[<h3 id="各位相加"><a href="#各位相加" class="headerlink" title="各位相加"></a>各位相加</h3><p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p>
@@ -30,11 +58,11 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>数组</tag>
-        <tag>字符串</tag>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>递归</tag>
+        <tag>数组</tag>
+        <tag>简单</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -94,8 +122,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>困难</tag>
         <tag>队列</tag>
+        <tag>困难</tag>
       </tags>
   </entry>
   <entry>
@@ -126,8 +154,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>栈</tag>
         <tag>中等</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -166,8 +194,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>数组</tag>
         <tag>Leetcode</tag>
+        <tag>数组</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -196,10 +224,10 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>数组</tag>
-        <tag>字符串</tag>
         <tag>Leetcode</tag>
+        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -308,8 +336,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>链表</tag>
         <tag>困难</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>

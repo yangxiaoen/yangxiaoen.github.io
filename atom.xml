@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-05T14:15:05.913Z</updated>
+  <updated>2019-11-06T14:16:16.681Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树的前序遍历</title>
+    <link href="http://yoursite.com/2019/11/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    <id>http://yoursite.com/2019/11/06/二叉树的前序遍历/</id>
+    <published>2019-11-06T14:16:16.679Z</published>
+    <updated>2019-11-06T14:16:16.681Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="二叉树的前序遍历"><a href="#二叉树的前序遍历" class="headerlink" title="二叉树的前序遍历"></a>二叉树的前序遍历</h3><p>给定一个二叉树，返回它的 前序 遍历。</p><p> 示例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,null,2,3]  </span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3 </span><br><span class="line"></span><br><span class="line">输出: [1,2,3]</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-preorder-traversal</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归实现，思路很简单，获取根节点的值并存储，递归调用遍历左子树，然后递归调用遍历右子树，但是对于我来说，将想法转换为代码有些困难，大家直接看代码吧！</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void preorderTravel(struct TreeNode* root, int* result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return;</span><br><span class="line">    result [*rSize] = root -&gt; val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">    preorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    preorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* preorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int *)malloc(sizeof(int)*100);//为结果开辟存储空间</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    preorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>参考代码的作者：sfas</p></blockquote><blockquote><p>执行用时 :4 ms, 在所有 c 提交中击败了73.21% 的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了99.14%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;二叉树的前序遍历&quot;&gt;&lt;a href=&quot;#二叉树的前序遍历&quot; class=&quot;headerlink&quot; title=&quot;二叉树的前序遍历&quot;&gt;&lt;/a&gt;二叉树的前序遍历&lt;/h3&gt;&lt;p&gt;给定一个二叉树，返回它的 前序 遍历。&lt;/p&gt;
+&lt;p&gt; 示例:&lt;/p&gt;
+&lt;figure cl
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode二叉树" scheme="http://yoursite.com/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="数二叉树" scheme="http://yoursite.com/tags/%E6%95%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>各位相加</title>
@@ -46,15 +84,15 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -120,9 +158,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="困难" scheme="http://yoursite.com/tags/%E5%9B%B0%E9%9A%BE/"/>
-    
       <category term="队列" scheme="http://yoursite.com/tags/%E9%98%9F%E5%88%97/"/>
+    
+      <category term="困难" scheme="http://yoursite.com/tags/%E5%9B%B0%E9%9A%BE/"/>
     
   </entry>
   
@@ -152,9 +190,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
-    
       <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+      <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
     
   </entry>
   
@@ -183,9 +221,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E7%AE%80%E5%8D%95/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
@@ -216,13 +254,13 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -276,9 +314,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="困难" scheme="http://yoursite.com/tags/%E5%9B%B0%E9%9A%BE/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   

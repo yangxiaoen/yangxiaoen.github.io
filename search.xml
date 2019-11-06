@@ -60,9 +60,9 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>二叉树</tag>
-        <tag>中等</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -94,8 +94,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>队列</tag>
         <tag>困难</tag>
+        <tag>队列</tag>
       </tags>
   </entry>
   <entry>
@@ -126,8 +126,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>栈</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -308,8 +308,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>困难</tag>
         <tag>链表</tag>
+        <tag>困难</tag>
       </tags>
   </entry>
   <entry>

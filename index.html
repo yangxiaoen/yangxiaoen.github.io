@@ -211,6 +211,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/07/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">反转链表</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-07 22:54:10" itemprop="dateCreated datePublished" datetime="2019-11-07T22:54:10+08:00">2019-11-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode链表</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
+                    <span itemprop="name">递归</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/%E9%80%92%E5%BD%92/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><p>反转一个单链表。<br>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</span><br><span class="line">输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</span><br></pre></td></tr></table></figure>
+
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>运用递归，如果传入的是空链表返回空链表，</p>
+<h4 id="完整代码（一）"><a href="#完整代码（一）" class="headerlink" title="完整代码（一）"></a>完整代码（一）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode* reverseList(struct ListNode* head)&#123;</span><br><span class="line">    if (head == NULL)</span><br><span class="line">        return NULL;</span><br><span class="line">    if (head -&gt; next == NULL)</span><br><span class="line">        return head;</span><br><span class="line">    struct ListNode *newHead = reverseList(head -&gt; next);</span><br><span class="line">    head -&gt; next -&gt; next = head;</span><br><span class="line">    head -&gt; next = NULL;</span><br><span class="line">    return newHead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了92.62%的用户<br>内存消耗 :7.6 MB, 在所有 c 提交中击败了12.47%的用户</p>
+</blockquote>
+<h4 id="完整代码（二）"><a href="#完整代码（二）" class="headerlink" title="完整代码（二）"></a>完整代码（二）</h4><p>在链表元素个数&gt;1的情况下，先将链表的前两个结点反转，再将后面剩余的结点逐个添加到首端。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode* reverseList(struct ListNode* head)&#123;</span><br><span class="line">    if (head == NULL || head -&gt; next == NULL)//空链表或只有一个结点的链表</span><br><span class="line">        return head;</span><br><span class="line">    struct ListNode *p = head -&gt; next, *q = head -&gt; next -&gt; next, *t;//q从第3个结点开始，t为q的下一个结点，防止断链</span><br><span class="line"></span><br><span class="line">    p -&gt; next = head;</span><br><span class="line">    head -&gt; next = NULL;//将链表的前两个结点反转，为后面在头部逐个添加结点做准备</span><br><span class="line">    while (q)&#123;</span><br><span class="line">        t = q -&gt; next;//t指向q的下一个结点</span><br><span class="line">        q -&gt; next = p;//q连上p</span><br><span class="line">        p = q;//p指向其前一个结点（向前移动一位）</span><br><span class="line">        q = t;//q向后移动</span><br><span class="line">    &#125;</span><br><span class="line">    return p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了92.62%的用户<br>内存消耗 :7.6 MB, 在所有 c 提交中击败了34.26%的用户</p>
+</blockquote>
+<h4 id="完整代码（三）"><a href="#完整代码（三）" class="headerlink" title="完整代码（三）"></a>完整代码（三）</h4><p>在链表元素个数&gt;1的情况下，先将链表的前两个结点反转，再将后面剩余的结点逐个添加到首端。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">truct ListNode* reverseList(struct ListNode* head)&#123;</span><br><span class="line">    struct ListNode *pre = NULL, *nex;//pre表示新表的首结点，初始化为NULL,使新表尾端指向空，nex记录顺序遍历的下一结点</span><br><span class="line">    while (head)&#123;</span><br><span class="line">        nex = head -&gt; next;//记录下一结点</span><br><span class="line">        head -&gt; next = pre;//当前遍历的结点连接pre</span><br><span class="line">        pre = head;//pre指向当前结点，当前结点成为新表的首结点</span><br><span class="line">        head = nex;//指向当前结点下一结点，所以nex的作用在于辅助遍历，防止断链</span><br><span class="line">    &#125;</span><br><span class="line">    return pre;//返回新表首结点</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了92.62%的用户<br>内存消耗 :7.4 MB, 在所有 c 提交中击败了72.76%的用户</p>
+</blockquote>
+<h4 id="完整代码（四）"><a href="#完整代码（四）" class="headerlink" title="完整代码（四）"></a>完整代码（四）</h4><p>思路：第2个节点到第n个节点，依次逐节点插入到第1个节点(head节点)之后，(n-1)次这样的操作结束之后将首节点挪到新表的表尾即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode* reverseList(struct ListNode* head)&#123;</span><br><span class="line">    if (head == NULL || head -&gt; next == NULL)</span><br><span class="line">        return head;</span><br><span class="line">    struct ListNode *p = head -&gt; next, *q;</span><br><span class="line"></span><br><span class="line">    while (p -&gt; next != NULL)&#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        p -&gt; next = q -&gt; next;</span><br><span class="line">        q -&gt; next = head -&gt; next;</span><br><span class="line">        head -&gt; next = q;</span><br><span class="line">    &#125;</span><br><span class="line">    p -&gt; next = head;//相当于成环  </span><br><span class="line">    head = p -&gt; next -&gt; next;//新head变为原head的next  </span><br><span class="line">    p -&gt; next -&gt; next = NULL;//断掉环</span><br><span class="line"></span><br><span class="line">    return head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :8 ms, 在所有 c 提交中击败了55.66%的用户<br>内存消耗 :7.7 MB, 在所有 c 提交中击败了9.32%的用户</p>
+</blockquote>
+<h4 id="完整代码（五）"><a href="#完整代码（五）" class="headerlink" title="完整代码（五）"></a>完整代码（五）</h4><p>思路：第2个节点到第n个节点，依次逐节点插入到第1个节点(head节点)之后，(n-1)次这样的操作结束之后将首节点挪到新表的表尾即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode* reverseList(struct ListNode* head)&#123;</span><br><span class="line">    if (head == NULL || head -&gt; next == NULL)</span><br><span class="line">        return head;</span><br><span class="line">    struct ListNode *front = (struct ListNode*)malloc(sizeof(struct ListNode));</span><br><span class="line">    front -&gt; next = head;</span><br><span class="line">    struct ListNode *tail = front -&gt; next;</span><br><span class="line">    struct ListNode *t;</span><br><span class="line">    while (tail -&gt; next)&#123;</span><br><span class="line">        t = tail -&gt; next;</span><br><span class="line">        tail -&gt; next = t -&gt; next;</span><br><span class="line">        t -&gt; next = front -&gt; next;</span><br><span class="line">        front -&gt; next = t;</span><br><span class="line">    &#125;</span><br><span class="line">    return front -&gt; next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :8 ms, 在所有 c 提交中击败了55.66%的用户<br>内存消耗 :7.6 MB, 在所有 c 提交中击败了32.45%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -237,6 +345,13 @@
 
               <time title="创建时间：2019-11-06 22:16:16" itemprop="dateCreated datePublished" datetime="2019-11-06T22:16:16+08:00">2019-11-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-07 22:53:05" itemprop="dateModified" datetime="2019-11-07T22:53:05+08:00">2019-11-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -279,7 +394,7 @@
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归实现，思路很简单，获取根节点的值并存储，递归调用遍历左子树，然后递归调用遍历右子树，但是对于我来说，将想法转换为代码有些困难，大家直接看代码吧！</p>
 <h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void preorderTravel(struct TreeNode* root, int* result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return;</span><br><span class="line">    result [*rSize] = root -&gt; val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">    preorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    preorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* preorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int *)malloc(sizeof(int)*100);//为结果开辟存储空间</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    preorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>参考代码的作者：sfas</p>
+<p>感谢<strong>sfas</strong>提供代码参考</p>
 </blockquote>
 <blockquote>
 <p>执行用时 :4 ms, 在所有 c 提交中击败了73.21% 的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了99.14%的用户</p>
@@ -1107,83 +1222,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/01/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-01 11:03:35" itemprop="dateCreated datePublished" datetime="2019-11-01T11:03:35+08:00">2019-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-27 21:06:52" itemprop="dateModified" datetime="2019-10-27T21:06:52+08:00">2019-10-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1234,20 +1272,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

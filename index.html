@@ -211,6 +211,185 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/" class="post-title-link" itemprop="url">二叉树的中序遍历</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-08 21:56:03" itemprop="dateCreated datePublished" datetime="2019-11-08T21:56:03+08:00">2019-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode二叉树</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
+                    <span itemprop="name">递归</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/%E4%B8%AD%E7%AD%89/" itemprop="url" rel="index">
+                    <span itemprop="name">中等</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="二叉树的中序遍历"><a href="#二叉树的中序遍历" class="headerlink" title="二叉树的中序遍历"></a>二叉树的中序遍历</h3><p>给定一个二叉树，返回它的中序 遍历。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,null,2,3]</span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3</span><br><span class="line"></span><br><span class="line">输出: [1,3,2]</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-inorder-traversal</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归，根据中序遍历的规则，先访问左子树，再访问根节点，最后是右子树。创建一个动态链表用来记录遍历的节点。注意调用函数时传的参数。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void inorderTravel(struct TreeNode* root,int *result,int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return ;</span><br><span class="line">    inorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    result[*rSize] = root-&gt;val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">    inorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* inorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int*) malloc (sizeof(int)*1000);</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    inorderTravel(root, result, &amp;rSize);</span><br><span class="line">    *returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了71.25%的用户<br>内存消耗 :7.4 MB, 在所有 c 提交中击败了90.51%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" class="post-title-link" itemprop="url">二叉树的后序遍历</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-08 21:47:34" itemprop="dateCreated datePublished" datetime="2019-11-08T21:47:34+08:00">2019-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode二叉树</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
+                    <span itemprop="name">递归</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/%E4%B8%AD%E7%AD%89/" itemprop="url" rel="index">
+                    <span itemprop="name">中等</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="二叉树的后序遍历"><a href="#二叉树的后序遍历" class="headerlink" title="二叉树的后序遍历"></a>二叉树的后序遍历</h3><p>给定一个二叉树，返回它的 后序 遍历。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,null,2,3]  </span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3 </span><br><span class="line"></span><br><span class="line">输出: [3,2,1]</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-postorder-traversal</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归，根据后序遍历的规则，先访问左子树，在访问右子树，最后是根节点。创建一个动态链表用来记录遍历的节点。注意调用函数时传的参数。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void postorderTravel(struct TreeNode* root, int * result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return ;</span><br><span class="line">    postorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    postorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">    result[*rSize] = root-&gt;val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* postorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int*)malloc(sizeof(int)*1000);</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    postorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了74.30%的用户<br>内存消耗 :7.4 MB, 在所有 c 提交中击败了84.62%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -992,236 +1171,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/01/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%20%E4%BD%BF%E7%94%A8Hexo%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">如何搭建个人博客 使用Hexo（一）</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-01 11:03:35" itemprop="dateCreated datePublished" datetime="2019-11-01T11:03:35+08:00">2019-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-30 22:26:07" itemprop="dateModified" datetime="2019-10-30T22:26:07+08:00">2019-10-30</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天跟大家分享一篇文章，教大家如何一步步使用 GitHub 搭建出自己专属的个人博客！弄个博客网站不是要有服务器，数据库，域名的嘛？没事，如果都没有，我们依然可以搭建一个博客。这里我拿Win10系统做演示，对于Mac和Linux系统 基本是一样的</p>
-<h4 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h4><p>首先大家需要一个GitHub的账户，GitHub Pages 允许每个账户创建一个名为 {username}.github.io 的仓库，另外它还会自动为这个仓库分配一个 github.io 的二级域名，这就解决了域名的问题，当然如果想要自定义域名的话，也可以支持，我后续会跟大家说的。</p>
-<p>所以大家先注册个GitHub账号，我们就正式开始吧！</p>
-<h4 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h4><ul>
-<li><p>去<a href="https://nodejs.org" target="_blank" rel="noopener">官网</a>安装Node.js </p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapfwbwj30oc0eugma.jpg" alt="很棒哈"></p>
-</li>
-<li><p>下载好后一路 <strong>next</strong> 就好</p>
-</li>
-</ul>
-<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><ul>
-<li>新建一个文件夹，比如我这里建了  blog  文件  </li>
-<li>我们来看一下 Node.js是否安装成功</li>
-<li><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapmae5j30bq057t8l.jpg" alt="很棒哈"></li>
-</ul>
-<ul>
-<li><p>由于国内镜像源速度不是很好，我们先来安装个cnpm提高速度，以后下载什么东西都用cnpm</p>
-</li>
-<li><p>执行如下命令 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li>
-<li><p>等待安装完成</p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glappw47j30mm073jre.jpg" alt="很棒哈"></p>
-</li>
-<li><p>安装完成看一下他的版本</p>
-</li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glapve37j30n00act8y.jpg" alt="很棒哈"></p>
-</li>
-<li><p><strong>安装Hexo</strong> 执行如下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaq20hwj30nf0k90tv.jpg" alt="很棒哈"></p>
-</li>
-<li><p>使用如下命令检测是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></li>
-<li><p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaq8xrzj308l082wed.jpg" alt="很棒哈"></p>
-</li>
-<li><p>安装完毕之后，确保环境变量配置好，能正常使用 hexo 命令。</p>
-</li>
-<li><p>查看当前路径命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure></li>
-<li><p>结果为 我的是存放在D盘blog的文件夹内<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqe6xej306v03egld.jpg" alt="很棒哈"></p>
-</li>
-<li><p>然后我们运行命令，这步是关键，主要是建立整个项目，这里我的文件夹名字是blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-<li><p>等待下载安装完成，结果如下<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqlqa8j30n90d2t99.jpg" alt="很棒哈"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqrkauj30oi07jmxf.jpg" alt="很棒哈"></p>
-</li>
-</ul>
-<h4 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h4><ul>
-<li><p>首先我们调用  Hexo 的 generate 命令，将 Hexo 编译生成 HTML 代码，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
-<li><p>可以看到输出结果里面包含了 js、css、font 等内容，并发现他们都处在了项目根目录下的 public 文件夹下面了。<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glaqvv6oj30eq0dtmx8.jpg" alt="很棒哈"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glar00z8j30nj06v0su.jpg" alt="很棒哈"></p>
-</li>
-<li><p>然后我们利用 Hexo 提供的 serve 命令把博客在本地运行起来，命令如下：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>运行结果如下<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glar4s35j30ei01h3ya.jpg" alt="很棒哈"></p>
-</li>
-<li><p>我们在本地 4000 端口上就可以查看博客站点了，如图所示：<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8glarlqx0j31b00s0gyo.jpg" alt="很棒哈"></p>
-</li>
-<li><p>到这为止我们就已经搭建好 一个博客框架了</p>
-</li>
-<li><p>记住这三条很常用的命令</p>
-<blockquote>
-<p>hexo clean #用来清理缓存文件<br>hexo g      #生成文件<br>hexo  s     #运行本地服务器<br>hexo  d   #上传到服务器</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="这次我们就先说到这"><a href="#这次我们就先说到这" class="headerlink" title="这次我们就先说到这"></a>这次我们就先说到这</h4><ul>
-<li>下一次我再跟大家分享 如何美化我们的博客。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/01/K%E4%B8%AA%E4%B8%80%E7%BB%84%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">K个一组翻转链表</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-01 11:03:35 / 修改时间：22:16:42" itemprop="dateCreated datePublished" datetime="2019-11-01T11:03:35+08:00">2019-11-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode链表</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/%E5%9B%B0%E9%9A%BE/" itemprop="url" rel="index">
-                    <span itemprop="name">困难</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="K个一组翻转链表"><a href="#K个一组翻转链表" class="headerlink" title="K个一组翻转链表"></a>K个一组翻转链表</h2><p>给你一个链表，每?k?个节点一组进行翻转，请你返回翻转后的链表。</p>
-<p>k?是一个正整数，它的值小于或等于链表的长度。</p>
-<p>如果节点总数不是?k?的整数倍，那么请将最后剩余的节点保持原有顺序。</p>
-<p>示例 :</p>
-<p>给定这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5</p>
-<p>当?k?= 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5</p>
-<p>当?k?= 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5</p>
-<p>说明 :</p>
-<p>你的算法只能使用常数的额外空间。<br>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-nodes-in-k-group</a></p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以创建三个指针<code>pre</code>  <code>cur</code>   <code>next</code><br><code>pre</code>  指针指向开始节点，<code>cue</code>指针指向<code>pre</code> 的下一个节点，<code>next</code>指针指向<code>cur</code>指针的下一个节点。<br>每次移动让<code>next = cur-&gt;next</code>节点 <code>cur-&gt;next = pre</code>让cur的指针指向pre ，pre移动到cur的位置，cur移动到next的位置，这样就实现了 链表的反转<br>代码实现如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode* Myreverse(struct ListNode *head)&#123;</span><br><span class="line">    struct ListNode* next = NULL;</span><br><span class="line">    struct ListNode *pre = NULL;</span><br><span class="line">    struct ListNode *cur = head;</span><br><span class="line">    while(cur != NULL)&#123;</span><br><span class="line">        next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = next;</span><br><span class="line">    &#125;</span><br><span class="line">    return pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="对于这个题的完整代码如下"><a href="#对于这个题的完整代码如下" class="headerlink" title="对于这个题的完整代码如下"></a>对于这个题的完整代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">struct ListNode* Myreverse(struct ListNode *head);</span><br><span class="line">struct ListNode* reverseKGroup(struct ListNode* head, int k)&#123;</span><br><span class="line">    struct ListNode *cur = head, *start = head, *next = NULL, *result = head;</span><br><span class="line">    struct ListNode *pre = (struct ListNode*)malloc(sizeof(struct ListNode));</span><br><span class="line">    int flag = 0;//是否第一次翻转</span><br><span class="line">    pre-&gt;next = head;</span><br><span class="line">    while(cur != NULL)&#123;</span><br><span class="line">        for(int i = 1;(i&lt;k)&amp;&amp;(cur != NULL); i++)&#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        flag++;</span><br><span class="line">        if(cur == NULL) break;</span><br><span class="line">        next = cur-&gt;next;//后继</span><br><span class="line">        cur-&gt;next = NULL;//切断链表进行翻转</span><br><span class="line">        pre-&gt;next = Myreverse(start);</span><br><span class="line">        if (flag == 1) result = pre-&gt;next;</span><br><span class="line">        pre = start;</span><br><span class="line">        start-&gt;next = next;</span><br><span class="line">        cur = next;</span><br><span class="line">        start = next;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct ListNode* Myreverse(struct ListNode *head)&#123;</span><br><span class="line">    struct ListNode* next = NULL;</span><br><span class="line">    struct ListNode *pre = NULL;</span><br><span class="line">    struct ListNode *cur = head;</span><br><span class="line">    while(cur != NULL)&#123;</span><br><span class="line">        next = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = pre;</span><br><span class="line">        pre = cur;</span><br><span class="line">        cur = next;</span><br><span class="line">    &#125;</span><br><span class="line">    return pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>执行用时：12 ms</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1272,7 +1221,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

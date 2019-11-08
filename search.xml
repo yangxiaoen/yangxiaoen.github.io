@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>二叉树的中序遍历</title>
+    <url>/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86/</url>
+    <content><![CDATA[<h3 id="二叉树的中序遍历"><a href="#二叉树的中序遍历" class="headerlink" title="二叉树的中序遍历"></a>二叉树的中序遍历</h3><p>给定一个二叉树，返回它的中序 遍历。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,null,2,3]</span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3</span><br><span class="line"></span><br><span class="line">输出: [1,3,2]</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-inorder-traversal</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归，根据中序遍历的规则，先访问左子树，再访问根节点，最后是右子树。创建一个动态链表用来记录遍历的节点。注意调用函数时传的参数。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void inorderTravel(struct TreeNode* root,int *result,int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return ;</span><br><span class="line">    inorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    result[*rSize] = root-&gt;val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">    inorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* inorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int*) malloc (sizeof(int)*1000);</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    inorderTravel(root, result, &amp;rSize);</span><br><span class="line">    *returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了71.25%的用户<br>内存消耗 :7.4 MB, 在所有 c 提交中击败了90.51%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode二叉树</category>
+        <category>递归</category>
+        <category>中等</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
+        <tag>Leetcode</tag>
+        <tag>中等</tag>
+        <tag>递归</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的后序遍历</title>
+    <url>/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</url>
+    <content><![CDATA[<h3 id="二叉树的后序遍历"><a href="#二叉树的后序遍历" class="headerlink" title="二叉树的后序遍历"></a>二叉树的后序遍历</h3><p>给定一个二叉树，返回它的 后序 遍历。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,null,2,3]  </span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3 </span><br><span class="line"></span><br><span class="line">输出: [3,2,1]</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-postorder-traversal</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归，根据后序遍历的规则，先访问左子树，在访问右子树，最后是根节点。创建一个动态链表用来记录遍历的节点。注意调用函数时传的参数。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void postorderTravel(struct TreeNode* root, int * result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return ;</span><br><span class="line">    postorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    postorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">    result[*rSize] = root-&gt;val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* postorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int*)malloc(sizeof(int)*1000);</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    postorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了74.30%的用户<br>内存消耗 :7.4 MB, 在所有 c 提交中击败了84.62%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode二叉树</category>
+        <category>递归</category>
+        <category>中等</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
+        <tag>Leetcode</tag>
+        <tag>中等</tag>
+        <tag>递归</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>反转链表</title>
     <url>/2019/11/07/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><p>反转一个单链表。<br>示例:</p>
@@ -38,9 +89,9 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>递归</tag>
+        <tag>链表</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -66,8 +117,8 @@
         <category>中等</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>二叉树</tag>
+        <tag>Leetcode</tag>
         <tag>中等</tag>
         <tag>递归</tag>
       </tags>
@@ -104,9 +155,9 @@
       <tags>
         <tag>Leetcode</tag>
         <tag>递归</tag>
+        <tag>简单</tag>
         <tag>数组</tag>
         <tag>字符串</tag>
-        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -131,8 +182,8 @@
         <category>递归</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>二叉树</tag>
+        <tag>Leetcode</tag>
         <tag>中等</tag>
         <tag>递归</tag>
       </tags>
@@ -166,8 +217,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>困难</tag>
         <tag>队列</tag>
+        <tag>困难</tag>
       </tags>
   </entry>
   <entry>
@@ -239,8 +290,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -269,9 +320,9 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>数组</tag>
         <tag>字符串</tag>
-        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -379,8 +430,8 @@
         <category>困难</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
+        <tag>链表</tag>
         <tag>困难</tag>
       </tags>
   </entry>

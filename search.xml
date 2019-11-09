@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何上传文件夹下多个文件</title>
+    <url>/2019/11/09/%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="如何上传文件夹下多个文件"><a href="#如何上传文件夹下多个文件" class="headerlink" title="如何上传文件夹下多个文件"></a>如何上传文件夹下多个文件</h3><ol>
+<li>进入git项目的本地文件夹，将自己的项目复制到这个git 文件夹，查看状态，提交所有的新文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status </span><br><span class="line">git add -A</span><br><span class="line">git commit -a -m&quot;first commit&quot;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>上传更新到git 版本库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>注：<code>git add</code>上传本地项目所有变化的命令三种有<code>git add -A</code>、<code>git add -u</code>、<code>git add</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add -A  提交所有变化</span><br><span class="line">git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</span><br><span class="line">git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>小技巧</tag>
+        <tag>上传</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>平衡二叉树</title>
     <url>/2019/11/09/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><p>给定一个二叉树，判断它是否是高度平衡的二叉树。</p>
@@ -27,8 +52,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>二叉树</tag>
         <tag>Leetcode</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>简单</tag>
         <tag>平衡二叉树</tag>
@@ -54,8 +79,8 @@
         <category>中等</category>
       </categories>
       <tags>
-        <tag>二叉树</tag>
         <tag>Leetcode</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>中等</tag>
       </tags>
@@ -79,8 +104,8 @@
         <category>中等</category>
       </categories>
       <tags>
-        <tag>二叉树</tag>
         <tag>Leetcode</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>中等</tag>
       </tags>
@@ -123,9 +148,9 @@
         <category>简单</category>
       </categories>
       <tags>
+        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>递归</tag>
-        <tag>链表</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -151,8 +176,8 @@
         <category>中等</category>
       </categories>
       <tags>
-        <tag>二叉树</tag>
         <tag>Leetcode</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>中等</tag>
       </tags>
@@ -216,8 +241,8 @@
         <category>递归</category>
       </categories>
       <tags>
-        <tag>二叉树</tag>
         <tag>Leetcode</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>中等</tag>
       </tags>
@@ -464,8 +489,8 @@
         <category>困难</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>链表</tag>
+        <tag>Leetcode</tag>
         <tag>困难</tag>
       </tags>
   </entry>

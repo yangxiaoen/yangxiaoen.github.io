@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>先序遍历构建二叉树</title>
+    <url>/2019/11/10/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <content><![CDATA[<h3 id="先序遍历构造二叉树"><a href="#先序遍历构造二叉树" class="headerlink" title="先序遍历构造二叉树"></a>先序遍历构造二叉树</h3><p>返回与给定先序遍历 preorder 相匹配的二叉搜索树（binary search tree）的根结点。</p>
+<p>(回想一下，二叉搜索树是二叉树的一种，其每个节点都满足以下规则，对于<code>node.left</code> 的任何后代，值总 <code>&lt; node.val</code>，而 <code>node.right</code> 的任何后代，值总<code>&gt; node.val</code>。此外，先序遍历首先显示节点的值，然后遍历 <code>node.left</code>，接着遍历 <code>node.right</code>。）</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：[8,5,1,7,10,12]</span><br><span class="line">输出：[8,5,10,1,7,null,12]</span><br></pre></td></tr></table></figure>
+<p><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8ta7z9iwqj30ge0aqdgf.jpg" alt="示意图"></p>
+<p>提示：<br><code>1 &lt;= preorder.length &lt;= 100</code><br>先序<code>preorder</code> 中的值是不同的。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>构建二叉树，如果根节点为空，则根结点的值为要插入的值，并将其左右子树置为空，如果要插入的结点值比根节点值大，则在右子树中调用插入结点的方法，反之在左子树中调用这个插入结点的函数。<br>使用<code>for</code>循环，依次传递要插入的结点。利用循环与递归实现先序遍历构造二叉树</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     struct TreeNode *left;</span><br><span class="line"> *     struct TreeNode *right;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">struct TreeNode* add(struct TreeNode* root, int num)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        root = (struct TreeNode*)malloc(sizeof(struct TreeNode));</span><br><span class="line">        root-&gt;val = num;</span><br><span class="line">        root-&gt;left = NULL;</span><br><span class="line">        root-&gt;right = NULL;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root-&gt;val &gt; num)</span><br><span class="line">    &#123;</span><br><span class="line">        root-&gt;left = add(root-&gt;left,num);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        root-&gt;right = add(root-&gt;right,num);   </span><br><span class="line">    &#125; </span><br><span class="line">    return root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct TreeNode* bstFromPreorder(int* preorder, int preorderSize)&#123;</span><br><span class="line">    struct TreeNode* root = NULL;</span><br><span class="line">    for(int i = 0; i &lt; preorderSize; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        root = add(root,preorder[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :9.5 MB, 在所有 c 提交中击败了9.09%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode二叉树</category>
+        <category>递归</category>
+        <category>简单</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
+        <tag>构建二叉树</tag>
+        <tag>简单</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何上传文件夹下多个文件</title>
     <url>/2019/11/09/%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h3 id="如何上传文件夹下多个文件"><a href="#如何上传文件夹下多个文件" class="headerlink" title="如何上传文件夹下多个文件"></a>如何上传文件夹下多个文件</h3><ol>

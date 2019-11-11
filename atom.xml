@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-10T13:57:44.785Z</updated>
+  <updated>2019-11-11T14:24:08.213Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无重复字符的最长字串</title>
+    <link href="http://yoursite.com/2019/11/11/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/"/>
+    <id>http://yoursite.com/2019/11/11/无重复字符的最长字串/</id>
+    <published>2019-11-11T14:24:08.210Z</published>
+    <updated>2019-11-11T14:24:08.213Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h3><p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p><p>示例 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br></pre></td></tr></table></figure><p>示例 3:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line"></span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>使用滑动窗口，如果字符串为空，或只有1个，则返回0或1，初始窗口<code>start、end</code>都指向第一个字符，len为1，<code>maxLen</code>为1。每次检查end之后的字符是否在<code>start-end</code>之间有重复。<br>如果有，则把<code>start</code>移到找到的位置之后（因为这个字符的存在性由新加入字符表达） 无论找到没有，<code>end</code>都向后移动，直至结束。 每次移动后，重新计算长度<code>len=end-start+1</code>； 如果<code>maxLen&lt; len</code>，则<code>maxLne = len</code></p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int lengthOfLongestSubstring(char * s)&#123;</span><br><span class="line">    int start = 0, end = 0, maxLen = 0,len = 0,i;</span><br><span class="line">    len = strlen(s);</span><br><span class="line">    if(len ==0 || len == 1)</span><br><span class="line">    &#123;</span><br><span class="line">        return len;</span><br><span class="line">    &#125;</span><br><span class="line">    while(s[end+1] != 0) //每次取下一位，判断是否为空</span><br><span class="line">    &#123;</span><br><span class="line">        for(i = start; i &lt;= end; ++i)//判断是否与前面的重复</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[end+1] == s[i])</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        if(i &lt;= end)//与前面的重复了才会执行，移动到第一个与之重复的位置</span><br><span class="line">        &#123;</span><br><span class="line">            start = i+1;</span><br><span class="line">        &#125;</span><br><span class="line">        end++;//窗口扩大</span><br><span class="line">        len = end - start +1; //计算当前长度</span><br><span class="line">        if(maxLen &lt; len)</span><br><span class="line">        &#123;</span><br><span class="line">            maxLen = len;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return maxLen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :12 ms, 在所有 c 提交中击败了53.58%的用户<br>内存消耗 :7.1 MB, 在所有 c 提交中击败了82.26%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;无重复字符的最长子串&quot;&gt;&lt;a href=&quot;#无重复字符的最长子串&quot; class=&quot;headerlink&quot; title=&quot;无重复字符的最长子串&quot;&gt;&lt;/a&gt;无重复字符的最长子串&lt;/h3&gt;&lt;p&gt;给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode字符串" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="滑动窗口" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="字符串的操作" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两数之和</title>
+    <link href="http://yoursite.com/2019/11/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://yoursite.com/2019/11/11/两数之和/</id>
+    <published>2019-11-11T13:26:31.661Z</published>
+    <updated>2019-11-11T13:26:31.663Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p><p>示例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>遍历整个数组，两两相加，直到找到答案，构建动态链表存储结果并返回，否则返回结果为空。</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">int* twoSum(int* nums, int numsSize, int target, int* returnSize)&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int* result = NULL;</span><br><span class="line">    if(nums == NULL) //判断传来的数组是否为空</span><br><span class="line">    &#123;</span><br><span class="line">        //*returnSize = 0;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = 0; i &lt; numsSize-1; ++i) //遍历整个数组，两两相加</span><br><span class="line">    &#123;</span><br><span class="line">        for(j = i+1; j &lt; numsSize; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            if(nums[i] + nums[j] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                result = (int*) malloc (sizeof(int)*2);</span><br><span class="line">                result[0] = i;</span><br><span class="line">                result[1] = j;</span><br><span class="line">                *returnSize = 2;</span><br><span class="line">                return result; //如果找到 就将结果返回</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result; //如果没有找到 就返回空的result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :160 ms, 在所有 c 提交中击败了87.44%的用户<br>内存消耗 :7.6 MB, 在所有 c 提交中击败了53.48%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;两数之和&quot;&gt;&lt;a href=&quot;#两数之和&quot; class=&quot;headerlink&quot; title=&quot;两数之和&quot;&gt;&lt;/a&gt;两数之和&lt;/h3&gt;&lt;p&gt;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode数组" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="遍历" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E9%81%8D%E5%8E%86/%E7%AE%80%E5%8D%95/"/>
+    
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+  </entry>
   
   <entry>
     <title>先序遍历构建二叉树</title>
@@ -44,13 +117,13 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="构建二叉树" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
   </entry>
   
@@ -115,11 +188,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="平衡二叉树" scheme="http://yoursite.com/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -228,13 +301,13 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E9%80%92%E5%BD%92/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
@@ -306,13 +379,13 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -443,11 +516,11 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E7%AE%80%E5%8D%95/%E7%AE%80%E5%8D%95/"/>
     
     
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -476,11 +549,11 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E7%AE%80%E5%8D%95/"/>
     
     
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -534,9 +607,9 @@
       <category term="困难" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E5%9B%B0%E9%9A%BE/"/>
     
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
       <category term="困难" scheme="http://yoursite.com/tags/%E5%9B%B0%E9%9A%BE/"/>
     

@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>无重复字符的最长字串</title>
+    <url>/2019/11/11/%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/</url>
+    <content><![CDATA[<h3 id="无重复字符的最长子串"><a href="#无重复字符的最长子串" class="headerlink" title="无重复字符的最长子串"></a>无重复字符的最长子串</h3><p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: &quot;bbbbb&quot;</span><br><span class="line">输出: 1</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;b&quot;，所以其长度为 1。</span><br></pre></td></tr></table></figure>
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: &quot;pwwkew&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span><br><span class="line"></span><br><span class="line">     请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>使用滑动窗口，如果字符串为空，或只有1个，则返回0或1，初始窗口<code>start、end</code>都指向第一个字符，len为1，<code>maxLen</code>为1。每次检查end之后的字符是否在<code>start-end</code>之间有重复。<br>如果有，则把<code>start</code>移到找到的位置之后（因为这个字符的存在性由新加入字符表达） 无论找到没有，<code>end</code>都向后移动，直至结束。 每次移动后，重新计算长度<code>len=end-start+1</code>； 如果<code>maxLen&lt; len</code>，则<code>maxLne = len</code></p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">int lengthOfLongestSubstring(char * s)&#123;</span><br><span class="line">    int start = 0, end = 0, maxLen = 0,len = 0,i;</span><br><span class="line">    len = strlen(s);</span><br><span class="line">    if(len ==0 || len == 1)</span><br><span class="line">    &#123;</span><br><span class="line">        return len;</span><br><span class="line">    &#125;</span><br><span class="line">    while(s[end+1] != 0) //每次取下一位，判断是否为空</span><br><span class="line">    &#123;</span><br><span class="line">        for(i = start; i &lt;= end; ++i)//判断是否与前面的重复</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[end+1] == s[i])</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        if(i &lt;= end)//与前面的重复了才会执行，移动到第一个与之重复的位置</span><br><span class="line">        &#123;</span><br><span class="line">            start = i+1;</span><br><span class="line">        &#125;</span><br><span class="line">        end++;//窗口扩大</span><br><span class="line">        len = end - start +1; //计算当前长度</span><br><span class="line">        if(maxLen &lt; len)</span><br><span class="line">        &#123;</span><br><span class="line">            maxLen = len;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return maxLen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :12 ms, 在所有 c 提交中击败了53.58%的用户<br>内存消耗 :7.1 MB, 在所有 c 提交中击败了82.26%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode字符串</category>
+        <category>滑动窗口</category>
+        <category>中等</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>中等</tag>
+        <tag>字符串</tag>
+        <tag>字符串的操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两数之和</title>
+    <url>/2019/11/11/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line"></span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/two-sum</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>遍历整个数组，两两相加，直到找到答案，构建动态链表存储结果并返回，否则返回结果为空。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int* twoSum(int* nums, int numsSize, int target, int* returnSize)&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int* result = NULL;</span><br><span class="line">    if(nums == NULL) //判断传来的数组是否为空</span><br><span class="line">    &#123;</span><br><span class="line">        //*returnSize = 0;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = 0; i &lt; numsSize-1; ++i) //遍历整个数组，两两相加</span><br><span class="line">    &#123;</span><br><span class="line">        for(j = i+1; j &lt; numsSize; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            if(nums[i] + nums[j] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                result = (int*) malloc (sizeof(int)*2);</span><br><span class="line">                result[0] = i;</span><br><span class="line">                result[1] = j;</span><br><span class="line">                *returnSize = 2;</span><br><span class="line">                return result; //如果找到 就将结果返回</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result; //如果没有找到 就返回空的result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :160 ms, 在所有 c 提交中击败了87.44%的用户<br>内存消耗 :7.6 MB, 在所有 c 提交中击败了53.48%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode数组</category>
+        <category>遍历</category>
+        <category>简单</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+        <tag>Leetcode</tag>
+        <tag>遍历</tag>
+        <tag>简单</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>先序遍历构建二叉树</title>
     <url>/2019/11/10/%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<h3 id="先序遍历构造二叉树"><a href="#先序遍历构造二叉树" class="headerlink" title="先序遍历构造二叉树"></a>先序遍历构造二叉树</h3><p>返回与给定先序遍历 preorder 相匹配的二叉搜索树（binary search tree）的根结点。</p>
@@ -23,10 +78,10 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
         <tag>构建二叉树</tag>
-        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -82,9 +137,9 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>简单</tag>
         <tag>平衡二叉树</tag>
       </tags>
   </entry>
@@ -177,10 +232,10 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
         <tag>简单</tag>
+        <tag>递归</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -241,10 +296,10 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
-        <tag>递归</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
+        <tag>简单</tag>
+        <tag>递归</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -377,9 +432,9 @@
         <category>简单</category>
       </categories>
       <tags>
+        <tag>数组</tag>
         <tag>Leetcode</tag>
         <tag>简单</tag>
-        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -407,9 +462,9 @@
         <category>简单</category>
       </categories>
       <tags>
+        <tag>数组</tag>
         <tag>Leetcode</tag>
         <tag>简单</tag>
-        <tag>数组</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -518,8 +573,8 @@
         <category>困难</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
+        <tag>链表</tag>
         <tag>困难</tag>
       </tags>
   </entry>

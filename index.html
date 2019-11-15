@@ -211,6 +211,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/15/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="post-title-link" itemprop="url">最长回文子串</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-15 22:10:27" itemprop="dateCreated datePublished" datetime="2019-11-15T22:10:27+08:00">2019-11-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode字符串</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">滑动窗口</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/%E4%B8%AD%E7%AD%89/" itemprop="url" rel="index">
+                    <span itemprop="name">中等</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="最长回文子串"><a href="#最长回文子串" class="headerlink" title="最长回文子串"></a>最长回文子串</h3><p>给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;babad&quot;</span><br><span class="line">输出: &quot;bab&quot;</span><br><span class="line">注意: &quot;aba&quot; 也是一个有效答案。</span><br></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;cbbd&quot;</span><br><span class="line">输出: &quot;bb&quot;</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/longest-palindromic-substring" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-palindromic-substring</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">char * longestPalindrome(char * s)&#123;</span><br><span class="line">    int len = strlen(s);</span><br><span class="line">    int maxSubStrLen = 0;</span><br><span class="line">    int startIdx, endIdx;</span><br><span class="line">    int searchIdx = 0, searchLen = 1;</span><br><span class="line">    int i, m, n;</span><br><span class="line">    if (len &lt;= 1) &#123;</span><br><span class="line">        return s;</span><br><span class="line">    &#125;</span><br><span class="line">    while (searchIdx &lt; len) &#123;</span><br><span class="line">        for (i = searchIdx + 1; i &lt; len; i++)&#123;</span><br><span class="line">            if (s[searchIdx] != s[i]) &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            searchLen++;</span><br><span class="line">        &#125;</span><br><span class="line">        m = i;</span><br><span class="line">        n = searchIdx - 1;</span><br><span class="line">        while ((n &gt;= 0) &amp;&amp; (m &lt; len)) &#123;</span><br><span class="line">            if (s[n] != s[m]) &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            m++;</span><br><span class="line">            n--;</span><br><span class="line">            searchLen += 2;   </span><br><span class="line">        &#125;</span><br><span class="line">        if (searchLen &gt; maxSubStrLen)&#123;</span><br><span class="line">            maxSubStrLen = searchLen;</span><br><span class="line">            startIdx = n + 1;</span><br><span class="line">            endIdx = m - 1;</span><br><span class="line">        &#125;</span><br><span class="line">        searchLen = 1;</span><br><span class="line">        searchIdx ++;</span><br><span class="line">    &#125;</span><br><span class="line">    s[endIdx + 1] = &apos;\0&apos;;</span><br><span class="line">    return &amp;s[startIdx];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :12 ms, 在所有 c 提交中击败了96.12%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了80.99%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,8 +324,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-14 22:26:29" itemprop="dateCreated datePublished" datetime="2019-11-14T22:26:29+08:00">2019-11-14</time>
+              <time title="创建时间：2019-11-14 22:26:29 / 修改时间：22:30:18" itemprop="dateCreated datePublished" datetime="2019-11-14T22:26:29+08:00">2019-11-14</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +366,10 @@
           <h3 id="盛最多水的容器"><a href="#盛最多水的容器" class="headerlink" title="盛最多水的容器"></a>盛最多水的容器</h3><p>给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
 <p>说明：你不能倾斜容器，且 n 的值至少为 2。</p>
 <p><img src="http://tva1.sinaimg.cn/large/0080ySGmly1g8xxf5axnej30m90anwep.jpg" alt="示意图"></p>
-<h6 id="图中垂直线代表输入数组-1-8-6-2-5-4-8-3-7-。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为-49。"><a href="#图中垂直线代表输入数组-1-8-6-2-5-4-8-3-7-。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为-49。" class="headerlink" title="图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。"></a>图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</h6><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/container-with-most-water" target="_blank" rel="noopener">https://leetcode-cn.com/problems/container-with-most-water</a></p>
+ <center> <font size=3>图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</font></center>
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/container-with-most-water
+
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>用<code>k = heightSize - 1</code> ,比较<code>height[i]与height[k]</code>的大小，如果<code>height[i]</code>比<code>height[k]</code>大，用 <code>height[k] * (heightSize - 1 )，k--</code> 如果<code>height[i]</code>比<code>height[k]</code>小，用<code>height[i] * (heightSize - 1 )，i++</code> 逐一计算 每一个面积 ，最后获取最大的面积。</p>
 <h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int maxArea(int* height, int heightSize) &#123;</span><br><span class="line">    int area = 0;</span><br><span class="line">    int i = 0;</span><br><span class="line">    int k = heightSize -1;</span><br><span class="line">    while (1) &#123;</span><br><span class="line">        int temp_area;</span><br><span class="line">        if ( heightSize - 1 == 0)</span><br><span class="line">            break;</span><br><span class="line">        if (height[i] &gt; height[k]) &#123;</span><br><span class="line">            temp_area = height[k]*(heightSize - 1);</span><br><span class="line">            k--;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            temp_area = height[i]*(heightSize - 1);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        if (temp_area &gt; area)</span><br><span class="line">            area = temp_area;</span><br><span class="line">        heightSize--;</span><br><span class="line">    &#125;</span><br><span class="line">    return area;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -1031,95 +1125,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/08/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" class="post-title-link" itemprop="url">二叉树的后序遍历</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-08 21:47:34" itemprop="dateCreated datePublished" datetime="2019-11-08T21:47:34+08:00">2019-11-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode二叉树</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
-                    <span itemprop="name">递归</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/%E4%B8%AD%E7%AD%89/" itemprop="url" rel="index">
-                    <span itemprop="name">中等</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="二叉树的后序遍历"><a href="#二叉树的后序遍历" class="headerlink" title="二叉树的后序遍历"></a>二叉树的后序遍历</h3><p>给定一个二叉树，返回它的 后序 遍历。</p>
-<p>示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,null,2,3]  </span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3 </span><br><span class="line"></span><br><span class="line">输出: [3,2,1]</span><br></pre></td></tr></table></figure>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-postorder-traversal</a></p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归，根据后序遍历的规则，先访问左子树，在访问右子树，最后是根节点。创建一个动态链表用来记录遍历的节点。注意调用函数时传的参数。</p>
-<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void postorderTravel(struct TreeNode* root, int * result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return ;</span><br><span class="line">    postorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    postorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">    result[*rSize] = root-&gt;val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* postorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int*)malloc(sizeof(int)*1000);</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    postorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>执行用时 :4 ms, 在所有 c 提交中击败了74.30%的用户<br>内存消耗 :7.4 MB, 在所有 c 提交中击败了84.62%的用户</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1170,7 +1175,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

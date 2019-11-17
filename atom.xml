@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-16T14:33:22.769Z</updated>
+  <updated>2019-11-17T05:13:01.261Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/11/16/%E5%9B%9E%E6%96%87%E6%95%B0/"/>
     <id>http://yoursite.com/2019/11/16/回文数/</id>
     <published>2019-11-16T14:33:22.766Z</published>
-    <updated>2019-11-16T14:33:22.769Z</updated>
+    <updated>2019-11-17T05:13:01.261Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>回文数</code></pre><p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p><p>示例 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 121</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: -121</span><br><span class="line">输出: false</span><br><span class="line">解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure><p>示例 3:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 10</span><br><span class="line">输出: false</span><br><span class="line">解释: 从右向左读, 为 01 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/palindrome-number" target="_blank" rel="noopener">https://leetcode-cn.com/problems/palindrome-number</a></p><h4 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h4><p>如果给的数字是负数，则一定不是回文数</p><ol><li>将整数倒置，判断与原整数是否相同。</li><li>将整数转化为字符串<code>a[]</code>，<code>a[i]</code>是字符串第一个元素，<code>a[j]</code>是字符串最后一个元素，判断<code>a[i]</code>与<code>a[j]</code>是否相等，如果相等 <code>i++,j++</code> 直到<code>a[i] == a[j]</code>,则返回<code>true</code>,如果不想等直接返回<code>false</code>。</li></ol><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bool isPalindrome(int x)&#123;</span><br><span class="line">    if(x &lt; 0)</span><br><span class="line">        return false;</span><br><span class="line">    long f = 0;</span><br><span class="line">    int temp = x;</span><br><span class="line">    for(;x;f = f * 10 +x % 10,x/=10);</span><br><span class="line">    if( temp == f &amp;&amp; temp &gt;= 0)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :8 ms, 在所有 c 提交中击败了92.91%的用户<br>内存消耗 :7 MB, 在所有 c 提交中击败了93.11%的用户</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<pre><code>回文数</code></pre><p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p><p>示例 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 121</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: -121</span><br><span class="line">输出: false</span><br><span class="line">解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure><p>示例 3:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 10</span><br><span class="line">输出: false</span><br><span class="line">解释: 从右向左读, 为 01 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/palindrome-number" target="_blank" rel="noopener">https://leetcode-cn.com/problems/palindrome-number</a></p><h4 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h4><p>如果给的数字是负数，则一定不是回文数</p><ol><li>将整数倒置，判断与原整数是否相同。</li><li>将整数转化为字符串<code>a[]</code>，<code>a[i]</code>是字符串第一个元素，<code>a[j]</code>是字符串最后一个元素，判断<code>a[i]</code>与<code>a[j]</code>是否相等，如果相等 <code>i++,j++</code> 直到<code>a[i] == a[j]</code>,则返回<code>true</code>,如果不想等直接返回<code>false</code>。</li></ol><h4 id="完整代码（1）"><a href="#完整代码（1）" class="headerlink" title="完整代码（1）"></a>完整代码（1）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bool isPalindrome(int x)&#123;</span><br><span class="line">    if(x &lt; 0)</span><br><span class="line">        return false;</span><br><span class="line">    long f = 0;</span><br><span class="line">    int temp = x;</span><br><span class="line">    for(;x;f = f * 10 +x % 10,x/=10);</span><br><span class="line">    if( temp == f &amp;&amp; temp &gt;= 0)</span><br><span class="line">        return true;</span><br><span class="line">    else</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :8 ms, 在所有 c 提交中击败了92.91%的用户<br>内存消耗 :7 MB, 在所有 c 提交中击败了93.11%的用户</p></blockquote><h4 id="完整代码（2）"><a href="#完整代码（2）" class="headerlink" title="完整代码（2）"></a>完整代码（2）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// itoa 是实现将整数转换为字符串的方法</span><br><span class="line">char* itoa(int num,char* str,int radix)</span><br><span class="line">&#123;</span><br><span class="line">char index[]=&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;//索引表</span><br><span class="line">unsigned unum;//存放要转换的整数的绝对值,转换的整数可能是负数</span><br><span class="line">int i=0,j,k;//i用来指示设置字符串相应位，转换之后i其实就是字符串的长度；转换后顺序是逆序的，有正负的情况，k用来指示调整顺序的开始位置;j用来指示调整顺序时的交换。</span><br><span class="line"> </span><br><span class="line">//获取要转换的整数的绝对值</span><br><span class="line">if(radix==10&amp;&amp;num&lt;0)//要转换成十进制数并且是负数</span><br><span class="line">&#123;</span><br><span class="line">unum=(unsigned)-num;//将num的绝对值赋给unum</span><br><span class="line">str[i++]=&apos;-&apos;;//在字符串最前面设置为&apos;-&apos;号，并且索引加1</span><br><span class="line">&#125;</span><br><span class="line">else unum=(unsigned)num;//若是num为正，直接赋值给unum</span><br><span class="line"> </span><br><span class="line">//转换部分，注意转换后是逆序的</span><br><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">str[i++]=index[unum%(unsigned)radix];//取unum的最后一位，并设置为str对应位，指示索引加1</span><br><span class="line">unum/=radix;//unum去掉最后一位</span><br><span class="line"> </span><br><span class="line">&#125;while(unum);//直至unum为0退出循环</span><br><span class="line"> </span><br><span class="line">str[i]=&apos;\0&apos;;//在字符串最后添加&apos;\0&apos;字符，c语言字符串以&apos;\0&apos;结束。</span><br><span class="line"> </span><br><span class="line">//将顺序调整过来</span><br><span class="line">if(str[0]==&apos;-&apos;) k=1;//如果是负数，符号不用调整，从符号后面开始调整</span><br><span class="line">else k=0;//不是负数，全部都要调整</span><br><span class="line"> </span><br><span class="line">char temp;//临时变量，交换两个值时用到</span><br><span class="line">for(j=k;j&lt;=(i-1)/2;j++)//头尾一一对称交换，i其实就是字符串的长度，索引最大值比长度少1</span><br><span class="line">&#123;</span><br><span class="line">temp=str[j];//头部赋值给临时变量</span><br><span class="line">str[j]=str[i-1+k-j];//尾部赋值给头部</span><br><span class="line">str[i-1+k-j]=temp;//将临时变量的值(其实就是之前的头部值)赋给尾部</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">return str;//返回转换后的字符串</span><br><span class="line">&#125;</span><br><span class="line">bool isPalindrome(int x)&#123;</span><br><span class="line">    if(x &lt; 0)</span><br><span class="line">        return false;</span><br><span class="line">    char string[100] = &#123;0&#125;;</span><br><span class="line">    itoa(x,string,10);</span><br><span class="line">    int i = 0, j = strlen(string);</span><br><span class="line">    for(i = 0; i != j &amp;&amp; j &gt;0 ; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        if(string[i] != string[j-1])</span><br><span class="line">            return false;</span><br><span class="line">        --j;</span><br><span class="line">    &#125; </span><br><span class="line">    return true;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :16 ms, 在所有 c 提交中击败了58.54%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了82.37%的用户</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -117,9 +117,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
       <category term="数组的操作" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
     
@@ -265,9 +265,9 @@
     
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
   </entry>
   
@@ -299,11 +299,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="构建二叉树" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -370,11 +370,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="平衡二叉树" scheme="http://yoursite.com/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -487,9 +487,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
@@ -563,11 +563,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     

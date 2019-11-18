@@ -211,6 +211,158 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/18/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/" class="post-title-link" itemprop="url">罗马数字转整数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-18 22:20:32" itemprop="dateCreated datePublished" datetime="2019-11-18T22:20:32+08:00">2019-11-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode字符串</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%95%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">回文数</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%95%B0/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="罗马数字转整数"><a href="#罗马数字转整数" class="headerlink" title="罗马数字转整数"></a>罗马数字转整数</h3><p>罗马数字包含以下七种字符:<code>I， V， X， L，C，D 和 M</code>。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>I</td>
+<td>1</td>
+</tr>
+<tr>
+<td>V</td>
+<td>5</td>
+</tr>
+<tr>
+<td>X</td>
+<td>10</td>
+</tr>
+<tr>
+<td>L</td>
+<td>50</td>
+</tr>
+<tr>
+<td>C</td>
+<td>100</td>
+</tr>
+<tr>
+<td>D</td>
+<td>500</td>
+</tr>
+<tr>
+<td>M</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<ul>
+<li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
+<li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li>
+<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li>
+</ul>
+<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;III&quot;</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IV&quot;</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IX&quot;</span><br><span class="line">输出: 9</span><br></pre></td></tr></table></figure>
+<p>示例 4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;LVIII&quot;</span><br><span class="line">输出: 58</span><br><span class="line">解释: L = 50, V= 5, III = 3.</span><br></pre></td></tr></table></figure>
+<p>示例 5:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;MCMXCIV&quot;</span><br><span class="line">输出: 1994</span><br><span class="line">解释: M = 1000, CM = 900, XC = 90, IV = 4.</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/roman-to-integer" target="_blank" rel="noopener">https://leetcode-cn.com/problems/roman-to-integer</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>用<code>switch()</code>解决，判断字符串中每个字符，与罗马字符对应，结果加上罗马字母对应的值， 比较字符串中<code>I、X 、C</code>字符 <code>s[i]</code>与<code>s[i+1]</code>是否符合</p>
+<pre><code>1. I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+2. X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90
+3.C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900</code></pre><p>这六种情况,如果符合，则结果减去 <code>2</code>倍的 <code>s[i]</code>罗马字母对应的值，因为本来要减去的值，之前多加了一个，所以要减去二倍的 罗马值。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int change(char c)</span><br><span class="line">&#123;</span><br><span class="line">    switch (c)</span><br><span class="line">    &#123;</span><br><span class="line">        case &apos;I&apos;: return 1;</span><br><span class="line">        case &apos;V&apos;: return 5;</span><br><span class="line">        case &apos;X&apos;: return 10;</span><br><span class="line">        case &apos;L&apos;: return 50;</span><br><span class="line">        case &apos;C&apos;: return 100;</span><br><span class="line">        case &apos;D&apos;: return 500;</span><br><span class="line">        case &apos;M&apos;: return 1000;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int romanToInt(char * s)</span><br><span class="line">&#123;</span><br><span class="line">    int i = 0;</span><br><span class="line">    int result = 0;</span><br><span class="line">    while (s[i] != &apos;\0&apos;) &#123;</span><br><span class="line">        if (s[i] == &apos;I&apos; &amp;&amp; s[i + 1] == &apos;V&apos;) &#123;</span><br><span class="line">            result += 4;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;I&apos; &amp;&amp; s[i + 1] == &apos;X&apos;) &#123;</span><br><span class="line">            result += 9;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;X&apos; &amp;&amp; s[i + 1] == &apos;L&apos;) &#123;</span><br><span class="line">            result += 40;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;X&apos; &amp;&amp; s[i + 1] == &apos;C&apos;) &#123;</span><br><span class="line">            result += 90;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;C&apos; &amp;&amp; s[i + 1] == &apos;D&apos;) &#123;</span><br><span class="line">            result += 400;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;C&apos; &amp;&amp; s[i + 1] == &apos;M&apos;) &#123;</span><br><span class="line">            result += 900;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            result += change(s[i]);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :20 ms, 在所有 c 提交中击败了14.17%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了79.18%的用户</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">int romanToInt(char * s)&#123;</span><br><span class="line">    int len = strlen(s);</span><br><span class="line">    if (len == 0)</span><br><span class="line">        return 0;</span><br><span class="line">    int ans = 0;</span><br><span class="line">    </span><br><span class="line">    for(int i=0; i &lt; len; ++i) &#123;</span><br><span class="line">        switch (s[i]) &#123;</span><br><span class="line">            case &apos;M&apos;: ans+=1000;break;</span><br><span class="line">            case &apos;D&apos;: ans+=500;break;  </span><br><span class="line">            case &apos;C&apos;: ans+=100; </span><br><span class="line">                if(i &lt; (len - 1)) </span><br><span class="line">                    if(s[i+1] == &apos;M&apos; || s[i+1] == &apos;D&apos;) </span><br><span class="line">                        ans-=200; </span><br><span class="line">                break;</span><br><span class="line">            case &apos;L&apos;: ans+=50; break;</span><br><span class="line">            case &apos;X&apos;: ans+=10; </span><br><span class="line">                if(i &lt; (len - 1)) </span><br><span class="line">                    if(s[i+1] == &apos;L&apos; || s[i+1] == &apos;C&apos;) </span><br><span class="line">                    ans-=20; </span><br><span class="line">                break;</span><br><span class="line">            case &apos;V&apos;: ans+=5;  break;</span><br><span class="line">            case &apos;I&apos;: ans+=1;  </span><br><span class="line">                if(i &lt; (len - 1)) </span><br><span class="line">                    if(s[i+1] == &apos;X&apos; || s[i+1] == &apos;V&apos;) </span><br><span class="line">                        ans-=2; </span><br><span class="line">                break;</span><br><span class="line">            default: break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :12 ms, 在所有 c 提交中击败了58.66%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了79.05%的用户</p>
+</blockquote>
+<p>以上两种代码实现方式，第二种比第一种，用时短减少了很多<code>if..else</code>判断。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/%E5%9B%9E%E6%96%87%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1046,103 +1198,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">平衡二叉树</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-09 22:11:07" itemprop="dateCreated datePublished" datetime="2019-11-09T22:11:07+08:00">2019-11-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode二叉树</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
-                    <span itemprop="name">递归</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
-                    <span itemprop="name">简单</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><p>给定一个二叉树，判断它是否是高度平衡的二叉树。</p>
-<p>本题中，一棵高度平衡二叉树定义为：</p>
-<blockquote>
-<p>一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。</p>
-</blockquote>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">给定二叉树 [3,9,20,null,null,15,7]</span><br><span class="line"></span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
-<p>返回 true 。</p>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">给定二叉树 [1,2,2,3,3,null,null,4,4]</span><br><span class="line"></span><br><span class="line">       1</span><br><span class="line">      / \</span><br><span class="line">     2   2</span><br><span class="line">    / \</span><br><span class="line">   3   3</span><br><span class="line">  / \</span><br><span class="line"> 4   4</span><br></pre></td></tr></table></figure>
-<p>返回 false 。</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/balanced-binary-tree" target="_blank" rel="noopener">https://leetcode-cn.com/problems/balanced-binary-tree</a></p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>使用递归完成，分别获取左子树与右子树的高度，求左子树减去右子树的绝对值，如果大于一则一直返回 -1 ， -1表示这棵树已经失去平衡了。</p>
-<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int balance(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">        return 0;</span><br><span class="line">    int left = balance(root-&gt;left); //left表示左子树的高度</span><br><span class="line">    if(left == -1)</span><br><span class="line">        return -1;</span><br><span class="line">    int right = balance(root-&gt;right);// right表示右子树的高度</span><br><span class="line">    if(right == -1)</span><br><span class="line">        return -1;</span><br><span class="line">    if(abs(left - right) &gt; 1) //-1 用来表示已经产生不平衡了</span><br><span class="line">        return -1;</span><br><span class="line">    return (left &gt; right ? left : right) + 1;</span><br><span class="line">&#125;</span><br><span class="line">bool isBalanced(struct TreeNode* root) &#123;</span><br><span class="line">    return balance(root) != -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>执行用时 :16 ms, 在所有 c 提交中击败了51.56%的用户<br>内存消耗 :10.2 MB, 在所有 c 提交中击败了100.00%的用户</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1193,20 +1248,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

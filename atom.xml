@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-17T05:13:01.261Z</updated>
+  <updated>2019-11-18T14:20:32.510Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>罗马数字转整数</title>
+    <link href="http://yoursite.com/2019/11/18/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/11/18/罗马数字转整数/</id>
+    <published>2019-11-18T14:20:32.439Z</published>
+    <updated>2019-11-18T14:20:32.510Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="罗马数字转整数"><a href="#罗马数字转整数" class="headerlink" title="罗马数字转整数"></a>罗马数字转整数</h3><p>罗马数字包含以下七种字符:<code>I， V， X， L，C，D 和 M</code>。</p><table><thead><tr><th>字符</th><th>数值</th></tr></thead><tbody><tr><td>I</td><td>1</td></tr><tr><td>V</td><td>5</td></tr><tr><td>X</td><td>10</td></tr><tr><td>L</td><td>50</td></tr><tr><td>C</td><td>100</td></tr><tr><td>D</td><td>500</td></tr><tr><td>M</td><td>1000</td></tr><tr><td>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</td><td></td></tr></tbody></table><p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p><ul><li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li><li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li><li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li></ul><p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p><p>示例 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;III&quot;</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IV&quot;</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure><p>示例 3:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IX&quot;</span><br><span class="line">输出: 9</span><br></pre></td></tr></table></figure><p>示例 4:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;LVIII&quot;</span><br><span class="line">输出: 58</span><br><span class="line">解释: L = 50, V= 5, III = 3.</span><br></pre></td></tr></table></figure><p>示例 5:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;MCMXCIV&quot;</span><br><span class="line">输出: 1994</span><br><span class="line">解释: M = 1000, CM = 900, XC = 90, IV = 4.</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/roman-to-integer" target="_blank" rel="noopener">https://leetcode-cn.com/problems/roman-to-integer</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>用<code>switch()</code>解决，判断字符串中每个字符，与罗马字符对应，结果加上罗马字母对应的值， 比较字符串中<code>I、X 、C</code>字符 <code>s[i]</code>与<code>s[i+1]</code>是否符合</p><pre><code>1. I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。2. X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 903.C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900</code></pre><p>这六种情况,如果符合，则结果减去 <code>2</code>倍的 <code>s[i]</code>罗马字母对应的值，因为本来要减去的值，之前多加了一个，所以要减去二倍的 罗马值。</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int change(char c)</span><br><span class="line">&#123;</span><br><span class="line">    switch (c)</span><br><span class="line">    &#123;</span><br><span class="line">        case &apos;I&apos;: return 1;</span><br><span class="line">        case &apos;V&apos;: return 5;</span><br><span class="line">        case &apos;X&apos;: return 10;</span><br><span class="line">        case &apos;L&apos;: return 50;</span><br><span class="line">        case &apos;C&apos;: return 100;</span><br><span class="line">        case &apos;D&apos;: return 500;</span><br><span class="line">        case &apos;M&apos;: return 1000;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int romanToInt(char * s)</span><br><span class="line">&#123;</span><br><span class="line">    int i = 0;</span><br><span class="line">    int result = 0;</span><br><span class="line">    while (s[i] != &apos;\0&apos;) &#123;</span><br><span class="line">        if (s[i] == &apos;I&apos; &amp;&amp; s[i + 1] == &apos;V&apos;) &#123;</span><br><span class="line">            result += 4;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;I&apos; &amp;&amp; s[i + 1] == &apos;X&apos;) &#123;</span><br><span class="line">            result += 9;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;X&apos; &amp;&amp; s[i + 1] == &apos;L&apos;) &#123;</span><br><span class="line">            result += 40;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;X&apos; &amp;&amp; s[i + 1] == &apos;C&apos;) &#123;</span><br><span class="line">            result += 90;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;C&apos; &amp;&amp; s[i + 1] == &apos;D&apos;) &#123;</span><br><span class="line">            result += 400;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else if (s[i] == &apos;C&apos; &amp;&amp; s[i + 1] == &apos;M&apos;) &#123;</span><br><span class="line">            result += 900;</span><br><span class="line">            i += 2;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            result += change(s[i]);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :20 ms, 在所有 c 提交中击败了14.17%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了79.18%的用户</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">int romanToInt(char * s)&#123;</span><br><span class="line">    int len = strlen(s);</span><br><span class="line">    if (len == 0)</span><br><span class="line">        return 0;</span><br><span class="line">    int ans = 0;</span><br><span class="line">    </span><br><span class="line">    for(int i=0; i &lt; len; ++i) &#123;</span><br><span class="line">        switch (s[i]) &#123;</span><br><span class="line">            case &apos;M&apos;: ans+=1000;break;</span><br><span class="line">            case &apos;D&apos;: ans+=500;break;  </span><br><span class="line">            case &apos;C&apos;: ans+=100; </span><br><span class="line">                if(i &lt; (len - 1)) </span><br><span class="line">                    if(s[i+1] == &apos;M&apos; || s[i+1] == &apos;D&apos;) </span><br><span class="line">                        ans-=200; </span><br><span class="line">                break;</span><br><span class="line">            case &apos;L&apos;: ans+=50; break;</span><br><span class="line">            case &apos;X&apos;: ans+=10; </span><br><span class="line">                if(i &lt; (len - 1)) </span><br><span class="line">                    if(s[i+1] == &apos;L&apos; || s[i+1] == &apos;C&apos;) </span><br><span class="line">                    ans-=20; </span><br><span class="line">                break;</span><br><span class="line">            case &apos;V&apos;: ans+=5;  break;</span><br><span class="line">            case &apos;I&apos;: ans+=1;  </span><br><span class="line">                if(i &lt; (len - 1)) </span><br><span class="line">                    if(s[i+1] == &apos;X&apos; || s[i+1] == &apos;V&apos;) </span><br><span class="line">                        ans-=2; </span><br><span class="line">                break;</span><br><span class="line">            default: break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :12 ms, 在所有 c 提交中击败了58.66%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了79.05%的用户</p></blockquote><p>以上两种代码实现方式，第二种比第一种，用时短减少了很多<code>if..else</code>判断。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;罗马数字转整数&quot;&gt;&lt;a href=&quot;#罗马数字转整数&quot; class=&quot;headerlink&quot; title=&quot;罗马数字转整数&quot;&gt;&lt;/a&gt;罗马数字转整数&lt;/h3&gt;&lt;p&gt;罗马数字包含以下七种字符:&lt;code&gt;I， V， X， L，C，D 和 M&lt;/code&gt;。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode字符串" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="回文数" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%95%B0/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%95%B0/%E7%AE%80%E5%8D%95/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="字符转换" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>回文数</title>
@@ -115,9 +152,9 @@
       <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%BE%AA%E7%8E%AF/%E4%B8%AD%E7%AD%89/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
@@ -152,9 +189,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
@@ -261,9 +298,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E9%81%8D%E5%8E%86/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
     
@@ -483,13 +520,13 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E9%80%92%E5%BD%92/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
@@ -561,9 +598,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
@@ -698,46 +735,11 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E7%AE%80%E5%8D%95/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的字母异位词</title>
-    <link href="http://yoursite.com/2019/11/01/%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/"/>
-    <id>http://yoursite.com/2019/11/01/有效的字母异位词/</id>
-    <published>2019-11-01T03:03:35.074Z</published>
-    <updated>2019-11-01T02:55:34.141Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="有效的字母异位词"><a href="#有效的字母异位词" class="headerlink" title="有效的字母异位词"></a>有效的字母异位词</h3><p>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。</p><p>示例?1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure><p>说明:<br>你可以假设字符串只包含小写字母。</p><p>进阶:<br>如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/valid-anagram" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-anagram</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>解决字符串的问题，英文字母一共才26个，我们可以创建两个数组a[],b[]，数组中的元素分别对应字母”a,b,c….z“，遍历数组 s 数组s中每个字符对应的数组元素a[i]++，同理遍历数组 t 数组t中每个字符对应的数组元素b[i]++,然后比较数组a[]与数组b[],如果数组一致则<code>return true</code> 否则<code>return false</code></p><p>提交的代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">bool isAnagram(char * s, char * t)&#123;</span><br><span class="line">    int a[26]=&#123;0&#125;;</span><br><span class="line">    int b[26]=&#123;0&#125;;</span><br><span class="line">    int n;</span><br><span class="line">    int i;</span><br><span class="line">    for(i=0;i&lt;strlen(s);++i)&#123;</span><br><span class="line">        if(s[i]&gt;=97 &amp;&amp; s[i]&lt;=123)</span><br><span class="line">        &#123;</span><br><span class="line">            n=s[i]-97;</span><br><span class="line">            a[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0 ;i&lt;strlen(t); ++i)&#123;</span><br><span class="line">        if(t[i]&gt;=97 &amp;&amp; t[i]&lt;=123)</span><br><span class="line">         &#123;</span><br><span class="line">            n=t[i]-97;</span><br><span class="line">            b[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0;i&lt;26;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[i]!=b[i])</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时：344 ms<br>仅仅至战胜了5.12%的c提交记录</p></blockquote><p><strong>加油！每天做点数据结构练习!</strong></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;有效的字母异位词&quot;&gt;&lt;a href=&quot;#有效的字母异位词&quot; class=&quot;headerlink&quot; title=&quot;有效的字母异位词&quot;&gt;&lt;/a&gt;有效的字母异位词&lt;/h3&gt;&lt;p&gt;给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。&lt;/p&gt;
-&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="Leetcode字符串" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E7%AE%80%E5%8D%95/"/>
-    
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   

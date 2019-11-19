@@ -211,6 +211,100 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/%E5%8A%A0%E4%B8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/%E5%8A%A0%E4%B8%80/" class="post-title-link" itemprop="url">加一</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 22:22:00" itemprop="dateCreated datePublished" datetime="2019-11-19T22:22:00+08:00">2019-11-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E6%95%B0%E7%BB%84/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode数组</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/" itemprop="url" rel="index">
+                    <span itemprop="name">动态分配</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="加一"><a href="#加一" class="headerlink" title="加一"></a>加一</h3><p>给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。</p>
+<p>最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。</p>
+<p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3]</span><br><span class="line">输出: [1,2,4]</span><br><span class="line">解释: 输入数组表示数字 123。</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [4,3,2,1]</span><br><span class="line">输出: [4,3,2,2]</span><br><span class="line">解释: 输入数组表示数字 4321。</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/plus-one" target="_blank" rel="noopener">https://leetcode-cn.com/problems/plus-one</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>第一种情况：直接给数组最后一位的数字加一<br>第二种情况：1119 最后一位（最高位不为9）数字加一，会向前进一<br>第三种情况：999 每一位加都进一，且最高位为9，我们就需要动态开辟一个空间，空间大小为原数组大小加一</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int* plusOne(int* digits, int digitsSize, int* returnSize)&#123;</span><br><span class="line">    if(digitsSize == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return digits;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = digitsSize - 1; i&gt;= 0; --i)</span><br><span class="line">    &#123;</span><br><span class="line">        digits[i] = (digits[i] + 1) % 10;</span><br><span class="line">        if(digits[i] != 0)</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">    * returnSize = digitsSize;</span><br><span class="line">    if(digits[0] == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        int *result = (int *) malloc (sizeof(int) * (digitsSize+1));</span><br><span class="line">        result[0] = 1;</span><br><span class="line">        for(int k =1; k&lt;digitsSize+1; ++k)</span><br><span class="line">        &#123;</span><br><span class="line">            result[k] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        *returnSize = digitsSize + 1;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">        return digits;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了80.94%的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了5.51%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/18/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1118,86 +1212,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">如何上传文件夹下多个文件</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-09 22:21:16" itemprop="dateCreated datePublished" datetime="2019-11-09T22:21:16+08:00">2019-11-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="如何上传文件夹下多个文件"><a href="#如何上传文件夹下多个文件" class="headerlink" title="如何上传文件夹下多个文件"></a>如何上传文件夹下多个文件</h3><ol>
-<li>进入git项目的本地文件夹，将自己的项目复制到这个git 文件夹，查看状态，提交所有的新文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status </span><br><span class="line">git add -A</span><br><span class="line">git commit -a -m&quot;first commit&quot;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>上传更新到git 版本库<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<p>注：<code>git add</code>上传本地项目所有变化的命令三种有<code>git add -A</code>、<code>git add -u</code>、<code>git add</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add -A  提交所有变化</span><br><span class="line">git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</span><br><span class="line">git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1248,20 +1262,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-19T14:22:00.167Z</updated>
+  <updated>2019-11-21T12:41:04.968Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>爬楼梯</title>
+    <link href="http://yoursite.com/2019/11/21/%E7%88%AC%E6%A5%BC%E6%A2%AF/"/>
+    <id>http://yoursite.com/2019/11/21/爬楼梯/</id>
+    <published>2019-11-21T12:41:04.964Z</published>
+    <updated>2019-11-21T12:41:04.968Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p><p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p><p>注意：给定 n 是一个正整数。</p><p>示例 1：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入： 2</span><br><span class="line">输出： 2</span><br><span class="line">解释： 有两种方法可以爬到楼顶。</span><br><span class="line">1.  1 阶 + 1 阶</span><br><span class="line">2.  2 阶</span><br></pre></td></tr></table></figure><p>示例 2：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入： 3</span><br><span class="line">输出： 3</span><br><span class="line">解释： 有三种方法可以爬到楼顶。</span><br><span class="line">1.  1 阶 + 1 阶 + 1 阶</span><br><span class="line">2.  1 阶 + 2 阶</span><br><span class="line">3.  2 阶 + 1 阶</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/climbing-stairs" target="_blank" rel="noopener">https://leetcode-cn.com/problems/climbing-stairs</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>通过查找规律，很容易发现这个的结果就是，斐波那契数。所以使用解决斐波那契数的方法解决</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int climbStairs(int n)&#123;</span><br><span class="line">    int a = 0, b = 1, c = 0;</span><br><span class="line">    while (n--)&#123;</span><br><span class="line">        c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    return c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :4 ms, 在所有 c 提交中击败了63.56%的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了52.18%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;爬楼梯&quot;&gt;&lt;a href=&quot;#爬楼梯&quot; class=&quot;headerlink&quot; title=&quot;爬楼梯&quot;&gt;&lt;/a&gt;爬楼梯&lt;/h3&gt;&lt;p&gt;假设你正在爬楼梯。需要 n 阶你才能到达楼顶。&lt;/p&gt;
+&lt;p&gt;每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode递归" scheme="http://yoursite.com/categories/Leetcode%E9%80%92%E5%BD%92/"/>
+    
+      <category term="斐波那契数" scheme="http://yoursite.com/categories/Leetcode%E9%80%92%E5%BD%92/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/categories/Leetcode%E9%80%92%E5%BD%92/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E9%80%92%E5%BD%92/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/%E9%80%92%E5%BD%92/%E7%AE%80%E5%8D%95/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="斐波那契数" scheme="http://yoursite.com/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除链表的倒数第N个结点</title>
+    <link href="http://yoursite.com/2019/11/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/"/>
+    <id>http://yoursite.com/2019/11/21/删除链表的倒数第N个结点/</id>
+    <published>2019-11-21T11:56:15.763Z</published>
+    <updated>2019-11-21T12:39:46.375Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="删除链表的倒数第N个结点"><a href="#删除链表的倒数第N个结点" class="headerlink" title="删除链表的倒数第N个结点"></a>删除链表的倒数第N个结点</h3><p>给定一个链表，删除链表的倒数第<code>n</code> 个节点，并且返回链表的头结点。</p><p>示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</span><br><span class="line"></span><br><span class="line">当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</span><br></pre></td></tr></table></figure><p>说明：</p><p>给定的 n 保证是有效的。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list" target="_blank" rel="noopener">https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以假设设置了双指针<code>fast</code> 和 <code>slow</code> ，当 <code>fast</code>指向末尾的 <code>NULL</code>，<code>fast</code>和 <code>slow</code> 之间相隔的元素个数为<code>n</code>时，那么删除掉<code>slow</code>的下一个指针就完成了要求</p><ul><li>设置虚拟结点 <code>node</code> 指向 <code>head</code></li><li>设定双指针 <code>fast</code> 和 <code>slow</code>，<code>fast</code>指向 <code>head</code>，<code>slow</code>指向<code>head</code>。</li><li>移动 <code>fast</code>直到<code>fast</code> 与 <code>slow</code>之间相隔的元素个数为<code>n</code></li><li>同时移动 <code>fast</code>和<code>slow</code>直到 <code>fast</code> 指向的为<code>NULL</code></li><li>将 <code>slow</code>的下个节点指向下下个节点</li></ul><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     struct ListNode *next;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">struct ListNode* removeNthFromEnd(struct ListNode* head, int n)&#123;</span><br><span class="line">    if(head == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return head;</span><br><span class="line">    &#125;</span><br><span class="line">    struct ListNode node;</span><br><span class="line">    node.next = head;</span><br><span class="line">    struct ListNode * fast = head;</span><br><span class="line">    struct ListNode * slow = &amp;node;</span><br><span class="line">    int i = 1;</span><br><span class="line">    while(fast != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        if(i &gt; n)//fast 与 slow 的间隔 为n的时候，两个指针一起移动</span><br><span class="line">        &#123;</span><br><span class="line">            slow = slow -&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        fast = fast-&gt; next;</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">    slow -&gt; next = slow-&gt;next-&gt;next;</span><br><span class="line">    return node.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :8 ms, 在所有 c 提交中击败了37.41%的用户<br>内存消耗 :6.9 MB, 在所有 c 提交中击败了91.62%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;删除链表的倒数第N个结点&quot;&gt;&lt;a href=&quot;#删除链表的倒数第N个结点&quot; class=&quot;headerlink&quot; title=&quot;删除链表的倒数第N个结点&quot;&gt;&lt;/a&gt;删除链表的倒数第N个结点&lt;/h3&gt;&lt;p&gt;给定一个链表，删除链表的倒数第&lt;code&gt;n&lt;/code&gt; 
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode链表" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="双指针" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E5%8F%8C%E6%8C%87%E9%92%88/%E4%B8%AD%E7%AD%89/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+      <category term="双指针" scheme="http://yoursite.com/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>加一</title>
@@ -43,9 +118,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
@@ -189,9 +264,9 @@
       <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%BE%AA%E7%8E%AF/%E4%B8%AD%E7%AD%89/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
@@ -226,9 +301,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
@@ -335,13 +410,13 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E9%81%8D%E5%8E%86/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
   </entry>
   
@@ -557,11 +632,11 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E9%80%92%E5%BD%92/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
-    
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
@@ -635,9 +710,9 @@
       <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
     
     
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
@@ -680,70 +755,6 @@
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>滑动窗口最大值</title>
-    <link href="http://yoursite.com/2019/11/03/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
-    <id>http://yoursite.com/2019/11/03/滑动窗口最大值/</id>
-    <published>2019-11-03T14:19:10.950Z</published>
-    <updated>2019-11-03T14:24:52.326Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="滑动窗口最大值"><a href="#滑动窗口最大值" class="headerlink" title="滑动窗口最大值"></a>滑动窗口最大值</h3><p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p><p>返回滑动窗口中的最大值。</p><p>示例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3</span><br><span class="line">输出: [3,3,5,5,6,7] </span><br><span class="line">解释: </span><br><span class="line"></span><br><span class="line">  滑动窗口的位置                最大值</span><br><span class="line">---------------               -----</span><br><span class="line">[1  3  -1] -3  5  3  6  7       3</span><br><span class="line"> 1 [3  -1  -3] 5  3  6  7       3</span><br><span class="line"> 1  3 [-1  -3  5] 3  6  7       5</span><br><span class="line"> 1  3  -1 [-3  5  3] 6  7       5</span><br><span class="line"> 1  3  -1  -3 [5  3  6] 7       6</span><br><span class="line"> 1  3  -1  -3  5 [3  6  7]      7</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/sliding-window-maximum" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sliding-window-maximum</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>有两种解题方法</p><ol><li>一种是每k个元素进行比较，创建一个链表将最大值输出</li><li>第二种是创建一个双端链表，将元素从队尾入队，如果后一个节点元素数值比前一个大则前一个数值移除，如果比前一个结点元素数值小，则入队。这样就能保证队列的第一个元素为当前k个数值中最大的<br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8l7raet5lj30lp08y0tt.jpg" alt="henbang"><br><img src="http://tva1.sinaimg.cn/large/007X8olVly1g8l7vawonpj30j008q0tj.jpg" alt=""></li></ol><h4 id="第一种想法完整代码如下"><a href="#第一种想法完整代码如下" class="headerlink" title="第一种想法完整代码如下"></a>第一种想法完整代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Note: The returned array must be malloced, assume caller calls free().</span><br><span class="line"> */</span><br><span class="line">/*</span><br><span class="line">    maxInk()用于比较k个数值中最大值</span><br><span class="line">*/</span><br><span class="line">int maxInk(int *nums,int k)</span><br><span class="line">&#123;</span><br><span class="line">    int max=nums[0];</span><br><span class="line">    int i;</span><br><span class="line">    for(i = 0; i &lt; k; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        if(nums[i] &gt; max)</span><br><span class="line">            max = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* maxSlidingWindow(int* nums, int numsSize, int k, int* returnSize)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    int end = numsSize - k;</span><br><span class="line">    int rsize = numsSize - k + 1;</span><br><span class="line">    if(numsSize == 0)</span><br><span class="line">    &#123;</span><br><span class="line">        * returnSize = 0;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    * returnSize = rsize;</span><br><span class="line">    int *r = (int *)malloc(sizeof(int)*rsize);</span><br><span class="line">    memset(r,0,sizeof(int)*rsize);</span><br><span class="line">    </span><br><span class="line">    for(i = 0; i&lt;= end; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        r[i] = maxInk(nums+i,k);</span><br><span class="line">    &#125;</span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :144 ms, 在所有 c 提交中击败了40.05% 的用户<br>内存消耗 :15.9 MB, 在所有 c 提交中击败了18.18%的用户</p></blockquote><h4 id="第二种想法完整代码如下"><a href="#第二种想法完整代码如下" class="headerlink" title="第二种想法完整代码如下"></a>第二种想法完整代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">int *qdata;</span><br><span class="line">int head;</span><br><span class="line">int tail;</span><br><span class="line">int qlen;</span><br><span class="line">&#125;Queue;</span><br><span class="line"></span><br><span class="line">void queue_init(Queue* q, int n)</span><br><span class="line">&#123;</span><br><span class="line">if(n&gt;=0)</span><br><span class="line">&#123;</span><br><span class="line">q-&gt;qlen = n+1;</span><br><span class="line">q-&gt;qdata = (int *)malloc(sizeof(int) *q-&gt;qlen);</span><br><span class="line">q-&gt;head = 0;</span><br><span class="line">q-&gt;tail = 0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void queue_destroy(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">free(q-&gt;qdata);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_is_full(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">if((q-&gt;tail+1)%q-&gt;qlen == q-&gt;head) return 1;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_is_empty(Queue*q )</span><br><span class="line">&#123;</span><br><span class="line">return q-&gt;head == q-&gt;tail;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void queue_add_tail(Queue *q, int e)</span><br><span class="line">&#123;</span><br><span class="line">if(!queue_is_full(q))</span><br><span class="line">&#123;</span><br><span class="line">q-&gt;qdata[q-&gt;tail] = e;</span><br><span class="line">q-&gt;tail = (q-&gt;tail+1)%q-&gt;qlen;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;%d not add, queue is full\n&quot;, e);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_pull_head(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">if(!queue_is_empty(q))</span><br><span class="line">&#123;</span><br><span class="line">int r = q-&gt;qdata[q-&gt;head];</span><br><span class="line">q-&gt;head = (q-&gt;head+1)%q-&gt;qlen;</span><br><span class="line">return r;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;not pull, queue is empty\n&quot;);</span><br><span class="line">return -1;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">int queue_peek_head(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">if(!queue_is_empty(q))</span><br><span class="line">return q-&gt;qdata[q-&gt;head];</span><br><span class="line">return -1;</span><br><span class="line">&#125;</span><br><span class="line">int queue_pull_tail(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">    int r = q-&gt;qdata[(q-&gt;tail-1+q-&gt;qlen)%q-&gt;qlen];</span><br><span class="line">    if(!queue_is_empty(q))</span><br><span class="line">    &#123;</span><br><span class="line">        q-&gt;tail = (q-&gt;tail-1+q-&gt;qlen)%q-&gt;qlen;</span><br><span class="line">    &#125;</span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int queue_peek_tail(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">    if(!queue_is_empty(q))</span><br><span class="line">    &#123;</span><br><span class="line">        return q-&gt;qdata[(q-&gt;tail-1+q-&gt;qlen)%q-&gt;qlen];</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br><span class="line">void queue_print(Queue *q)</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">    printf(&quot;in queue: &quot;);</span><br><span class="line">for(i = q-&gt;head; i != q-&gt;tail; i= (i+1)%q-&gt;qlen)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;%d &quot;,q-&gt;qdata[i]);</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void queue_reflact(Queue *q, int *nums)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;in queue: &quot;);</span><br><span class="line">for(i = q-&gt;head; i != q-&gt;tail; i= (i+1)%q-&gt;qlen)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;%d &quot;,nums[q-&gt;qdata[i]]);</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;\n&quot;);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void pr(int* nums, int numsSize)</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    printf(&quot;result: &quot;);</span><br><span class="line">    for(i=0; i&lt;numsSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;%d &quot;,nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int* maxSlidingWindow(int* nums, int numsSize, int k, int* returnSize)&#123;</span><br><span class="line">    int i;</span><br><span class="line">    int j=0;</span><br><span class="line">    </span><br><span class="line">    int rsize = numsSize -k +1; </span><br><span class="line">    if(numsSize==0)</span><br><span class="line">    &#123;</span><br><span class="line">        *returnSize = 0;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    Queue qnode;</span><br><span class="line">    Queue* q = &amp;qnode;</span><br><span class="line">    queue_init(q, k);</span><br><span class="line">    </span><br><span class="line">    *returnSize = rsize;</span><br><span class="line">    int *r = (int *)malloc(sizeof(int)*rsize);</span><br><span class="line">    *returnSize = rsize;</span><br><span class="line">    memset(r, 0, sizeof(int)*rsize);</span><br><span class="line">     </span><br><span class="line">    for(i=0; i&lt;numsSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(queue_is_empty(q))</span><br><span class="line">        &#123; </span><br><span class="line">            queue_add_tail(q, i);</span><br><span class="line">            goto juge;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        if(queue_peek_head(q)&lt;=i-k)</span><br><span class="line">        &#123;</span><br><span class="line">            queue_pull_head(q);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        while(!queue_is_empty(q) &amp;&amp; nums[queue_peek_tail(q)] &lt; nums[i])</span><br><span class="line">        &#123;</span><br><span class="line">             queue_pull_tail(q);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        queue_add_tail(q, i);</span><br><span class="line"> </span><br><span class="line">        juge:if(i-k+1&gt;=0)&#123;</span><br><span class="line">            r[j++] = nums[queue_peek_head(q)];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :76 ms, 在所有 c 提交中击败了84.56% 的用户<br>内存消耗 :16.1 MB, 在所有 c 提交中击败了9.09%的用户</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;滑动窗口最大值&quot;&gt;&lt;a href=&quot;#滑动窗口最大值&quot; class=&quot;headerlink&quot; title=&quot;滑动窗口最大值&quot;&gt;&lt;/a&gt;滑动窗口最大值&lt;/h3&gt;&lt;p&gt;给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在
-      
-    
-    </summary>
-    
-    
-      <category term="Leetcode队列" scheme="http://yoursite.com/categories/Leetcode%E9%98%9F%E5%88%97/"/>
-    
-      <category term="困难" scheme="http://yoursite.com/categories/Leetcode%E9%98%9F%E5%88%97/%E5%9B%B0%E9%9A%BE/"/>
-    
-    
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
-      <category term="困难" scheme="http://yoursite.com/tags/%E5%9B%B0%E9%9A%BE/"/>
-    
-      <category term="队列" scheme="http://yoursite.com/tags/%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日温度</title>
-    <link href="http://yoursite.com/2019/11/02/%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6/"/>
-    <id>http://yoursite.com/2019/11/02/每日温度/</id>
-    <published>2019-11-02T14:02:32.144Z</published>
-    <updated>2019-11-02T14:16:51.224Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="每日温度"><a href="#每日温度" class="headerlink" title="每日温度"></a>每日温度</h3><p>根据每日 气温 列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请在该位置用?0 来代替。</p><p>例如，给定一个列表?<code>temperatures = [73, 74, 75, 71, 69, 72, 76, 73]</code>，你的输出应该是?<code>[1, 1, 4, 2, 1, 1, 0, 0]</code>。</p><p>提示：气温 列表长度的范围是?<code>[1, 30000]</code>。每个气温的值的均为华氏度，都是在?<code>[30, 100]?</code>范围内的整数。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/daily-temperatures" target="_blank" rel="noopener">https://leetcode-cn.com/problems/daily-temperatures</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>创建一个栈，把第一天的温度放进栈内，第二天与之比较，如果比第一天温度高，则应该输出1，如果比第一天温度低，就把这个温度值也入栈，继续下一个数值进行比较，如果温度比第二天高，则对应的第二天输出的应该为1，第二天的温度值出栈，然后与第一天的进行比较，如果大则第一天的数值出栈，对应输出为2，否则继续下一个元素按照这种方法比较，直到最后一个比较完，栈内还有元素就依次出栈，每个元素对应的输出结果为0.<br><strong>实现过程</strong></p><ul><li>定义一个栈，并定义栈顶指针top</li><li>创建一个链表<code>res</code> 用来存储结果，定义一个 <code>temp</code>用来存储数组下标</li><li>核心代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">for(i = 0; i&lt; TSize; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    while(top != -1 &amp;&amp; T[i]&gt;T[stack[top]])</span><br><span class="line">    &#123;</span><br><span class="line">        temp = stack[top];</span><br><span class="line">        top--;//处理下标的距离</span><br><span class="line">        res[temp] = i - temp;</span><br><span class="line">    &#125;</span><br><span class="line">    ++top;//栈空了或者满足递减条件就入站</span><br><span class="line">    stack[top] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h4 id="完整代码如下"><a href="#完整代码如下" class="headerlink" title="完整代码如下"></a>完整代码如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Note: The returned array must be malloced, assume caller calls free().</span><br><span class="line"> */</span><br><span class="line">#define MAX 30000</span><br><span class="line"></span><br><span class="line">int* dailyTemperatures(int* T, int TSize, int* returnSize)&#123;</span><br><span class="line">    int stack[MAX] = &#123;0&#125;;</span><br><span class="line">    int top = -1,i = 0, temp = 0;</span><br><span class="line">    int* res =(int *)malloc(sizeof(int)*TSize);</span><br><span class="line">    memset(res,0,sizeof(int)*TSize);//初始化函数 给res中 sizeof(int)*Tsize个赋值为0</span><br><span class="line">    if(res == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        * returnSize = 0;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i = 0; i&lt; TSize; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        while(top != -1 &amp;&amp; T[i]&gt;T[stack[top]])</span><br><span class="line">        &#123;</span><br><span class="line">            temp = stack[top];</span><br><span class="line">            top--;//处理下标的距离</span><br><span class="line">            res[temp] = i - temp;</span><br><span class="line">        &#125;</span><br><span class="line">        ++top;//栈空了或者满足递减条件就入站</span><br><span class="line">        stack[top] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    * returnSize = TSize;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :232 ms, 在所有?c?提交中击败了53.11%的用户<br>内存消耗 :23.8 MB, 在所有?c?提交中击败了76.47%的用户</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;每日温度&quot;&gt;&lt;a href=&quot;#每日温度&quot; class=&quot;headerlink&quot; title=&quot;每日温度&quot;&gt;&lt;/a&gt;每日温度&lt;/h3&gt;&lt;p&gt;根据每日 气温 列表，请重新生成一个列表，对应位置的输入是你需要再等待多久温度才会升高超过该日的天数。如果之后都不会升高，请
-      
-    
-    </summary>
-    
-    
-      <category term="Leetcode数组" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E6%95%B0%E7%BB%84/%E4%B8%AD%E7%AD%89/"/>
-    
-    
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
-      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
-      <category term="栈" scheme="http://yoursite.com/tags/%E6%A0%88/"/>
     
   </entry>
   

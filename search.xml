@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>爬楼梯</title>
+    <url>/2019/11/21/%E7%88%AC%E6%A5%BC%E6%A2%AF/</url>
+    <content><![CDATA[<h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><p>假设你正在爬楼梯。需要 n 阶你才能到达楼顶。</p>
+<p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<p>注意：给定 n 是一个正整数。</p>
+<p>示例 1：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入： 2</span><br><span class="line">输出： 2</span><br><span class="line">解释： 有两种方法可以爬到楼顶。</span><br><span class="line">1.  1 阶 + 1 阶</span><br><span class="line">2.  2 阶</span><br></pre></td></tr></table></figure>
+<p>示例 2：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入： 3</span><br><span class="line">输出： 3</span><br><span class="line">解释： 有三种方法可以爬到楼顶。</span><br><span class="line">1.  1 阶 + 1 阶 + 1 阶</span><br><span class="line">2.  1 阶 + 2 阶</span><br><span class="line">3.  2 阶 + 1 阶</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/climbing-stairs" target="_blank" rel="noopener">https://leetcode-cn.com/problems/climbing-stairs</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>通过查找规律，很容易发现这个的结果就是，斐波那契数。所以使用解决斐波那契数的方法解决</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">int climbStairs(int n)&#123;</span><br><span class="line">    int a = 0, b = 1, c = 0;</span><br><span class="line">    while (n--)&#123;</span><br><span class="line">        c = a + b;</span><br><span class="line">        a = b;</span><br><span class="line">        b = c;</span><br><span class="line">    &#125;</span><br><span class="line">    return c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了63.56%的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了52.18%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode递归</category>
+        <category>斐波那契数</category>
+        <category>递归</category>
+        <category>简单</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>简单</tag>
+        <tag>递归</tag>
+        <tag>斐波那契数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>删除链表的倒数第N个结点</title>
+    <url>/2019/11/21/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E7%BB%93%E7%82%B9/</url>
+    <content><![CDATA[<h3 id="删除链表的倒数第N个结点"><a href="#删除链表的倒数第N个结点" class="headerlink" title="删除链表的倒数第N个结点"></a>删除链表的倒数第N个结点</h3><p>给定一个链表，删除链表的倒数第<code>n</code> 个节点，并且返回链表的头结点。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.</span><br><span class="line"></span><br><span class="line">当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.</span><br></pre></td></tr></table></figure>
+<p>说明：</p>
+<p>给定的 n 保证是有效的。</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list" target="_blank" rel="noopener">https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以假设设置了双指针<code>fast</code> 和 <code>slow</code> ，当 <code>fast</code>指向末尾的 <code>NULL</code>，<code>fast</code>和 <code>slow</code> 之间相隔的元素个数为<code>n</code>时，那么删除掉<code>slow</code>的下一个指针就完成了要求</p>
+<ul>
+<li>设置虚拟结点 <code>node</code> 指向 <code>head</code></li>
+<li>设定双指针 <code>fast</code> 和 <code>slow</code>，<code>fast</code>指向 <code>head</code>，<code>slow</code>指向<code>head</code>。</li>
+<li>移动 <code>fast</code>直到<code>fast</code> 与 <code>slow</code>之间相隔的元素个数为<code>n</code></li>
+<li>同时移动 <code>fast</code>和<code>slow</code>直到 <code>fast</code> 指向的为<code>NULL</code></li>
+<li>将 <code>slow</code>的下个节点指向下下个节点</li>
+</ul>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     struct ListNode *next;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">struct ListNode* removeNthFromEnd(struct ListNode* head, int n)&#123;</span><br><span class="line">    if(head == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return head;</span><br><span class="line">    &#125;</span><br><span class="line">    struct ListNode node;</span><br><span class="line">    node.next = head;</span><br><span class="line">    struct ListNode * fast = head;</span><br><span class="line">    struct ListNode * slow = &amp;node;</span><br><span class="line">    int i = 1;</span><br><span class="line">    while(fast != NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        if(i &gt; n)//fast 与 slow 的间隔 为n的时候，两个指针一起移动</span><br><span class="line">        &#123;</span><br><span class="line">            slow = slow -&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        fast = fast-&gt; next;</span><br><span class="line">        ++i;</span><br><span class="line">    &#125;</span><br><span class="line">    slow -&gt; next = slow-&gt;next-&gt;next;</span><br><span class="line">    return node.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :8 ms, 在所有 c 提交中击败了37.41%的用户<br>内存消耗 :6.9 MB, 在所有 c 提交中击败了91.62%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode链表</category>
+        <category>双指针</category>
+        <category>中等</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>链表</tag>
+        <tag>中等</tag>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>加一</title>
     <url>/2019/11/19/%E5%8A%A0%E4%B8%80/</url>
     <content><![CDATA[<h3 id="加一"><a href="#加一" class="headerlink" title="加一"></a>加一</h3><p>给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。</p>
@@ -24,8 +89,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
         <tag>动态分配</tag>
       </tags>
@@ -202,8 +267,8 @@
         <category>中等</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>中等</tag>
         <tag>数组的操作</tag>
       </tags>
@@ -231,8 +296,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -321,10 +386,10 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
-        <tag>简单</tag>
+        <tag>Leetcode</tag>
         <tag>遍历</tag>
+        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -504,9 +569,9 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>简单</tag>
+        <tag>链表</tag>
         <tag>递归</tag>
       </tags>
   </entry>
@@ -568,8 +633,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
         <tag>递归</tag>
         <tag>字符串</tag>
@@ -704,8 +769,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -734,8 +799,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>数组</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
         <tag>字符串</tag>
       </tags>
@@ -845,8 +910,8 @@
         <category>困难</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
+        <tag>链表</tag>
         <tag>困难</tag>
       </tags>
   </entry>

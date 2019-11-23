@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-22T14:15:37.810Z</updated>
+  <updated>2019-11-23T14:04:40.318Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>合并两个有序链表</title>
+    <link href="http://yoursite.com/2019/11/23/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/"/>
+    <id>http://yoursite.com/2019/11/23/合并两个有序链表/</id>
+    <published>2019-11-23T14:04:40.315Z</published>
+    <updated>2019-11-23T14:04:40.318Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p><p>示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists" target="_blank" rel="noopener">https://leetcode-cn.com/problems/merge-two-sorted-lists</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>创建两个节点指针<code>head</code>,<code>l3</code>，且<code>head</code>指向<code>l3</code><br>比较<code>l1</code>和<code>l2</code>的值，小的插入<code>l3</code>里面，各自往后移动不断进行比较<br>直到其中一个链表为空了，另一个有序链表直接链接到<code>l3</code><br>返回<code>head-&gt;next</code></p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><pre><code>/** * Definition for singly-linked list. * struct ListNode { *     int val; *     struct ListNode *next; * }; */struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){    if(l1 == NULL)        return l2;    if(l2 == NULL)        return l1;    struct ListNode *l3,*head;    head = (struct ListNode*) malloc (sizeof(struct ListNode));    l3 = head;    while(l1 &amp;&amp; l2)    {        if(l1-&gt;val &lt; l2-&gt;val)        {            l3-&gt;next = l1;            l1 = l1-&gt;next;            l3 = l3-&gt;next;        }else{            l3-&gt;next = l2;            l2 = l2-&gt;next;            l3 = l3-&gt;next;        }    }    if(l1 != NULL)        l3-&gt;next = l1;    else            l3-&gt;next = l2;    return head-&gt;next;}</code></pre><blockquote><p>执行用时 :8 ms, 在所有 c 提交中击败了60.79%的用户<br>内存消耗 :7.5 MB, 在所有 c 提交中击败了77.63%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;合并两个有序链表&quot;&gt;&lt;a href=&quot;#合并两个有序链表&quot; class=&quot;headerlink&quot; title=&quot;合并两个有序链表&quot;&gt;&lt;/a&gt;合并两个有序链表&lt;/h3&gt;&lt;p&gt;将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode链表" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E9%93%BE%E8%A1%A8/%E7%AE%80%E5%8D%95/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="链表" scheme="http://yoursite.com/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>不同的二叉搜索树</title>
     <link href="http://yoursite.com/2019/11/22/%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
     <id>http://yoursite.com/2019/11/22/不同的二叉搜索树/</id>
     <published>2019-11-22T14:15:37.809Z</published>
-    <updated>2019-11-22T14:15:37.810Z</updated>
+    <updated>2019-11-22T14:19:02.107Z</updated>
     
     <content type="html"><![CDATA[<h3 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h3><p>给定一个整数 n，求以 1 … n 为节点组成的二叉搜索树有多少种？</p><p>示例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入: 3</span><br><span class="line">输出: 5</span><br><span class="line">解释:</span><br><span class="line">给定 n = 3, 一共有 5 种不同结构的二叉搜索树:</span><br><span class="line"></span><br><span class="line">   1         3     3      2      1</span><br><span class="line">    \       /     /      / \      \</span><br><span class="line">     3     2     1      1   3      2</span><br><span class="line">    /     /       \                 \</span><br><span class="line">   2     1         2                 3</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/unique-binary-search-trees" target="_blank" rel="noopener">https://leetcode-cn.com/problems/unique-binary-search-trees</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>二叉搜索树：<br>①若任意节点的左子树不为空，则左子树上所有结点的值均小于它根节点的值<br>②若任意节点的右子树不为空，则右子树上所有结点的值均大于它根节点的值<br>③任意结点的左、右子树也是二叉搜索树在本题中： </p><p>设dp(n)表示有n个结点时搜索二叉树有多少种可能，则</p><ol><li>当头结点的值为1时，左子树为空，右子树上有n - 1个结点，右子树的搜索二叉树个数为dp(n - 1)</li><li>当头结点的值为i(1 &lt; i &lt; n)时，左子树由结点1—&gt;i-1构成，右子树由结点i+1—&gt;n构成；左子树的搜索二叉树个数为dp(i-1),右子树的搜索二叉树个数为dp(n - i);此时搜索二叉树总的个数为dp(i - 1) * dp(n - i)</li><li>当头结点的值为n时，右子树为空，左子树上有n - 1个结点，左子树的搜索二叉树个数为dp(n - 1)所以，n个结点时搜索二叉树的个数上述三个步骤的和。</li></ol><p>递推公式：<br>dp(n)=dp(0)dp(n-1)+dp(1)dp(n-2)+dp(2)dp(n-3)+…+dp(n-1)dp(0)</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int numTrees(int n)&#123;</span><br><span class="line">    int dp[n+1];</span><br><span class="line">    dp[0] = 1;</span><br><span class="line">    dp[1] = 1;</span><br><span class="line">    for(int i = 2; i &lt; n+1; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for(int j = 1; j &lt; i+1; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += dp[j-1] * dp[i-j];</span><br><span class="line">        &#125;</span><br><span class="line">        dp[i] = sum;</span><br><span class="line">    &#125;</span><br><span class="line">    return dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :6.7 MB, 在所有 c 提交中击败了28.95%的用户</p></blockquote>]]></content>
     
@@ -716,48 +748,6 @@
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>各位相加</title>
-    <link href="http://yoursite.com/2019/11/05/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0/"/>
-    <id>http://yoursite.com/2019/11/05/各位相加/</id>
-    <published>2019-11-05T14:15:05.884Z</published>
-    <updated>2019-11-05T14:15:05.913Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="各位相加"><a href="#各位相加" class="headerlink" title="各位相加"></a>各位相加</h3><p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p><p>示例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 38</span><br><span class="line">输出: 2 </span><br><span class="line">解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。</span><br></pre></td></tr></table></figure><p>进阶:<br>你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/add-digits" target="_blank" rel="noopener">https://leetcode-cn.com/problems/add-digits</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以使用循环依次获取到这个数字 num 的各个位置的数字，并将其相加，如果相加不是个位数，我们就递归调用这个函数</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int addDigits(int num)&#123;</span><br><span class="line">    int k = 0; //表示各个位置上数字之和</span><br><span class="line">    while(num != 0)//求出各个位置上的数字并求和</span><br><span class="line">    &#123;</span><br><span class="line">        k = k + num % 10; </span><br><span class="line">        num = num/10; </span><br><span class="line">    &#125;</span><br><span class="line">    if(k / 10 != 0)//判断各个位置上数字是否为个位数</span><br><span class="line">        return addDigits(k);</span><br><span class="line">    return k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :4 ms, 在所有 c 提交中击败了76.94% 的用户<br>内存消耗 :6.6 MB, 在所有 c 提交中击败了55.62%的用户</p></blockquote><h5 id="进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？"><a href="#进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？" class="headerlink" title="进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？"></a>进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</h5><p>在Leetcode的题解区 看到了一位大神的实现方法，一行代码解决问题,大致思路是这样的</p><blockquote><p>时间复杂度为O(1)的解法：<br>    除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位<br>    把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。<br>    这样就出现了两部分的东西：<br>        原本10个现在9个1份的，打包好的物品，这些，我们不用管<br>        零散的物品，它们还可以分成：<br>            从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和<br>            以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值<br>    如上零散物品的总数，就是第一次处理num后得到的累加值<br>    如果这个累加值&gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。<br>    那么按照如上的思路，似乎可以通过n % 9得到最后的值<br>    但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。<br>    所以需要做一下特殊处理，(num - 1) % 9 + 1<br>    可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。</p></blockquote><p>作者：liveforexperience</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int addDigits(int num)&#123;</span><br><span class="line">    return 1 + (num - 1) % 9;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :0 ms, 在所有 c 提交中击败了100.00% 的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了7.69%的用户</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;各位相加&quot;&gt;&lt;a href=&quot;#各位相加&quot; class=&quot;headerlink&quot; title=&quot;各位相加&quot;&gt;&lt;/a&gt;各位相加&lt;/h3&gt;&lt;p&gt;给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。&lt;/p&gt;
-&lt;p&gt;示例:&lt;/p&gt;
-&lt;figure cla
-      
-    
-    </summary>
-    
-    
-      <category term="Leetcode字符串" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-      <category term="递归" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="循环" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/"/>
-    
-    
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   

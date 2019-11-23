@@ -211,6 +211,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/23/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/23/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">合并两个有序链表</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-23 22:04:40" itemprop="dateCreated datePublished" datetime="2019-11-23T22:04:40+08:00">2019-11-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode链表</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E9%93%BE%E8%A1%A8/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists" target="_blank" rel="noopener">https://leetcode-cn.com/problems/merge-two-sorted-lists</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>创建两个节点指针<code>head</code>,<code>l3</code>，且<code>head</code>指向<code>l3</code><br>比较<code>l1</code>和<code>l2</code>的值，小的插入<code>l3</code>里面，各自往后移动不断进行比较<br>直到其中一个链表为空了，另一个有序链表直接链接到<code>l3</code><br>返回<code>head-&gt;next</code></p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><pre><code>
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
+    if(l1 == NULL)
+        return l2;
+    if(l2 == NULL)
+        return l1;
+    struct ListNode *l3,*head;
+    head = (struct ListNode*) malloc (sizeof(struct ListNode));
+    l3 = head;
+    while(l1 &amp;&amp; l2)
+    {
+        if(l1-&gt;val &lt; l2-&gt;val)
+        {
+            l3-&gt;next = l1;
+            l1 = l1-&gt;next;
+            l3 = l3-&gt;next;
+        }else{
+            l3-&gt;next = l2;
+            l2 = l2-&gt;next;
+            l3 = l3-&gt;next;
+        }
+    }
+    if(l1 != NULL)
+        l3-&gt;next = l1;
+    else    
+        l3-&gt;next = l2;
+    return head-&gt;next;
+}</code></pre><blockquote>
+<p>执行用时 :8 ms, 在所有 c 提交中击败了60.79%的用户<br>内存消耗 :7.5 MB, 在所有 c 提交中击败了77.63%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,8 +350,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-22 22:15:37" itemprop="dateCreated datePublished" datetime="2019-11-22T22:15:37+08:00">2019-11-22</time>
+              <time title="创建时间：2019-11-22 22:15:37 / 修改时间：22:19:02" itemprop="dateCreated datePublished" datetime="2019-11-22T22:15:37+08:00">2019-11-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1138,106 +1255,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/gang.png">
-      <meta itemprop="name" content="杨小恩">
-      <meta itemprop="description" content="一段时间只做一件事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杨小恩同学的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/12/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/" class="post-title-link" itemprop="url">整数反转</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-12 22:27:41" itemprop="dateCreated datePublished" datetime="2019-11-12T22:27:41+08:00">2019-11-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode字符串</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%BE%AA%E7%8E%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">循环</span>
-                  </a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%BE%AA%E7%8E%AF/%E4%B8%AD%E7%AD%89/" itemprop="url" rel="index">
-                    <span itemprop="name">中等</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h3><p>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。</p>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 123</span><br><span class="line">输出: 321</span><br></pre></td></tr></table></figure>
-<p> 示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br></pre></td></tr></table></figure>
-<p>示例 3:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure>
-<p><strong>注意:</strong></p>
-<p>假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-integer" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-integer</a></p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>获取整数各个位置上的数字，并且使用 <code>count</code>用来记录有几位数字，<code>result =result*10+ a[i] ;</code>得到结果，其余就是要判断溢出问题和 负数问题</p>
-<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int reverse(int x)&#123;</span><br><span class="line">    int a[10] = &#123;0&#125;;</span><br><span class="line">    long result = 0;</span><br><span class="line">    int count = 0;</span><br><span class="line">    int temp = x;</span><br><span class="line">    int max = 0x7fffffff, min = 0x80000000;//int的最大值最小值</span><br><span class="line">    for(int i = 0; temp != 0; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i] = temp % 10;</span><br><span class="line">        temp = temp / 10;</span><br><span class="line">        count ++;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0; i &lt; count; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        result =result*10+ a[i] ;</span><br><span class="line">       // result *= 10;</span><br><span class="line">    &#125;</span><br><span class="line">    if(result &gt;max || result &lt; min)</span><br><span class="line">        return 0;</span><br><span class="line">    else if(x &lt; 0)</span><br><span class="line">        return result * -1;</span><br><span class="line">    else </span><br><span class="line">        return result;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :6.9 MB, 在所有 c 提交中击败了75.39%的用户</p>
-</blockquote>
-<p>在LeetCode平台中看到评论区有位 作者：止于至善<br>代码非常简洁明了，我在这也给贴出来，供大家学习交流！</p>
-<h4 id="其他实现代码"><a href="#其他实现代码" class="headerlink" title="其他实现代码"></a>其他实现代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int reverse(int x)</span><br><span class="line">&#123;</span><br><span class="line">    int max = 0x7fffffff, min = 0x80000000;//int的最大值最小值</span><br><span class="line">    long rs = 0;//用long类型判断溢出</span><br><span class="line">    for(;x;rs = rs*10+x%10,x/=10);//逆序，正负通吃，不用单独考虑负值</span><br><span class="line">    return rs&gt;max||rs&lt;min?0:rs;//超了最大值低于最小值就返回0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>执行用时 :4 ms, 在所有 c 提交中击败了80.32%的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了76.46%的用户</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1288,14 +1305,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

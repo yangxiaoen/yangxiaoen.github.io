@@ -211,6 +211,111 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/gang.png">
+      <meta itemprop="name" content="杨小恩">
+      <meta itemprop="description" content="一段时间只做一件事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨小恩同学的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/05/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0/" class="post-title-link" itemprop="url">各位相加</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-05 22:15:05" itemprop="dateCreated datePublished" datetime="2019-11-05T22:15:05+08:00">2019-11-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode字符串</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/" itemprop="url" rel="index">
+                    <span itemprop="name">递归</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">循环</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode%E5%AD%97%E7%AC%A6%E4%B8%B2/%E9%80%92%E5%BD%92/%E5%BE%AA%E7%8E%AF/%E7%AE%80%E5%8D%95/" itemprop="url" rel="index">
+                    <span itemprop="name">简单</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="各位相加"><a href="#各位相加" class="headerlink" title="各位相加"></a>各位相加</h3><p>给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 38</span><br><span class="line">输出: 2 </span><br><span class="line">解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。</span><br></pre></td></tr></table></figure>
+<p>进阶:<br>你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/add-digits" target="_blank" rel="noopener">https://leetcode-cn.com/problems/add-digits</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>我们可以使用循环依次获取到这个数字 num 的各个位置的数字，并将其相加，如果相加不是个位数，我们就递归调用这个函数</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int addDigits(int num)&#123;</span><br><span class="line">    int k = 0; //表示各个位置上数字之和</span><br><span class="line">    while(num != 0)//求出各个位置上的数字并求和</span><br><span class="line">    &#123;</span><br><span class="line">        k = k + num % 10; </span><br><span class="line">        num = num/10; </span><br><span class="line">    &#125;</span><br><span class="line">    if(k / 10 != 0)//判断各个位置上数字是否为个位数</span><br><span class="line">        return addDigits(k);</span><br><span class="line">    return k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :4 ms, 在所有 c 提交中击败了76.94% 的用户<br>内存消耗 :6.6 MB, 在所有 c 提交中击败了55.62%的用户</p>
+</blockquote>
+<h5 id="进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？"><a href="#进阶-你可以不使用循环或者递归，且在-O-1-时间复杂度内解决这个问题吗？" class="headerlink" title="进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？"></a>进阶:你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？</h5><p>在Leetcode的题解区 看到了一位大神的实现方法，一行代码解决问题,大致思路是这样的</p>
+<blockquote>
+<p>时间复杂度为O(1)的解法：<br>    除个位外，每一位上的值都是通过(9+1)进位的过程得到的，想一下拨算盘进位<br>    把整数n看成n样物品，原本是以10个1份打包的，现在从这些10个1份打包好的里面，拿出1个，让它们以9个为1份打包。<br>    这样就出现了两部分的东西：<br>        原本10个现在9个1份的，打包好的物品，这些，我们不用管<br>        零散的物品，它们还可以分成：<br>            从原来打包的里面拿出来的物品，它们的总和 =》 原来打包好的份数 =》 10进制进位的次数 =》 10进制下，除个位外其他位上的值的总和<br>            以10个为1份打包时，打不进去的零散物品 =》 10进制个位上的值<br>    如上零散物品的总数，就是第一次处理num后得到的累加值<br>    如果这个累加值&gt;9，那么如题就还需要将各个位上的值再相加，直到结果为个位数为止。也就意味着还需要来一遍如上的过程。<br>    那么按照如上的思路，似乎可以通过n % 9得到最后的值<br>    但是有1个关键的问题，如果num是9的倍数，那么就不适用上述逻辑。原本我是想得到n被打包成10个1份的份数+打不进10个1份的散落个数的和。通过与9取模，去获得那个不能整除的1，作为计算份数的方式，但是如果可以被9整除，我就无法得到那个1，也得不到个位上的数。<br>    所以需要做一下特殊处理，(num - 1) % 9 + 1<br>    可以这么做的原因：原本可以被完美分成9个为一份的n样物品，我故意去掉一个，那么就又可以回到上述逻辑中去得到我要的n被打包成10个一份的份数+打不进10个一份的散落个数的和。而这个减去的1就相当于从，在10个1份打包的时候散落的个数中借走的，本来就不影响原来10个1份打包的份数，先拿走再放回来，都只影响散落的个数，所以没有关系。</p>
+</blockquote>
+<p>作者：liveforexperience</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int addDigits(int num)&#123;</span><br><span class="line">    return 1 + (num - 1) % 9;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :0 ms, 在所有 c 提交中击败了100.00% 的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了7.69%的用户</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/04/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1096,14 +1201,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

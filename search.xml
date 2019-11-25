@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>x的平方根</title>
+    <url>/2019/11/24/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/</url>
+    <content><![CDATA[<h3 id="X的平方根"><a href="#X的平方根" class="headerlink" title="X的平方根"></a>X的平方根</h3><p>实现 int sqrt(int x) 函数。</p>
+<p>计算并返回 x 的平方根，其中 x 是非负整数。</p>
+<p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 8</span><br><span class="line">输出: 2</span><br><span class="line">说明: 8 的平方根是 2.82842..., </span><br><span class="line">     由于返回类型是整数，小数部分将被舍去。</span><br></pre></td></tr></table></figure>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/sqrtx" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sqrtx</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>采用二分法，类似于我们猜数，大了往小了猜，小了往大的了猜。原理一致。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int mySqrt(int x)&#123;</span><br><span class="line">    if(x == 1)</span><br><span class="line">        return 1;</span><br><span class="line">    int min = 0;</span><br><span class="line">    int max = x;</span><br><span class="line">    while(max - min &gt;1)</span><br><span class="line">    &#123;</span><br><span class="line">        int m = (max + min) / 2;</span><br><span class="line">        if(x / m &lt;m)</span><br><span class="line">            max = m;</span><br><span class="line">        else</span><br><span class="line">            min = m;</span><br><span class="line">    &#125;</span><br><span class="line">    return min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了70.89%的用户</p>
+</blockquote>
+<h4 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h4><p>使用牛顿迭代<br>下面这种方法可以很有效地求出根号 aa 的近似值：首先随便猜一个近似值 xx，然后不断令 xx 等于 xx 和 a/xa/x 的平均数，迭代个六七次后 xx 的值就已经相当精确了。</p>
+<p>例如，我想求根号 2 等于多少。假如我猜测的结果为 4，虽然错的离谱，但你可以看到使用牛顿迭代法后这个值很快就趋近于根号 2 了：</p>
+<blockquote>
+<p>( 4 + 2/ 4 ) / 2 = 2.25<br>( 2.25 + 2/ 2.25 ) / 2 = 1.56944..<br>( 1.56944..+ 2/1.56944..) / 2 = 1.42189..<br>( 1.42189..+ 2/1.42189..) / 2 = 1.41423..<br>…<br><img src="https://ftp.bmp.ovh/imgs/2019/11/3ab89e39fc70ab06.jpg" alt="示意图"></p>
+</blockquote>
+<p>这种算法的原理很简单，我们仅仅是不断用 (x, f(x))的切线来逼近方程 x^2-a=0 的根。根号 a实际上就是 x^2-a=0的一个正实根，这个函数的导数是 2x。也就是说，函数上任一点 (x,f(x)) 处的切线斜率是 2x。那么，x-f(x)/(2x) 就是一个比 x 更接近的近似值。代入 f(x)=x^2-a 得到 x-(x^2-a)/(2x)，也就(x+a/x)/2。<br>同样的方法可以用在其它的近似值计算中。</p>
+<p>知道方程实现就非常简单了。</p>
+<p>作者：LOAFER<br>链接：<a href="https://leetcode-cn.com/problems/sqrtx/solution/niu-dun-die-dai-fa-by-loafer/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sqrtx/solution/niu-dun-die-dai-fa-by-loafer/</a><br>来源：力扣（LeetCode）</p>
+<h4 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int mySqrt(int x)&#123;</span><br><span class="line">    long r = x;</span><br><span class="line">    while(r*r &gt; x) </span><br><span class="line">        r = (r + x/r) / 2;</span><br><span class="line">    return (int)r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :6.7 MB, 在所有 c 提交中击败了76.94%的用户</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+        <category>简单</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>二分法</tag>
+        <tag>简单</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>合并两个有序链表</title>
     <url>/2019/11/23/%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
@@ -115,8 +155,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
         <tag>简单</tag>
+        <tag>递归</tag>
         <tag>斐波那契数</tag>
       </tags>
   </entry>
@@ -179,8 +219,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>动态分配</tag>
       </tags>
   </entry>
@@ -357,8 +397,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>数组</tag>
+        <tag>中等</tag>
         <tag>数组的操作</tag>
       </tags>
   </entry>
@@ -386,8 +426,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -476,8 +516,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>遍历</tag>
       </tags>
   </entry>
@@ -504,9 +544,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>简单</tag>
         <tag>构建二叉树</tag>
       </tags>
   </entry>
@@ -563,9 +603,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>简单</tag>
         <tag>平衡二叉树</tag>
       </tags>
   </entry>
@@ -591,8 +631,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>Leetcode</tag>
         <tag>二叉树</tag>
-        <tag>中等</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -616,8 +656,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>Leetcode</tag>
         <tag>二叉树</tag>
-        <tag>中等</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -660,8 +700,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>链表</tag>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
         <tag>简单</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -688,8 +728,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>Leetcode</tag>
         <tag>二叉树</tag>
-        <tag>中等</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -723,9 +763,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
+        <tag>递归</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -753,8 +793,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>Leetcode</tag>
         <tag>二叉树</tag>
-        <tag>中等</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -859,8 +899,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -889,8 +929,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>字符串</tag>
       </tags>
   </entry>

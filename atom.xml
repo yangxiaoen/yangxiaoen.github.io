@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-23T14:04:40.318Z</updated>
+  <updated>2019-11-25T03:27:55.471Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>x的平方根</title>
+    <link href="http://yoursite.com/2019/11/24/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9/"/>
+    <id>http://yoursite.com/2019/11/24/x的平方根/</id>
+    <published>2019-11-24T14:16:24.619Z</published>
+    <updated>2019-11-25T03:27:55.471Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="X的平方根"><a href="#X的平方根" class="headerlink" title="X的平方根"></a>X的平方根</h3><p>实现 int sqrt(int x) 函数。</p><p>计算并返回 x 的平方根，其中 x 是非负整数。</p><p>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p><p>示例 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: 8</span><br><span class="line">输出: 2</span><br><span class="line">说明: 8 的平方根是 2.82842..., </span><br><span class="line">     由于返回类型是整数，小数部分将被舍去。</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/sqrtx" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sqrtx</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>采用二分法，类似于我们猜数，大了往小了猜，小了往大的了猜。原理一致。</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int mySqrt(int x)&#123;</span><br><span class="line">    if(x == 1)</span><br><span class="line">        return 1;</span><br><span class="line">    int min = 0;</span><br><span class="line">    int max = x;</span><br><span class="line">    while(max - min &gt;1)</span><br><span class="line">    &#123;</span><br><span class="line">        int m = (max + min) / 2;</span><br><span class="line">        if(x / m &lt;m)</span><br><span class="line">            max = m;</span><br><span class="line">        else</span><br><span class="line">            min = m;</span><br><span class="line">    &#125;</span><br><span class="line">    return min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :6.8 MB, 在所有 c 提交中击败了70.89%的用户</p></blockquote><h4 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h4><p>使用牛顿迭代<br>下面这种方法可以很有效地求出根号 aa 的近似值：首先随便猜一个近似值 xx，然后不断令 xx 等于 xx 和 a/xa/x 的平均数，迭代个六七次后 xx 的值就已经相当精确了。</p><p>例如，我想求根号 2 等于多少。假如我猜测的结果为 4，虽然错的离谱，但你可以看到使用牛顿迭代法后这个值很快就趋近于根号 2 了：</p><blockquote><p>( 4 + 2/ 4 ) / 2 = 2.25<br>( 2.25 + 2/ 2.25 ) / 2 = 1.56944..<br>( 1.56944..+ 2/1.56944..) / 2 = 1.42189..<br>( 1.42189..+ 2/1.42189..) / 2 = 1.41423..<br>…<br><img src="https://ftp.bmp.ovh/imgs/2019/11/3ab89e39fc70ab06.jpg" alt="示意图"></p></blockquote><p>这种算法的原理很简单，我们仅仅是不断用 (x, f(x))的切线来逼近方程 x^2-a=0 的根。根号 a实际上就是 x^2-a=0的一个正实根，这个函数的导数是 2x。也就是说，函数上任一点 (x,f(x)) 处的切线斜率是 2x。那么，x-f(x)/(2x) 就是一个比 x 更接近的近似值。代入 f(x)=x^2-a 得到 x-(x^2-a)/(2x)，也就(x+a/x)/2。<br>同样的方法可以用在其它的近似值计算中。</p><p>知道方程实现就非常简单了。</p><p>作者：LOAFER<br>链接：<a href="https://leetcode-cn.com/problems/sqrtx/solution/niu-dun-die-dai-fa-by-loafer/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/sqrtx/solution/niu-dun-die-dai-fa-by-loafer/</a><br>来源：力扣（LeetCode）</p><h4 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int mySqrt(int x)&#123;</span><br><span class="line">    long r = x;</span><br><span class="line">    while(r*r &gt; x) </span><br><span class="line">        r = (r + x/r) / 2;</span><br><span class="line">    return (int)r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>执行用时 :0 ms, 在所有 c 提交中击败了100.00%的用户<br>内存消耗 :6.7 MB, 在所有 c 提交中击败了76.94%的用户</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;X的平方根&quot;&gt;&lt;a href=&quot;#X的平方根&quot; class=&quot;headerlink&quot; title=&quot;X的平方根&quot;&gt;&lt;/a&gt;X的平方根&lt;/h3&gt;&lt;p&gt;实现 int sqrt(int x) 函数。&lt;/p&gt;
+&lt;p&gt;计算并返回 x 的平方根，其中 x 是非负整数。&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/categories/Leetcode/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/categories/Leetcode/%E7%AE%80%E5%8D%95/"/>
+    
+    
+      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
+    
+      <category term="二分法" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+  </entry>
   
   <entry>
     <title>合并两个有序链表</title>
@@ -118,9 +151,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="斐波那契数" scheme="http://yoursite.com/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/"/>
     
@@ -191,9 +224,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="动态分配" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/"/>
     
@@ -337,9 +370,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
       <category term="数组的操作" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
     
@@ -374,9 +407,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -483,9 +516,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
     
@@ -519,11 +552,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="构建二叉树" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -590,11 +623,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="平衡二叉树" scheme="http://yoursite.com/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -632,9 +665,9 @@
     
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
   </entry>
   
@@ -670,9 +703,9 @@
     
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
-      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
-    
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
   </entry>
   
@@ -707,45 +740,7 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二叉树的前序遍历</title>
-    <link href="http://yoursite.com/2019/11/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
-    <id>http://yoursite.com/2019/11/06/二叉树的前序遍历/</id>
-    <published>2019-11-06T14:16:16.679Z</published>
-    <updated>2019-11-07T14:53:05.188Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="二叉树的前序遍历"><a href="#二叉树的前序遍历" class="headerlink" title="二叉树的前序遍历"></a>二叉树的前序遍历</h3><p>给定一个二叉树，返回它的 前序 遍历。</p><p> 示例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,null,2,3]  </span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3 </span><br><span class="line"></span><br><span class="line">输出: [1,2,3]</span><br></pre></td></tr></table></figure><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal" target="_blank" rel="noopener">https://leetcode-cn.com/problems/binary-tree-preorder-traversal</a></p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>利用递归实现，思路很简单，获取根节点的值并存储，递归调用遍历左子树，然后递归调用遍历右子树，但是对于我来说，将想法转换为代码有些困难，大家直接看代码吧！</p><h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void preorderTravel(struct TreeNode* root, int* result, int *rSize)</span><br><span class="line">&#123;</span><br><span class="line">    if(!root)</span><br><span class="line">        return;</span><br><span class="line">    result [*rSize] = root -&gt; val;</span><br><span class="line">    ++(*rSize);</span><br><span class="line">    preorderTravel(root-&gt;left, result, rSize);</span><br><span class="line">    preorderTravel(root-&gt;right, result, rSize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* preorderTraversal(struct TreeNode* root, int* returnSize)&#123;</span><br><span class="line">    int *result = (int *)malloc(sizeof(int)*100);//为结果开辟存储空间</span><br><span class="line">    int rSize = 0;</span><br><span class="line">    preorderTravel(root, result, &amp;rSize);</span><br><span class="line">    * returnSize = rSize;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>感谢<strong>sfas</strong>提供代码参考</p></blockquote><blockquote><p>执行用时 :4 ms, 在所有 c 提交中击败了73.21% 的用户<br>内存消耗 :7.2 MB, 在所有 c 提交中击败了99.14%的用户</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;二叉树的前序遍历&quot;&gt;&lt;a href=&quot;#二叉树的前序遍历&quot; class=&quot;headerlink&quot; title=&quot;二叉树的前序遍历&quot;&gt;&lt;/a&gt;二叉树的前序遍历&lt;/h3&gt;&lt;p&gt;给定一个二叉树，返回它的 前序 遍历。&lt;/p&gt;
-&lt;p&gt; 示例:&lt;/p&gt;
-&lt;figure cl
-      
-    
-    </summary>
-    
-    
-      <category term="Leetcode二叉树" scheme="http://yoursite.com/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="递归" scheme="http://yoursite.com/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/"/>
-    
-      <category term="中等" scheme="http://yoursite.com/categories/Leetcode%E4%BA%8C%E5%8F%89%E6%A0%91/%E9%80%92%E5%BD%92/%E4%B8%AD%E7%AD%89/"/>
-    
-    
-      <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
-    
-      <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="中等" scheme="http://yoursite.com/tags/%E4%B8%AD%E7%AD%89/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
     

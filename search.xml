@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AndriodStudio安装与配置</title>
+    <url>/2020/02/05/AndriodStudio%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h5 id="����һ-ϵͳҪ��"><a href="#����һ-ϵͳҪ��" class="headerlink" title="����һ ϵͳҪ��"></a>����һ ϵͳҪ��</h5><p>Windows 10 ��<br>Java JDK5 ���Ժ�汾��</p>
+<h5 id="�����-��װ-Android-Studio"><a href="#�����-��װ-Android-Studio" class="headerlink" title="����� ��װ Android Studio"></a>����� ��װ Android Studio</h5><h6 id="�l�"><a href="#�l�" class="headerlink" title="�ſ�"></a>�ſ�</h6><p>Android Studio �ǿ��� Android Ӧ�ó���Ĺٷ� IDE������ Intellij IDEA������Դ�<a href="http://www.android-studio.org/index.php" target="_blank" rel="noopener">����Android Studio</a>�����������°汾�� Android Studio��</p>
+<h6 id="��װ"><a href="#��װ" class="headerlink" title="��װ"></a>��װ</h6><p>����<br><img src="https://s2.ax1x.com/2020/02/05/1rJbI1.png" alt="1rJbI1.png"></p>
+<p>ȷ���ڰ�װ Android Studio ֮ǰ���Ѿ���װ�� Java JDK��<br><img src="https://s2.ax1x.com/2020/02/05/1rJ7Z9.png" alt="1rJ7Z9.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJoqJ.png" alt="1rJoqJ.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJ5MF.png" alt="1rJ5MF.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJIr4.png" alt="1rJIr4.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJHaR.png" alt="1rJHaR.png"></p>
+<ul>
+<li>�״ΰ�װ������£�ѡ�񲻵���֮ǰ�汾�����á�</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rJXRK.png" alt="1rJXRK.png"></p>
+<ul>
+<li>��������ʱ��������ͼ�����Don’t send<br><img src="https://s2.ax1x.com/2020/02/05/1rJjxO.png" alt="1rJjxO.png"></li>
+<li>�����򵼽��棬���next<br><img src="https://s2.ax1x.com/2020/02/05/1rJxMD.png" alt="1rJxMD.png"></li>
+<li>ѡ��װ���ͣ�����ѡ��Standard��ʹ��Ĭ�����ã��ȽϷ��㣩<br><img src="https://s2.ax1x.com/2020/02/05/1rJzse.png" alt="1rJzse.png"></li>
+<li>ѡ��UI���⣬������ݸ���ϰ��ѡ��ͺ�<br><img src="https://s2.ax1x.com/2020/02/05/1rY9Zd.png" alt="1rY9Zd.png"></li>
+<li>���ǰ��ѡ��Standard���������ͼ��SDKĬ�ϰ�װ��C�̣����Finish����ϣ������·������ǰ��ѡ��Custom��<br><img src="https://s2.ax1x.com/2020/02/05/1rYCdA.png" alt="1rYCdA.png"></li>
+<li>��ʼ����SDK���<br><img src="https://s2.ax1x.com/2020/02/05/1rYPII.png" alt="1rYPII.png"></li>
+<li>���˰�װ��ɣ����Դ����Լ��ĵ�һ��Android��Ŀ�ˡ�</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rYFit.png" alt="1rYFit.png"></p>
+<h6 id="����Hello-Word��L"><a href="#����Hello-Word��L" class="headerlink" title="����Hello Word��Ŀ"></a>����Hello Word��Ŀ</h6><p><img src="https://s2.ax1x.com/2020/02/05/1rYkJP.png" alt="1rYkJP.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYARf.png" alt="1rYARf.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYEz8.png" alt="1rYEz8.png"></p>
+<ul>
+<li>���Run-&gt;Run ?’app’��ѡ��������Ӧ��ģ�����������û��ģ������������������AVD Manager���д�����<br><img src="https://s2.ax1x.com/2020/02/05/1rYZQS.png" alt="1rYZQS.png"></li>
+<li>�½�һ��<br><img src="https://s2.ax1x.com/2020/02/05/1rYesg.png" alt="1rYesg.png"></li>
+<li>ѡ��Nexus 5X �� next����<br><img src="https://s2.ax1x.com/2020/02/05/1rYmLQ.png" alt="1rYmLQ.png"></li>
+<li>����һ����׿�汾ϵͳ��������ѡ��� ���°汾<br><img src="https://s2.ax1x.com/2020/02/05/1rYKds.png" alt="1rYKds.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYMon.png" alt="1rYMon.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYliq.png" alt="1rYliq.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rY1J0.png" alt="1rY1J0.png"></li>
+<li>������ɺ����´�AVD Manager���д���</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/02/05/1rY8zT.png" alt="1rY8zT.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYYyF.png" alt="1rYYyF.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYtL4.png" alt="1rYtL4.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYaw9.png" alt="1rYaw9.png"></p>
+<ul>
+<li>���û�������<br>  �����������������Android_SDK_ROOT������<br>ֵ��sdk�İ�װ·����ȷ�����˳�<br><img src="https://s2.ax1x.com/2020/02/05/1rYdoR.png" alt="1rYdoR.png"></li>
+<li>��� Run &gt; Run App ���г������н�����£�<br><img src="https://s2.ax1x.com/2020/02/05/1rY0F1.png" alt="1rY0F1.png"><br><img src="en-resource://database/2983:1" alt="050518fa9f067f41745da21d292ff8a7.png"></li>
+</ul>
+<h6 id="PS������-XX-is-not-allowed-here-��һ����L���취����File-gt-Project-Structure"><a href="#PS������-XX-is-not-allowed-here-��һ����L���취����File-gt-Project-Structure" class="headerlink" title="PS������ XX is not allowed here ��һ����Ľ���취����File-&gt;Project Structure"></a>PS������ XX is not allowed here ��һ����Ľ���취����File-&gt;Project Structure</h6><p><img src="en-resource://database/2985:0" alt="22336fe6dcad5130b33ff966792d3e30.png"><br><img src="en-resource://database/2987:0" alt="daa0d3f5145ea9cfddbbaa3f3dcf69d9.png"></p>
+]]></content>
+      <categories>
+        <category>������װ</category>
+        <category>Android Studio</category>
+      </categories>
+      <tags>
+        <tag>������װ</tag>
+        <tag>Android Studio</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度学习tensorflow object detect 之手势识别</title>
     <url>/2020/01/15/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0tensorflow%20object%20detect%20%E4%B9%8B%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</url>
     <content><![CDATA[<p>今天我来带大家做一个有趣的事情，识别“啪”的手势，使用<code>tensorflow object detect api</code>来检测</p>
 <h4 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h4><p>首先我们使用<a href="https://github.com/sanfooh/tensorflow_label_tool" target="_blank" rel="noopener">标注工具</a>来进行标注</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lXISPI.png" alt="lXISPI.png"></p>
-<p>此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”</p>
+<p>此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”。</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lX5jVH.png" alt="lX5jVH.png"></p>
 <p>还有一种方法就是直接从网上找图片，输入关键字，点击启动，等待进度条完成后，导入到标注文件就好。（爬取的照片准确度不是很高，所以我拿的是自己拍的）<br><img src="https://s2.ax1x.com/2020/01/15/lX5vad.png" alt="lX5vad.png"></p>
-<p>导入图片后我们在右侧输入要标注物体的<code>tag</code>，在图片上从左向右下角将识别的物体框住就好</p>
+<p>导入图片后我们在右侧输入要标注物体的<code>tag</code>，在图片上从左向右下角将识别的物体框住就好。</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lX5Oqe.png" alt="lX5Oqe.png"></p>
 <p>标注完在右下角可以看到具体的标注信息</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lX5LrD.png" alt="lX5LrD.png"></p>
@@ -114,8 +159,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>二分法</tag>
+        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -202,9 +247,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>动态规划</tag>
         <tag>二叉搜索树</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -297,8 +342,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>动态分配</tag>
       </tags>
   </entry>
@@ -475,8 +520,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>中等</tag>
+        <tag>数组</tag>
         <tag>数组的操作</tag>
       </tags>
   </entry>
@@ -504,8 +549,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -594,9 +639,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>数组</tag>
         <tag>遍历</tag>
-        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -708,8 +753,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>二叉树</tag>
         <tag>中等</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
       </tags>
   </entry>
@@ -733,8 +778,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>二叉树</tag>
         <tag>中等</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
       </tags>
   </entry>
@@ -805,8 +850,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>二叉树</tag>
         <tag>中等</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
       </tags>
   </entry>
@@ -841,8 +886,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>递归</tag>
         <tag>字符串</tag>
       </tags>
@@ -870,8 +915,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>二叉树</tag>
         <tag>中等</tag>
+        <tag>二叉树</tag>
         <tag>递归</tag>
       </tags>
   </entry>
@@ -977,8 +1022,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1007,8 +1052,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>字符串</tag>
       </tags>
   </entry>

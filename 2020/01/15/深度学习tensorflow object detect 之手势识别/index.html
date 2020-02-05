@@ -50,13 +50,13 @@
   };
 </script>
 
-  <meta name="description" content="今天我来带大家做一个有趣的事情，识别“啪”的手势，使用tensorflow object detect api来检测 标注首先我们使用标注工具来进行标注  此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”  还有一种方法就是直接从网上找图片，输入关键字，点击启动，等待进度条完成后，导入到标注文件就好。（爬取的照片准确度不是很高，所以我拿的是自己拍的） 导入图片后我们在右侧">
+  <meta name="description" content="今天我来带大家做一个有趣的事情，识别“啪”的手势，使用tensorflow object detect api来检测 标注首先我们使用标注工具来进行标注  此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”。  还有一种方法就是直接从网上找图片，输入关键字，点击启动，等待进度条完成后，导入到标注文件就好。（爬取的照片准确度不是很高，所以我拿的是自己拍的） 导入图片后我们在右">
 <meta name="keywords" content="TensorFlow,手势识别,模型训练">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习tensorflow object detect 之手势识别">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0tensorflow%20object%20detect%20%E4%B9%8B%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB&#x2F;index.html">
 <meta property="og:site_name" content="杨小恩同学的博客">
-<meta property="og:description" content="今天我来带大家做一个有趣的事情，识别“啪”的手势，使用tensorflow object detect api来检测 标注首先我们使用标注工具来进行标注  此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”  还有一种方法就是直接从网上找图片，输入关键字，点击启动，等待进度条完成后，导入到标注文件就好。（爬取的照片准确度不是很高，所以我拿的是自己拍的） 导入图片后我们在右侧">
+<meta property="og:description" content="今天我来带大家做一个有趣的事情，识别“啪”的手势，使用tensorflow object detect api来检测 标注首先我们使用标注工具来进行标注  此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”。  还有一种方法就是直接从网上找图片，输入关键字，点击启动，等待进度条完成后，导入到标注文件就好。（爬取的照片准确度不是很高，所以我拿的是自己拍的） 导入图片后我们在右">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;lXISPI.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;lX5jVH.png">
@@ -87,7 +87,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;lXIwQK.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;lXI0sO.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;lXIBLD.png">
-<meta property="og:updated_time" content="2020-01-15T15:01:58.259Z">
+<meta property="og:updated_time" content="2020-01-16T15:42:04.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;s2.ax1x.com&#x2F;2020&#x2F;01&#x2F;15&#x2F;lXISPI.png">
 
@@ -265,10 +265,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-15 22:52:51 / 修改时间：23:01:58" itemprop="dateCreated datePublished" datetime="2020-01-15T22:52:51+08:00">2020-01-15</time>
+              <time title="创建时间：2020-01-15 22:52:51" itemprop="dateCreated datePublished" datetime="2020-01-15T22:52:51+08:00">2020-01-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-16 23:42:04" itemprop="dateModified" datetime="2020-01-16T23:42:04+08:00">2020-01-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -301,10 +307,10 @@
         <p>今天我来带大家做一个有趣的事情，识别“啪”的手势，使用<code>tensorflow object detect api</code>来检测</p>
 <h4 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h4><p>首先我们使用<a href="https://github.com/sanfooh/tensorflow_label_tool" target="_blank" rel="noopener">标注工具</a>来进行标注</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lXISPI.png" alt="lXISPI.png"></p>
-<p>此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”</p>
+<p>此工具是C#写的，只能用在windows环境下，输入图片的地址，按“导入”。</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lX5jVH.png" alt="lX5jVH.png"></p>
 <p>还有一种方法就是直接从网上找图片，输入关键字，点击启动，等待进度条完成后，导入到标注文件就好。（爬取的照片准确度不是很高，所以我拿的是自己拍的）<br><img src="https://s2.ax1x.com/2020/01/15/lX5vad.png" alt="lX5vad.png"></p>
-<p>导入图片后我们在右侧输入要标注物体的<code>tag</code>，在图片上从左向右下角将识别的物体框住就好</p>
+<p>导入图片后我们在右侧输入要标注物体的<code>tag</code>，在图片上从左向右下角将识别的物体框住就好。</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lX5Oqe.png" alt="lX5Oqe.png"></p>
 <p>标注完在右下角可以看到具体的标注信息</p>
 <p><img src="https://s2.ax1x.com/2020/01/15/lX5LrD.png" alt="lX5LrD.png"></p>
@@ -388,6 +394,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/02/05/AndriodStudio%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="prev" title="AndriodStudio安装与配置">
+                  AndriodStudio安装与配置 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -443,20 +452,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

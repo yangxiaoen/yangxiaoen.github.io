@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-05T03:03:54.504Z</updated>
+  <updated>2020-02-05T06:44:19.385Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,26 +21,27 @@
     <link href="http://yoursite.com/2020/02/05/AndriodStudio%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2020/02/05/AndriodStudio安装与配置/</id>
     <published>2020-02-05T02:55:45.967Z</published>
-    <updated>2020-02-05T03:03:54.504Z</updated>
+    <updated>2020-02-05T06:44:19.385Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="����һ-ϵͳҪ��"><a href="#����һ-ϵͳҪ��" class="headerlink" title="����һ ϵͳҪ��"></a>����һ ϵͳҪ��</h5><p>Windows 10 ��<br>Java JDK5 ���Ժ�汾��</p><h5 id="�����-��װ-Android-Studio"><a href="#�����-��װ-Android-Studio" class="headerlink" title="����� ��װ Android Studio"></a>����� ��װ Android Studio</h5><h6 id="�l�"><a href="#�l�" class="headerlink" title="�ſ�"></a>�ſ�</h6><p>Android Studio �ǿ��� Android Ӧ�ó���Ĺٷ� IDE������ Intellij IDEA������Դ�<a href="http://www.android-studio.org/index.php" target="_blank" rel="noopener">����Android Studio</a>�����������°汾�� Android Studio��</p><h6 id="��װ"><a href="#��װ" class="headerlink" title="��װ"></a>��װ</h6><p>����<br><img src="https://s2.ax1x.com/2020/02/05/1rJbI1.png" alt="1rJbI1.png"></p><p>ȷ���ڰ�װ Android Studio ֮ǰ���Ѿ���װ�� Java JDK��<br><img src="https://s2.ax1x.com/2020/02/05/1rJ7Z9.png" alt="1rJ7Z9.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJoqJ.png" alt="1rJoqJ.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJ5MF.png" alt="1rJ5MF.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJIr4.png" alt="1rJIr4.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJHaR.png" alt="1rJHaR.png"></p><ul><li>�״ΰ�װ������£�ѡ�񲻵���֮ǰ�汾�����á�</li></ul><p><img src="https://s2.ax1x.com/2020/02/05/1rJXRK.png" alt="1rJXRK.png"></p><ul><li>��������ʱ��������ͼ�����Don’t send<br><img src="https://s2.ax1x.com/2020/02/05/1rJjxO.png" alt="1rJjxO.png"></li><li>�����򵼽��棬���next<br><img src="https://s2.ax1x.com/2020/02/05/1rJxMD.png" alt="1rJxMD.png"></li><li>ѡ��װ���ͣ�����ѡ��Standard��ʹ��Ĭ�����ã��ȽϷ��㣩<br><img src="https://s2.ax1x.com/2020/02/05/1rJzse.png" alt="1rJzse.png"></li><li>ѡ��UI���⣬������ݸ���ϰ��ѡ��ͺ�<br><img src="https://s2.ax1x.com/2020/02/05/1rY9Zd.png" alt="1rY9Zd.png"></li><li>���ǰ��ѡ��Standard���������ͼ��SDKĬ�ϰ�װ��C�̣����Finish����ϣ������·������ǰ��ѡ��Custom��<br><img src="https://s2.ax1x.com/2020/02/05/1rYCdA.png" alt="1rYCdA.png"></li><li>��ʼ����SDK���<br><img src="https://s2.ax1x.com/2020/02/05/1rYPII.png" alt="1rYPII.png"></li><li>���˰�װ��ɣ����Դ����Լ��ĵ�һ��Android��Ŀ�ˡ�</li></ul><p><img src="https://s2.ax1x.com/2020/02/05/1rYFit.png" alt="1rYFit.png"></p><h6 id="����Hello-Word��L"><a href="#����Hello-Word��L" class="headerlink" title="����Hello Word��Ŀ"></a>����Hello Word��Ŀ</h6><p><img src="https://s2.ax1x.com/2020/02/05/1rYkJP.png" alt="1rYkJP.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYARf.png" alt="1rYARf.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYEz8.png" alt="1rYEz8.png"></p><ul><li>���Run-&gt;Run ?’app’��ѡ��������Ӧ��ģ�����������û��ģ������������������AVD Manager���д�����<br><img src="https://s2.ax1x.com/2020/02/05/1rYZQS.png" alt="1rYZQS.png"></li><li>�½�һ��<br><img src="https://s2.ax1x.com/2020/02/05/1rYesg.png" alt="1rYesg.png"></li><li>ѡ��Nexus 5X �� next����<br><img src="https://s2.ax1x.com/2020/02/05/1rYmLQ.png" alt="1rYmLQ.png"></li><li>����һ����׿�汾ϵͳ��������ѡ��� ���°汾<br><img src="https://s2.ax1x.com/2020/02/05/1rYKds.png" alt="1rYKds.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYMon.png" alt="1rYMon.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYliq.png" alt="1rYliq.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rY1J0.png" alt="1rY1J0.png"></li><li>������ɺ����´�AVD Manager���д���</li></ul><p><img src="https://s2.ax1x.com/2020/02/05/1rY8zT.png" alt="1rY8zT.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYYyF.png" alt="1rYYyF.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYtL4.png" alt="1rYtL4.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYaw9.png" alt="1rYaw9.png"></p><ul><li>���û�������<br>  �����������������Android_SDK_ROOT������<br>ֵ��sdk�İ�װ·����ȷ�����˳�<br><img src="https://s2.ax1x.com/2020/02/05/1rYdoR.png" alt="1rYdoR.png"></li><li>��� Run &gt; Run App ���г������н�����£�<br><img src="https://s2.ax1x.com/2020/02/05/1rY0F1.png" alt="1rY0F1.png"><br><img src="en-resource://database/2983:1" alt="050518fa9f067f41745da21d292ff8a7.png"></li></ul><h6 id="PS������-XX-is-not-allowed-here-��һ����L���취����File-gt-Project-Structure"><a href="#PS������-XX-is-not-allowed-here-��һ����L���취����File-gt-Project-Structure" class="headerlink" title="PS������ XX is not allowed here ��һ����Ľ���취����File-&gt;Project Structure"></a>PS������ XX is not allowed here ��һ����Ľ���취����File-&gt;Project Structure</h6><p><img src="en-resource://database/2985:0" alt="22336fe6dcad5130b33ff966792d3e30.png"><br><img src="en-resource://database/2987:0" alt="daa0d3f5145ea9cfddbbaa3f3dcf69d9.png"></p>]]></content>
+    <content type="html"><![CDATA[<h5 id="步骤一-系统要求"><a href="#步骤一-系统要求" class="headerlink" title="步骤一 系统要求"></a>步骤一 系统要求</h5><p>Windows 10 ；<br>Java JDK5 及以后版本；</p><h5 id="步骤二-安装-Android-Studio"><a href="#步骤二-安装-Android-Studio" class="headerlink" title="步骤二 安装 Android Studio"></a>步骤二 安装 Android Studio</h5><h6 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h6><p>Android Studio 是开发 Android 应用程序的官方 IDE，基于 Intellij IDEA。你可以从<a href="http://www.android-studio.org/index.php" target="_blank" rel="noopener">官网Android Studio</a>下载下载最新版本的 Android Studio。</p><h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>下载<br><img src="https://s2.ax1x.com/2020/02/05/1rJbI1.png" alt="1rJbI1.png"></p><p>确保在安装 Android Studio 之前，已经安装好 Java JDK。<br><img src="https://s2.ax1x.com/2020/02/05/1rJ7Z9.png" alt="1rJ7Z9.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJoqJ.png" alt="1rJoqJ.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJ5MF.png" alt="1rJ5MF.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJIr4.png" alt="1rJIr4.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rJHaR.png" alt="1rJHaR.png"></p><ul><li><p>首次安装的情况下，选择不导入之前版本的配置。<br><img src="https://s2.ax1x.com/2020/02/05/1rJXRK.png" alt="1rJXRK.png"></p></li><li><p>在启动的时候会出现下图，点击Don’t send</p></li></ul><p><img src="https://s2.ax1x.com/2020/02/05/1rJjxO.png" alt="1rJjxO.png"></p><ul><li>出现向导界面，点击next<br><img src="https://s2.ax1x.com/2020/02/05/1rJxMD.png" alt="1rJxMD.png"></li><li>选择安装类型，这里选择Standard（使用默认配置，比较方便）<br><img src="https://s2.ax1x.com/2020/02/05/1rJzse.png" alt="1rJzse.png"></li><li>选择UI主题，这里根据个人习惯选择就好<br><img src="https://s2.ax1x.com/2020/02/05/1rY9Zd.png" alt="1rY9Zd.png"></li><li>如果前面选择Standard，则出现下图，SDK默认安装在C盘，点击Finish。如希望更改路径，在前面选择Custom。<br><img src="https://s2.ax1x.com/2020/02/05/1rYCdA.png" alt="1rYCdA.png"></li><li>开始下载SDK组件<br><img src="https://s2.ax1x.com/2020/02/05/1rYPII.png" alt="1rYPII.png"></li><li>至此安装完成，可以创建自己的第一个Android项目了。<br><img src="https://s2.ax1x.com/2020/02/05/1rYFit.png" alt="1rYFit.png"></li></ul><h6 id="创建Hello-Word项目"><a href="#创建Hello-Word项目" class="headerlink" title="创建Hello Word项目"></a>创建Hello Word项目</h6><p><img src="https://s2.ax1x.com/2020/02/05/1rYkJP.png" alt="1rYkJP.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYARf.png" alt="1rYARf.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYEz8.png" alt="1rYEz8.png"></p><ul><li>点击Run-&gt;Run  ‘app’，选择启动相应的模拟器。如果还没有模拟器，则点击工具栏的AVD Manager进行创建。<br><img src="https://s2.ax1x.com/2020/02/05/1rYZQS.png" alt="1rYZQS.png"></li><li>新建一个</li></ul><p><img src="https://s2.ax1x.com/2020/02/05/1rYesg.png" alt="1rYesg.png"></p><ul><li><p>选择Nexus 5X 按 next继续<br><img src="https://s2.ax1x.com/2020/02/05/1rYmLQ.png" alt="1rYmLQ.png"></p></li><li><p>下载一个安卓版本系统，这里我选择的 最新版本<br><img src="https://s2.ax1x.com/2020/02/05/1rYKds.png" alt="1rYKds.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYMon.png" alt="1rYMon.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYliq.png" alt="1rYliq.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rY1J0.png" alt="1rY1J0.png"></p></li><li><p>下载完成后重新打开AVD Manager进行创建<br><img src="https://s2.ax1x.com/2020/02/05/1rY8zT.png" alt="1rY8zT.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYYyF.png" alt="1rYYyF.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYtL4.png" alt="1rYtL4.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYaw9.png" alt="1rYaw9.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rYdoR.png" alt="1rYdoR.png"></p></li><li><p>设置环境变量<br>  点击环境变量，添加Android_SDK_ROOT变量：<br>  值：sdk的安装路径。确定并退出<br><img src="https://s2.ax1x.com/2020/02/05/1rY0F1.png" alt="1rY0F1.png"></p></li><li><p>点击 Run &gt; Run App 运行程序，运行结果如下：<br><img src="https://s2.ax1x.com/2020/02/05/1rBDMt.png" alt="1rBDMt.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rB0xI.png" alt="1rB0xI.png"></p></li></ul><h6 id="PS：出现-XX-is-not-allowed-here-这一问题的解决办法，打开File-gt-Project-Structure"><a href="#PS：出现-XX-is-not-allowed-here-这一问题的解决办法，打开File-gt-Project-Structure" class="headerlink" title="PS：出现 XX is not allowed here 这一问题的解决办法，打开File-&gt;Project Structure"></a>PS：出现 XX is not allowed here 这一问题的解决办法，打开File-&gt;Project Structure</h6><p><img src="https://s2.ax1x.com/2020/02/05/1rBwRA.png" alt="1rBwRA.png"><br><img src="https://s2.ax1x.com/2020/02/05/1rBaPH.png" alt="1rBaPH.png"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h5 id=&quot;����һ-ϵͳҪ��&quot;&gt;&lt;a href=&quot;#����һ-ϵͳҪ��&quot; class=&quot;headerlink&quot; title=&quot;����һ ϵͳҪ��&quot;&gt;&lt;/a&gt;����һ ϵͳҪ��&lt;/h5&gt;&lt;p&gt;Windows 10 ��&lt;br&gt;Java JDK5 ���Ժ�汾�
+        &lt;h5 id=&quot;步骤一-系统要求&quot;&gt;&lt;a href=&quot;#步骤一-系统要求&quot; class=&quot;headerlink&quot; title=&quot;步骤一 系统要求&quot;&gt;&lt;/a&gt;步骤一 系统要求&lt;/h5&gt;&lt;p&gt;Windows 10 ；&lt;br&gt;Java JDK5 及以后版本；&lt;/p&gt;
+&lt;h5 id=&quot;步
       
     
     </summary>
     
     
-      <category term="������װ" scheme="http://yoursite.com/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%D7%B0/"/>
+      <category term="软件安装" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
-      <category term="Android Studio" scheme="http://yoursite.com/categories/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%D7%B0/Android-Studio/"/>
+      <category term="Android Studio" scheme="http://yoursite.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/Android-Studio/"/>
     
     
-      <category term="������װ" scheme="http://yoursite.com/tags/%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%D7%B0/"/>
+      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
       <category term="Android Studio" scheme="http://yoursite.com/tags/Android-Studio/"/>
     
@@ -106,9 +107,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="二分法" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
-    
       <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
+    
+      <category term="二分法" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
     
   </entry>
   
@@ -214,9 +215,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="斐波那契数" scheme="http://yoursite.com/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0/"/>
     
@@ -287,9 +288,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="动态分配" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D/"/>
     
@@ -470,9 +471,9 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
   </entry>
   
@@ -579,11 +580,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
     
       <category term="遍历" scheme="http://yoursite.com/tags/%E9%81%8D%E5%8E%86/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
   </entry>
   
@@ -615,11 +616,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="构建二叉树" scheme="http://yoursite.com/tags/%E6%9E%84%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -686,11 +687,11 @@
     
       <category term="Leetcode" scheme="http://yoursite.com/tags/Leetcode/"/>
     
-      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
-    
       <category term="二叉树" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="http://yoursite.com/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="简单" scheme="http://yoursite.com/tags/%E7%AE%80%E5%8D%95/"/>
     
       <category term="平衡二叉树" scheme="http://yoursite.com/tags/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     

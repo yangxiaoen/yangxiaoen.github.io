@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GitHub上一款颠覆你认知的翻译软件</title>
+    <url>/2020/02/16/GitHub%E4%B8%8A%E4%B8%80%E6%AC%BE%E9%A2%A0%E8%A6%86%E4%BD%A0%E8%AE%A4%E7%9F%A5%E7%9A%84%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<p>今天给大家介绍一款翻译软件，马上到了毕业季了，现在大家都在陆陆续续准备自己的毕业论文了，很多专业在查询相关文献的时候，绝大多数相对前沿的文献，应该都是英文的，很多同学就头疼了，不用头疼啦，今天我就跟大家分享一个很棒的免费翻译软件，个人认为比市面上一些翻译软件都要好用。</p>
+<p>好了，现在我就跟大家介绍下这款好用到爆的翻译软件</p>
+<h5 id="复制翻译"><a href="#复制翻译" class="headerlink" title="复制翻译"></a>复制翻译</h5><p>CopyTranslator监听到剪贴板变化，会将剪贴板内容进行处理（如去除多余换行等），并显示翻译结果，翻译效果相比于直接复制黏贴到网页版翻译有了巨大的改善，同时翻译所需时间也大大减少，借助于强大的在线翻译API，翻译质量有保证。有效提高人们阅读及翻译外文文献的效率。<br><img src="https://s2.ax1x.com/2020/02/16/39KlY8.gif" alt="39KlY8.gif"></p>
+<h5 id="拖拽复制"><a href="#拖拽复制" class="headerlink" title="拖拽复制"></a>拖拽复制</h5><p>默认关闭，为减少多次按Ctrl+C或者是右键复制所带来的麻烦，CopyTranslator在v9.0.0引入一个鼠标拖拽后自动复制选中文字的机制，在打开拖拽复制选项后，只需拖拽选中文字，即可复制。与历史版本中不稳定的点按复制不同，拖拽复制功能将完全颠覆您的使用习惯，让您更加轻松地复制和翻译。</p>
+<blockquote>
+<p>其机制为当鼠标拖动一定时间和距离后释放，会模拟一次Ctrl+C，拖动后的释放很重要，不是按越久越好。</p>
+<p><strong>拖拽选中=复制=翻译</strong></p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2020/02/16/39KQFf.gif" alt="39KQFf.gif"></p>
+<blockquote>
+<p>重要提示：拖放复制触发模拟按Ctrl + C，在大多数情况下代表安全复制文本，但在某些情况下可能会导致一些意想不到的问题，使时候，当剪贴板数据被覆盖，如，或按下Ctrl + C时要小心在壳中断正在运行的程序</p>
+</blockquote>
+<h5 id="智能互译"><a href="#智能互译" class="headerlink" title="智能互译"></a>智能互译</h5><p>CopyTranslator会自动识别所复制的文本，根据所设置的<code>源语言</code>(被翻译的语言一般都是英文)和<code>目标语言</code>(得到的语言 一般是中文)进行智能互译，如果您复制的是源语言，会翻译为目标语言，复制目标语言则会翻译为源语言。如果复制的文字既非源语言也不是目标语言，则会翻译为目标语言，智能互译可以在设置-开关界面关闭。不用担心，自动复制不会与此机制相互影响。<br><img src="https://s2.ax1x.com/2020/02/16/39KKTP.png" alt="39KKTP.png"></p>
+<h5 id="智能词典"><a href="#智能词典" class="headerlink" title="智能词典"></a>智能词典</h5><p>单词少于3的英语句子将被视为短语或单词，我们可以在专注模式上看到更详细的解释，默认开启。<br>查词引擎目前支持Youdao，Bing及Google，通过专注模式右下角按钮可以切换不同查词引擎。<br><img src="https://s2.ax1x.com/2020/02/16/39KeOA.png" alt="39KeOA.png"></p>
+<h5 id="对照模式"><a href="#对照模式" class="headerlink" title="对照模式"></a>对照模式</h5><p>对照模式适应于频繁交互,可以快速地设置各种选项，并同时显示原文和译文以供对照<br><img src="https://s2.ax1x.com/2020/02/16/39KneI.png" alt="39KneI.png"></p>
+<h5 id="专注模式"><a href="#专注模式" class="headerlink" title="专注模式"></a>专注模式</h5><p>专注模式只提供一个结果窗口，让我们在使用的时候更好地关注结果。</p>
+<blockquote>
+<p>通常需要配合监听剪贴板和始终置顶选项使用</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2020/02/16/39K1fS.png" alt="39K1fS.png"></p>
+<p>另外，这款软件的开发者还提供了很多强大的自定义功能</p>
+<h4 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h4><h5 id="自定义界面语言"><a href="#自定义界面语言" class="headerlink" title="自定义界面语言"></a>自定义界面语言</h5><p>我们可以下载本仓库目录<a href="https://github.com/CopyTranslator/CopyTranslator/tree/master/dist_locales" target="_blank" rel="noopener">dist_locales</a>下的语言文件 <code>{locale}.json</code>，并将其放在配置目录下的<code>locales</code>文件夹下面，CopyTranslator将在启动时检测它们，然后您可以在设置面板上选择它们。</p>
+<h5 id="自定义界面样式-风格"><a href="#自定义界面样式-风格" class="headerlink" title="自定义界面样式/风格"></a>自定义界面样式/风格</h5><p>我们可以通过修改配置目录下的<code>styles.css</code>文件来自定义CopyTranslator的界面风格，样式。<br>可以修改的属性包括但不限于：字体，颜色，背景，边框。<br>可以自定义的部分包括但不限于：两大模式的结果框，设置框，状态栏的样式。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.focusText</span> &#123;</span><br><span class="line">    <span class="comment">/*modify the style of the focus result textarea*/</span></span><br><span class="line">    <span class="attribute">font-family</span>: Monaco; <span class="comment">/*设置专注模式的字体为 Monaco*/</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.contrastText</span> &#123;</span><br><span class="line">    <span class="comment">/*modify the style of the contrast src and result textarea*/</span></span><br><span class="line"></span><br><span class="line">&#125;<span class="selector-class">.dict</span>&#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">"CMU Serif"</span>, <span class="string">"微软雅黑"</span>; <span class="comment">/*modify the style of the dict result in Focus Mode*/</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.contrast</span> &#123;</span><br><span class="line">    <span class="comment">/*modify the style of the contrast mode panel*/</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>CSS</code>文件的编写可以参考<a href="https://www.html.cn/book/css/all-properties.html" target="_blank" rel="noopener">HTML中文网</a>。欢迎大家分享自己编写的style.css文件。 </p>
+</blockquote>
+<h5 id="自定义全局快捷键"><a href="#自定义全局快捷键" class="headerlink" title="自定义全局快捷键"></a>自定义全局快捷键</h5><p>对于大多数动作，我们可以通过修改配置目录的<code>shortcut.json</code>来绑定全局快捷键。</p>
+<blockquote>
+<p>WARNING当快捷键已被其他应用程序占用时，绑定将失败。</p>
+</blockquote>
+<p>每条记录的形式为：action:accelerator。<br>例如</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"listenClipboard"</span>: <span class="string">"CommandOrControl+J"</span>,</span><br><span class="line"><span class="attr">"translatorType|google"</span>:<span class="string">"CommandOrControl+T"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>它将切换监听剪贴板的动作绑定到快捷键<code>Command Or Control+J</code>。并将切换为Google翻译器的操作绑定到快捷键<code>CommandOrControl+T</code>。<br>所有可用的快捷键，请查看<a href="https://electronjs.org/docs/api/accelerator" target="_blank" rel="noopener">Electron Accelerator</a>。</p>
+<h5 id="自定义局部快捷键"><a href="#自定义局部快捷键" class="headerlink" title="自定义局部快捷键"></a>自定义局部快捷键</h5><p>与全局快捷键不同，局部快捷键不会与其他应用冲突，但是只能在焦点在copytranslator时使用。<br>对于大多数动作，我们可以通过修改配置目录的<code>localShortcuts.json</code>来绑定全局快捷键。<br>每条记录的形式为：<code>action:accelerator</code>。<br>以下为默认局部快捷键</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"undo"</span>: <span class="string">"CmdOrCtrl+Z"</span>,</span><br><span class="line">    <span class="attr">"redo"</span>: <span class="string">"Shift+CmdOrCtrl+Z"</span>,</span><br><span class="line">    <span class="attr">"cut"</span>: <span class="string">"CmdOrCtrl+X"</span>,</span><br><span class="line">    <span class="attr">"copy"</span>: <span class="string">"CmdOrCtrl+C"</span>,</span><br><span class="line">    <span class="attr">"paste"</span>: <span class="string">"CmdOrCtrl+V"</span>,</span><br><span class="line">    <span class="attr">"selectAll"</span>: <span class="string">"CmdOrCtrl+A"</span>,</span><br><span class="line">    <span class="attr">"copyResult"</span>: <span class="string">"CmdOrCtrl+S"</span>,</span><br><span class="line">    <span class="attr">"copySource"</span>: <span class="string">"CmdOrCtrl+D"</span>,</span><br><span class="line">    <span class="attr">"quit"</span>: <span class="string">"Cmd+Q"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>以<code>&quot;copyResult&quot;: &quot;CmdOrCtrl+S&quot;</code>为例，它将复制译文的动作绑定到快捷键<code>Cmd Or Ctrl+S</code>，也就是说如果你的焦点在copytranslator时，按下<code>ctrl+s</code>即可复制译文。对于所有可用操作，所有可用的快捷键，请查看<a href="https://electronjs.org/docs/api/accelerator" target="_blank" rel="noopener">Electron Accelerator</a>。</p>
+<h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><p>如果大家感兴趣的话可以自己下载下来用一用，大家自己试一试就知道这款软件的神奇之处了。</p>
+]]></content>
+      <categories>
+        <category>软件分享</category>
+        <category>CopyTranslator-翻译软件</category>
+      </categories>
+      <tags>
+        <tag>软件分享</tag>
+        <tag>CopyTranslator</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AndriodStudio安装与配置</title>
     <url>/2020/02/05/AndriodStudio%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h5 id="步骤一-系统要求"><a href="#步骤一-系统要求" class="headerlink" title="步骤一 系统要求"></a>步骤一 系统要求</h5><p>Windows 10 ；<br>Java JDK5 及以后版本；</p>
@@ -165,8 +216,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>二分法</tag>
+        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -284,8 +335,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
         <tag>简单</tag>
+        <tag>递归</tag>
         <tag>斐波那契数</tag>
       </tags>
   </entry>
@@ -348,8 +399,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>动态分配</tag>
       </tags>
   </entry>
@@ -555,8 +606,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -645,9 +696,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>数组</tag>
         <tag>遍历</tag>
-        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -673,9 +724,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>简单</tag>
         <tag>构建二叉树</tag>
       </tags>
   </entry>
@@ -732,9 +783,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>简单</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
-        <tag>简单</tag>
         <tag>平衡二叉树</tag>
       </tags>
   </entry>
@@ -829,8 +880,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>链表</tag>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
         <tag>简单</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -892,9 +943,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>递归</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
+        <tag>递归</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -1028,8 +1079,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1058,8 +1109,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>数组</tag>
         <tag>简单</tag>
+        <tag>数组</tag>
         <tag>字符串</tag>
       </tags>
   </entry>

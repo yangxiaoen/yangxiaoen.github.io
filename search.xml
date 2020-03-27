@@ -5,6 +5,8 @@
     <url>/2020/02/16/GitHub%E4%B8%8A%E4%B8%80%E6%AC%BE%E9%A2%A0%E8%A6%86%E4%BD%A0%E8%AE%A4%E7%9F%A5%E7%9A%84%E7%BF%BB%E8%AF%91%E8%BD%AF%E4%BB%B6/</url>
     <content><![CDATA[<p>今天给大家介绍一款翻译软件，马上到了毕业季了，现在大家都在陆陆续续准备自己的毕业论文了，很多专业在查询相关文献的时候，绝大多数相对前沿的文献，应该都是英文的，很多同学就头疼了，不用头疼啦，今天我就跟大家分享一个很棒的免费翻译软件，个人认为比市面上一些翻译软件都要好用。</p>
 <p>好了，现在我就跟大家介绍下这款好用到爆的翻译软件</p>
+<a id="more"></a>
+
 <h5 id="复制翻译"><a href="#复制翻译" class="headerlink" title="复制翻译"></a>复制翻译</h5><p>CopyTranslator监听到剪贴板变化，会将剪贴板内容进行处理（如去除多余换行等），并显示翻译结果，翻译效果相比于直接复制黏贴到网页版翻译有了巨大的改善，同时翻译所需时间也大大减少，借助于强大的在线翻译API，翻译质量有保证。有效提高人们阅读及翻译外文文献的效率。<br><img src="https://s2.ax1x.com/2020/02/16/39KlY8.gif" alt="39KlY8.gif"></p>
 <h5 id="拖拽复制"><a href="#拖拽复制" class="headerlink" title="拖拽复制"></a>拖拽复制</h5><p>默认关闭，为减少多次按Ctrl+C或者是右键复制所带来的麻烦，CopyTranslator在v9.0.0引入一个鼠标拖拽后自动复制选中文字的机制，在打开拖拽复制选项后，只需拖拽选中文字，即可复制。与历史版本中不稳定的点按复制不同，拖拽复制功能将完全颠覆您的使用习惯，让您更加轻松地复制和翻译。</p>
 <blockquote>
@@ -304,9 +306,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>中等</tag>
         <tag>动态规划</tag>
         <tag>二叉搜索树</tag>
-        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -810,9 +812,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -835,9 +837,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -907,9 +909,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>
@@ -944,8 +946,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       <tags>
         <tag>Leetcode</tag>
         <tag>简单</tag>
-        <tag>数组</tag>
         <tag>递归</tag>
+        <tag>数组</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
@@ -972,9 +974,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>中等</tag>
         <tag>二叉树</tag>
         <tag>递归</tag>
+        <tag>中等</tag>
       </tags>
   </entry>
   <entry>

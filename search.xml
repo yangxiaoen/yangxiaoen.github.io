@@ -215,8 +215,8 @@
         <category>简单</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>二分法</tag>
+        <tag>Leetcode</tag>
         <tag>简单</tag>
       </tags>
   </entry>
@@ -271,9 +271,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
         <category>简单</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>简单</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -368,9 +368,9 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
         <category>中等</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>中等</tag>
+        <tag>链表</tag>
         <tag>双指针</tag>
       </tags>
   </entry>
@@ -878,10 +878,10 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
         <category>简单</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
         <tag>简单</tag>
         <tag>递归</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -1006,8 +1006,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>困难</tag>
         <tag>队列</tag>
+        <tag>困难</tag>
       </tags>
   </entry>
   <entry>
@@ -1219,8 +1219,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
         <category>困难</category>
       </categories>
       <tags>
-        <tag>链表</tag>
         <tag>Leetcode</tag>
+        <tag>链表</tag>
         <tag>困难</tag>
       </tags>
   </entry>

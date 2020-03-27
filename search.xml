@@ -216,8 +216,8 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>二分法</tag>
         <tag>简单</tag>
+        <tag>二分法</tag>
       </tags>
   </entry>
   <entry>
@@ -399,8 +399,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>简单</tag>
         <tag>动态分配</tag>
       </tags>
   </entry>
@@ -606,8 +606,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -696,8 +696,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>简单</tag>
         <tag>遍历</tag>
       </tags>
   </entry>
@@ -943,8 +943,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>简单</tag>
         <tag>递归</tag>
         <tag>字符串</tag>
       </tags>
@@ -1079,8 +1079,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>简单</tag>
       </tags>
   </entry>
   <entry>
@@ -1109,8 +1109,8 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
       </categories>
       <tags>
         <tag>Leetcode</tag>
-        <tag>简单</tag>
         <tag>数组</tag>
+        <tag>简单</tag>
         <tag>字符串</tag>
       </tags>
   </entry>
